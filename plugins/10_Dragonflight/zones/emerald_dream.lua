@@ -459,6 +459,18 @@ map.nodes[59005860] = Amalgamation() -- wowhead coords
 map.nodes[62805200] = Amalgamation() -- wowhead coords
 map.nodes[63806380] = Amalgamation() -- wowhead coords
 
+-------------------------------- WORLD BOSSES ---------------------------------
+
+map.nodes[39465371] = Rare({
+    id = 209574,
+    quest = 76367,
+    rewards = {
+        DG.Guardian.HibernatingRunebear,
+        Transmog({item = 210433, type = L['cosmetic']}), -- Visage of Aurostor
+        DC.FlourishingWhimsydrake.SunriseScales
+    }
+}) -- Aurostor
+
 ---------------------------------- ZONE DROPS ---------------------------------
 
 map.nodes[72002700] = Node({
@@ -471,7 +483,7 @@ map.nodes[72002700] = Node({
         Item({item = 208067}), -- Plump Dreamseed
         Item({item = 208047}), -- Gigantic Dreamseed
         Spacer(),
-        Recipe({item = 191578, profession = ns.professions.ALCHEMY.skillID}), -- Recipe: Transmute: Awakened Fire
+        -- Recipe({item = 191578, profession = ns.professions.ALCHEMY.skillID}), -- Recipe: Transmute: Awakened Fire
         Recipe({item = 210171, profession = ns.professions.ENCHANTING.skillID}), -- Formula: Enchanted Aspect's Dreaming Crest
         Recipe({item = 210172, profession = ns.professions.ENCHANTING.skillID}), -- Formula: Enchanted Wyrm's Dreaming Crest
         Recipe({item = 210173, profession = ns.professions.ENCHANTING.skillID}), -- Formula: Enchanted Whelpling's Dreaming Crest
@@ -609,19 +621,19 @@ map.nodes[34105633] = Treasure({
 
 -------------------------------------------------------------------------------
 
-map.nodes[74002700] = Treasure({
-    icon = 1394946,
-    label = '{item:201439}',
-    note = L['renewed_dream'],
-    scale = 1.5,
-    rewards = {
-        Item({item = 208066}), -- Small Dreamseed
-        Item({item = 208067}), -- Plump Dreamseed
-        DC.GrottoNetherwingDrake.TripleSpikedCrest, --
-        DC.GrottoNetherwingDrake.ShortHorns, --
-        DC.GrottoNetherwingDrake.BarbedTail
-    }
-}) -- Renewed Dream
+-- map.nodes[74002700] = Treasure({
+--     icon = 1394946,
+--     label = '{item:201439}',
+--     note = L['renewed_dream'],
+--     scale = 1.5,
+--     rewards = {
+--         Item({item = 208066}), -- Small Dreamseed
+--         Item({item = 208067}), -- Plump Dreamseed
+--         DC.GrottoNetherwingDrake.TripleSpikedCrest, --
+--         DC.GrottoNetherwingDrake.ShortHorns, --
+--         DC.GrottoNetherwingDrake.BarbedTail
+--     }
+-- }) -- Renewed Dream
 
 -------------------------------------------------------------------------------
 
@@ -946,22 +958,23 @@ local EmeraldBounty = Class('EmeraldBounty', Node, {
                 }), -- The Seeds I Sow
                 Section(L['dreamseed_cache']),
                 Mount({item = 210059, id = 1815}), -- Reins of the Winter Night Dreamsaber
-                DC.GrottoNetherwingDrake.HeadSpike, -- Gigantic Dreamseed by myself
+                DC.GrottoNetherwingDrake.HeadSpike,
                 DC.GrottoNetherwingDrake.OutcastPattern,
                 DC.GrottoNetherwingDrake.LongHorns,
                 DC.GrottoNetherwingDrake.ClusterSpikedBack,
                 Recipe({item = 211065, profession = 773}), -- Technique: Mark of the Auric Dreamstag -- Cache Drop
                 Recipe({item = 210490, profession = 773}), -- Technique: Vantus Rune: Amirdrassil, the Dream's Hope -- Cache Drop
-                Spacer(), Section('{item:208047}'),
-                Recipe({item = 210242, profession = 185, note = '{item:208067}'}), -- Recipe: Slumbering Peacebloom Tea -- Plump Dreamseed
-                Recipe({item = 210174, profession = 333, note = '{item:208067}'}), -- Formula: Illusory Adornment: Dreams -- Plump Dreamseed
-                Recipe({item = 210241, profession = 171, note = '{item:208067}'}), -- Recipe: Dreamwalker's Healing Potion -- Plump Dreamseed
-                Mount({item = 209950, id = 1810}), -- Reins of the Rekindled Dreamstag
-                Mount({item = 209947, id = 1808}), -- Reins of the Blossoming Dreamstag
-                Mount({item = 210775, id = 1835}), -- Reins of the Snowfluff Dreamtalon
-                Mount({item = 210769, id = 1833}), -- Reins of the Springtide Dreamtalon
-                Mount({item = 210057, id = 1817}), -- Reins of the Morning Flourish Dreamsaber
-                Mount({item = 210058, id = 1816}) -- Reins of the Evening Sun Dreamsaber
+                Spacer(), Section('{item:208067}'), -- Plump Dreamseed
+                Recipe({item = 210242, profession = 185}), -- Recipe: Slumbering Peacebloom Tea
+                Recipe({item = 210174, profession = 333}), -- Formula: Illusory Adornment: Dreams
+                Recipe({item = 210241, profession = 171}) -- Recipe: Dreamwalker's Healing Potion
+                -- Spacer(), Section('{item:208047}'),
+                -- Mount({item = 209950, id = 1810}), -- Reins of the Rekindled Dreamstag
+                -- Mount({item = 209947, id = 1808}), -- Reins of the Blossoming Dreamstag
+                -- Mount({item = 210775, id = 1835}), -- Reins of the Snowfluff Dreamtalon
+                -- Mount({item = 210769, id = 1833}), -- Reins of the Springtide Dreamtalon
+                -- Mount({item = 210057, id = 1817}), -- Reins of the Morning Flourish Dreamsaber
+                -- Mount({item = 210058, id = 1816}) -- Reins of the Evening Sun Dreamsaber
             }
         end
     }
@@ -1693,6 +1706,54 @@ local SeedbloomVendor = Class('SeedbloomVendor', Collectible, {
         DG.Travel.AuroralDreamtalon:Count('1'), --
         DG.Guardian.SnowyUmbraclaw:Count('1'), --
         DruidSpacer(), --
+        Transmog({item = 209960, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Gown
+        Transmog({item = 209961, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Cape
+        Transmog({item = 209962, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Sandals
+        Transmog({item = 209963, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Gloves
+        Transmog({item = 209964, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Crown
+        Transmog({item = 209965, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Pantaloons
+        Transmog({item = 209966, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Branches
+        Transmog({item = 209967, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Belt
+        Transmog({item = 209968, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Wraps
+        Transmog({item = 210035, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Crook
+        Transmog({item = 210037, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Slab
+        Transmog({item = 210038, slot = L['cosmetic'], count = '1'}), -- Ceremonial Jacaranda Bloom
+        Transmog({item = 209969, slot = L['cosmetic'], count = '1'}), -- Vest of the Dreamfused Skull
+        Transmog({item = 209970, slot = L['cosmetic'], count = '1'}), -- Pelt of the Dreamfused Skull
+        Transmog({item = 209971, slot = L['cosmetic'], count = '1'}), -- Clogs of the Dreamfused Skull
+        Transmog({item = 209972, slot = L['cosmetic'], count = '1'}), -- Grips of the Dreamfused Skull
+        Transmog({item = 209973, slot = L['cosmetic'], count = '1'}), -- Visage of the Dreamfused Skull
+        Transmog({item = 209974, slot = L['cosmetic'], count = '1'}), -- Leggings of the Dreamfused Skull
+        Transmog({item = 209975, slot = L['cosmetic'], count = '1'}), -- Pauldrons of the Dreamfused Skull
+        Transmog({item = 209976, slot = L['cosmetic'], count = '1'}), -- Buckle of the Dreamfused Skull
+        Transmog({item = 209977, slot = L['cosmetic'], count = '1'}), -- Bracers of the Dreamfused Skull
+        Transmog({item = 210030, slot = L['cosmetic'], count = '1'}), -- Bow of the Dreamfused Skull
+        Transmog({item = 210031, slot = L['cosmetic'], count = '1'}), -- Spike of the Dreamfused Skull
+        Transmog({item = 210033, slot = L['cosmetic'], count = '1'}), -- Essence of the Dreamfused Skull
+        Transmog({item = 209978, slot = L['cosmetic'], count = '1'}), -- Barkbloom Tunic
+        Transmog({item = 209979, slot = L['cosmetic'], count = '1'}), -- Barkbloom Cloak
+        Transmog({item = 209980, slot = L['cosmetic'], count = '1'}), -- Barkbloom Talons
+        Transmog({item = 209981, slot = L['cosmetic'], count = '1'}), -- Barkbloom Claws
+        Transmog({item = 209982, slot = L['cosmetic'], count = '1'}), -- Barkbloom Mask
+        Transmog({item = 209983, slot = L['cosmetic'], count = '1'}), -- Barkbloom Breeches
+        Transmog({item = 209984, slot = L['cosmetic'], count = '1'}), -- Barkbloom Shoulderpads
+        Transmog({item = 209985, slot = L['cosmetic'], count = '1'}), -- Barkbloom Sash
+        Transmog({item = 209986, slot = L['cosmetic'], count = '1'}), -- Barkbloom Wristguards
+        Transmog({item = 210036, slot = L['cosmetic'], count = '1'}), -- Barkbloom Saber
+        Transmog({item = 210039, slot = L['cosmetic'], count = '1'}), -- Barkbloom Warglaive
+        Transmog({item = 209987, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Plate
+        Transmog({item = 209988, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Drape
+        Transmog({item = 209989, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Boots
+        Transmog({item = 209990, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Handguards
+        Transmog({item = 209991, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Helm
+        Transmog({item = 209992, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Legguards
+        Transmog({item = 209993, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Shoulderguards
+        Transmog({item = 209994, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Girdle
+        Transmog({item = 209995, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Vambraces
+        Transmog({item = 210029, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Hatchet
+        Transmog({item = 210032, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Smasher
+        Transmog({item = 210034, slot = L['cosmetic'], count = '1'}), -- Overgrown Freyan Pike
+        Spacer(), --
         Section(ns.requirement.Reputation(2574, 11, true):GetText()),
         Pet({item = 210690, id = 4306, count = '1'}), -- Elmer
         Pet({item = 210689, id = 4305, count = '1'}), -- Snoots
@@ -1704,8 +1765,8 @@ local SeedbloomVendor = Class('SeedbloomVendor', Collectible, {
         Section(ns.requirement.Reputation(2574, 18, true):GetText()),
         Mount({item = 209950, id = 1810, count = '1'}), -- Reins of the Rekindled Dreamstag
         Mount({item = 209947, id = 1808, count = '1'}), -- Reins of the Blossoming Dreamstag
-        -- Mount({item = 210775, id = 1835, count = '1'}), -- Reins of the Snowfluff Dreamtalon
-        -- Mount({item = 210769, id = 1833, count = '1'}), -- Reins of the Springtide Dreamtalon
+        Mount({item = 210775, id = 1835, count = '1'}), -- Reins of the Snowfluff Dreamtalon
+        Mount({item = 210769, id = 1833, count = '1'}), -- Reins of the Springtide Dreamtalon
         Mount({item = 210057, id = 1817, count = '1'}), -- Reins of the Morning Flourish Dreamsaber
         Mount({item = 210058, id = 1816, count = '1'}) -- Reins of the Evening Sun Dreamsaber
     }

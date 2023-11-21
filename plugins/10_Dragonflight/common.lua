@@ -1452,6 +1452,49 @@ local ELEMENTAL_STORM_PET_REWARDS = {
     }) -- Echo of the Depths
 }
 
+local ELEMENTAL_STORM_PT_REWARDS = {
+    ['thunderstorm'] = Item({
+        item = 201358,
+        quest = 71939,
+        type = _G.ITEM_DISENCHANT_ANY_SKILL,
+        note = L['elemental_storm_thunderstorm'],
+        IsEnabled = function(self)
+            if not ns.PlayerHasProfession(333) then return false end
+            return Item.IsEnabled(self)
+        end
+    }), -- Glimmer of Air
+    ['sandstorm'] = Item({
+        item = 201359,
+        quest = 71940,
+        type = _G.ITEM_DISENCHANT_ANY_SKILL,
+        note = L['elemental_storm_sandstorm'],
+        IsEnabled = function(self)
+            if not ns.PlayerHasProfession(333) then return false end
+            return Item.IsEnabled(self)
+        end
+    }), -- Glimmer of Earth
+    ['firestorm'] = Item({
+        item = 201356,
+        quest = 71941,
+        type = _G.ITEM_DISENCHANT_ANY_SKILL,
+        note = L['elemental_storm_firestorm'],
+        IsEnabled = function(self)
+            if not ns.PlayerHasProfession(333) then return false end
+            return Item.IsEnabled(self)
+        end
+    }), -- Glimmer of Fire
+    ['snowstorm'] = Item({
+        item = 201357,
+        quest = 71942,
+        type = _G.ITEM_DISENCHANT_ANY_SKILL,
+        note = L['elemental_storm_snowstorm'],
+        IsEnabled = function(self)
+            if not ns.PlayerHasProfession(333) then return false end
+            return Item.IsEnabled(self)
+        end
+    }) -- Glimmer of Frost
+}
+
 local ELEMENTAL_STORM_FORMULA_REWARDS = {
     ['all'] = Recipe({item = 194641, profession = 755}), -- Design: Elemental Lariat
     ['thunderstorm'] = Recipe({
@@ -1560,6 +1603,7 @@ function ElementalStorm.getters:rewards()
         getStormAchievement(self.mapID, 'thunderstorm'),
         ELEMENTAL_STORM_BOSS_ACHIEVEMENTS['thunderstorm'],
         ELEMENTAL_STORM_PET_REWARDS['thunderstorm'],
+        ELEMENTAL_STORM_PT_REWARDS['thunderstorm'],
         ELEMENTAL_STORM_FORMULA_REWARDS['thunderstorm'],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['thunderstorm'][1],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['thunderstorm'][2],
@@ -1571,6 +1615,7 @@ function ElementalStorm.getters:rewards()
         getStormAchievement(self.mapID, 'sandstorm'),
         ELEMENTAL_STORM_BOSS_ACHIEVEMENTS['sandstorm'],
         ELEMENTAL_STORM_PET_REWARDS['sandstorm'],
+        ELEMENTAL_STORM_PT_REWARDS['sandstorm'],
         ELEMENTAL_STORM_FORMULA_REWARDS['sandstorm'],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['sandstorm'][1],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['sandstorm'][2],
@@ -1581,6 +1626,7 @@ function ElementalStorm.getters:rewards()
         getStormAchievement(self.mapID, 'firestorm'),
         ELEMENTAL_STORM_BOSS_ACHIEVEMENTS['firestorm'],
         ELEMENTAL_STORM_PET_REWARDS['firestorm'],
+        ELEMENTAL_STORM_PT_REWARDS['firestorm'],
         ELEMENTAL_STORM_FORMULA_REWARDS['firestorm'],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['firestorm'][1],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['firestorm'][2],
@@ -1593,6 +1639,7 @@ function ElementalStorm.getters:rewards()
         getStormAchievement(self.mapID, 'snowstorm'),
         ELEMENTAL_STORM_BOSS_ACHIEVEMENTS['snowstorm'],
         ELEMENTAL_STORM_PET_REWARDS['snowstorm'],
+        ELEMENTAL_STORM_PT_REWARDS['snowstorm'],
         ELEMENTAL_STORM_FORMULA_REWARDS['snowstorm'],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['snowstorm'][1],
         ELEMENTAL_STORM_TRANSMOG_REWARDS['snowstorm'][2],
@@ -1625,6 +1672,7 @@ hooksecurefunc(AreaPOIPinMixin, 'TryShowTooltip', function(self)
                         }
                     }), ELEMENTAL_STORM_BOSS_ACHIEVEMENTS[stormType],
                     ELEMENTAL_STORM_PET_REWARDS[stormType],
+                    ELEMENTAL_STORM_PT_REWARDS[stormType],
                     ELEMENTAL_STORM_FORMULA_REWARDS['all'],
                     ELEMENTAL_STORM_FORMULA_REWARDS[stormType],
                     ELEMENTAL_STORM_MANUSCRIPT_REWARDS['all'][1],

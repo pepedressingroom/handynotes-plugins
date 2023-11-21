@@ -346,6 +346,7 @@ map.nodes[43484697] = Rare({
 map.nodes[61755220] = Rare({
     id = 209365,
     quest = 77863,
+    note = L['splinterlimb_note'],
     rewards = {
         Achievement({id = 19316, criteria = 62935}), -- Adventurer of the Emerald Dream
         Transmog({item = 208361, type = L['staff']}), -- Splinterlimb's Branch
@@ -366,6 +367,7 @@ local SurgingLasher = Class('SurgingLasher', Rare, {
     }
 }) -- Surging Lasher
 
+map.nodes[42413092] = SurgingLasher()
 map.nodes[57015167] = SurgingLasher({vignette = 5859})
 map.nodes[58967188] = SurgingLasher()
 map.nodes[59896202] = SurgingLasher()
@@ -383,9 +385,15 @@ local Talthonei = Class('Talthonei', Rare, {
     }
 }) -- Talthonei Ashwisper
 
+-- map.nodes[34605500] = Talthonei() -- wowhead HOW? only with WQ?
 map.nodes[35132264] = Talthonei()
 map.nodes[36922240] = Talthonei()
+map.nodes[59204360] = Talthonei() -- wowhead
 map.nodes[61426741] = Talthonei()
+map.nodes[61604500] = Talthonei() -- wowhead
+map.nodes[61804140] = Talthonei() -- wowhead
+map.nodes[62805220] = Talthonei() -- wowhead
+map.nodes[62805520] = Talthonei() -- wowhead
 map.nodes[63877009] = Talthonei()
 map.nodes[64446660] = Talthonei()
 
@@ -621,22 +629,6 @@ map.nodes[34105633] = Treasure({
 
 -------------------------------------------------------------------------------
 
--- map.nodes[74002700] = Treasure({
---     icon = 1394946,
---     label = '{item:201439}',
---     note = L['renewed_dream'],
---     scale = 1.5,
---     rewards = {
---         Item({item = 208066}), -- Small Dreamseed
---         Item({item = 208067}), -- Plump Dreamseed
---         DC.GrottoNetherwingDrake.TripleSpikedCrest, --
---         DC.GrottoNetherwingDrake.ShortHorns, --
---         DC.GrottoNetherwingDrake.BarbedTail
---     }
--- }) -- Renewed Dream
-
--------------------------------------------------------------------------------
-
 local Book = Class('Book', ns.node.Item, {icon = 133741})
 
 map.nodes[49816171] = Book({
@@ -869,16 +861,19 @@ map.nodes[35756700] = MoonkinHatchling({
 
 map.nodes[37767327] = MoonkinHatchling({criteriaID = 62784}) -- Hops
 
-map.nodes[35566976] = MoonkinHatchling({
+map.nodes[35686969] = MoonkinHatchling({
     criteriaID = 62783,
     location = L['in_small_cave']
 }) -- Meep
 
-map.nodes[36116968] = MoonkinHatchling({criteriaID = 62787}) -- Moonbeam
+map.nodes[35656941] = MoonkinHatchling({
+    criteriaID = 62787,
+    location = L['in_small_cave']
+}) -- Moonbeam
 
 map.nodes[37427231] = MoonkinHatchling({criteriaID = 62782}) -- Owlington
 
-map.nodes[38046901] = MoonkinHatchling({
+map.nodes[37846926] = MoonkinHatchling({
     criteriaID = 62777,
     location = L['in_small_cave'],
     pois = {POI({37526855})} -- Entrance
@@ -1076,11 +1071,6 @@ map.nodes[51555972] = Collectible({
 ----------------------------- FRUIT OF THE BLOOM ------------------------------
 -------------------------------------------------------------------------------
 
--- https://us.forums.blizzard.com/en/wow/t/new-public-events-superbloom-and-emerald-bounty/1674596
--- There will be up to the total of four available Dreamfruit.
--- Each individual Dreamfruit during the Superbloom has its own,
--- unique pool of blessings it can bestow.
-
 local Dreamfruit = Class('Dreamfruit', Collectible, {
     icon = 5390643,
     label = L['dreamfruit_label'],
@@ -1134,22 +1124,22 @@ map.nodes[52847357] = Dreamfruit({
             criteria = {
                 -- 62910, -- Basket of Explosive Acorns
                 -- 62911, -- Bubble Blowgun
-                62912, -- Dream Gatherer
+                -- 62912, -- Dream Gatherer
                 -- 62913, -- Feral Overflow
                 62914, -- Flower Trail
                 -- 62915, -- Lifesurger
-                -- 62916, -- Memory of L'ghorek
+                62916, -- Memory of L'ghorek
                 62917, -- Memory of Ursoc
                 62918, -- Mighty Roar
                 -- 62919, -- Moonkin Jump
                 -- 62920, -- Moonkin Mayhem
                 -- 62921, -- Potent Lullaby
                 -- 62922, -- Putrid Propulsion
-                62923, -- Sack of Talontreats
+                -- 62923, -- Sack of Talontreats
                 62924, -- Star Shower
                 62925, -- The Superb Loom
                 62926, -- Wake Up!
-                -- 63414, -- Nae'dra Nibbles
+                63414, -- Nae'dra Nibbles
                 63415, -- Fae Lens
                 63438 -- Arachnid Annihilation
             }
@@ -1173,19 +1163,19 @@ map.nodes[46276304] = Dreamfruit({
                 -- 62913, -- Feral Overflow
                 62914, -- Flower Trail
                 -- 62915, -- Lifesurger
-                -- 62916, -- Memory of L'ghorek
-                -- 62917, -- Memory of Ursoc
+                62916, -- Memory of L'ghorek
+                62917, -- Memory of Ursoc
                 62918, -- Mighty Roar
                 -- 62919, -- Moonkin Jump
                 -- 62920, -- Moonkin Mayhem
                 -- 62921, -- Potent Lullaby
                 -- 62922, -- Putrid Propulsion
                 -- 62923, -- Sack of Talontreats
-                -- 62924, -- Star Shower
-                -- 62925, -- The Superb Loom
-                -- 62926, -- Wake Up!
-                -- 63414, -- Nae'dra Nibbles
-                -- 63415, -- Fae Lens
+                62924, -- Star Shower
+                62925, -- The Superb Loom
+                62926, -- Wake Up!
+                63414, -- Nae'dra Nibbles
+                63415, -- Fae Lens
                 63438 -- Arachnid Annihilation
             }
         })
@@ -1423,7 +1413,7 @@ local EMPTY_VIALS = {
 }
 
 local MoonBlessedClaw = Class('MoonBlessedClaw', DruidGlyph, {
-    quest = 78528,
+    quest = 78521,
     rewards = {DG.Feral.MoonBlessedDreamsaber} -- Moon-Blessed Claw
 })
 
@@ -1470,6 +1460,9 @@ for num, vial in ipairs(EMPTY_VIALS) do
         playerHasItem = {vial.vialFilledID, 210977},
         rewards = {Item({item = vial.vialFilledID, count = '1'})},
         IsCompleted = function(self)
+            if C_QuestLog.IsQuestFlaggedCompleted(78521) then
+                return true
+            end
             if self.playerHasItem then
                 for i, v in ipairs(self.playerHasItem) do
                     if ns.PlayerHasItem(v) then return true end

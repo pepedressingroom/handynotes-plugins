@@ -866,6 +866,7 @@ L['fruitface_note'] = 'Offrez votre aide à {npc:209950} {dot:Pink} pour recevoi
 L['greedy_gessie_note'] = 'Vous devez récupérer les objets {object:Légumes sauvages}, {object:Melon écaille de rubis} et {object:Racine orange} aux alentours et les mettre dans les paniers près des {npc:210285} pour commencer le combat.'
 L['nuoberon_note'] = 'Pourchassez les tortues, jetez de la nourriture aux singes ou combattez les monstres des rêves pour aider {npc:209101} à passer un rêve amusant !'
 L['reefbreaker_moruud_note'] = 'Connectez les 6 {npc:210089} proches pour attaquer {npc:209898}.'
+L['splinterlimb_note'] = nil
 L['surging_lasher_note'] = 'Peut apparaître pendant l\'événement {location:Frénésie d\'émeraude} dans cette zone.'
 L['talthonei_ashwisper_note'] = 'Tuez des monstres dans la zone jusqu\'à ce qu\'un des monstres tués dise "Je serai vengé" pour faire apparaître le rare.'
 
@@ -990,8 +991,6 @@ L['options_icons_somnut_desc'] = 'Afficher les emplacements possibles des {objec
 
 L['improvised_leafbed_note'] = 'Terminez la suite de quêtes commençant par {quest:77896} pour recevoir le {item:210864} de la part de {npc:210164}.'
 L['kalandu_note'] = 'Terminez la suite de quêtes commençant par {quest:77948} pour recevoir {item:210633} de la part de {npc:210196}.'
-
-L['renewed_dream'] = '{note:Ceci n\'est pas un trésor !}\nLes {item:201437} sont récupérés un peu partout au sein du {location:Rêve d\'Émeraude}.\nCombinez 5x {item:201437} pour reconstituer un {item:201439}.'
 
 L['ochre_note'] = 'Parlez à la {npc:209253} pour commencer la suite de la quête, le {npc:209571} vous indiquera les étapes suivantes.'
 L['ochre_note_stage1'] = '{quest:77677}. {note:Prends 5 jours à pousser.}'

@@ -193,7 +193,8 @@ map.nodes[54034142] = Rare({
     note = L['greedy_gessie_note'],
     rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
     rewards = {
-        Achievement({id = 19316, criteria = 62932}) -- Adventurer of the Emerald Dream
+        Achievement({id = 19316, criteria = 62932}), -- Adventurer of the Emerald Dream
+        Item({item = 208355, type = L['neck']}) -- String of Delicacies
     }
 }) -- Greedy Gessie
 
@@ -262,6 +263,7 @@ map.nodes[45781879] = Rare({
     quest = 77941,
     rewards = {
         Achievement({id = 19316, criteria = 62947}), -- Adventurer of the Emerald Dream
+        Item({item = 208353, type = L['ring']}), -- Djaradin's Molten Band
         Toy({item = 205463}) -- Molten Lava Ball
     }
 }) -- Moltenbinder's Disciple
@@ -283,6 +285,7 @@ map.nodes[40467258] = Rare({
     location = L['in_cave'],
     rewards = {
         Achievement({id = 19316, criteria = 62942}), -- Adventurer of the Emerald Dream
+        Item({item = 209954, type = L['trinket']}), -- Moragh's Favorite Rock
         Transmog({item = 208380, type = L['1h_axe']}), -- Moragh's Kneading Claw
         Transmog({item = 208329, type = L['cloth']}), -- Warm Grasp of the Dream
         DG.Guardian.VerdantBristlebruin -- Mark of the Verdant Bristlebruin
@@ -333,6 +336,7 @@ map.nodes[43484697] = Rare({
     quest = 78212,
     rewards = {
         Achievement({id = 19316, criteria = 62944}), -- Adventurer of the Emerald Dream
+        Item({item = 209956, type = L['trinket']}), -- Ori's Verdant Feather
         Transmog({item = 208381, type = L['1h_mace']}) -- Scepter of Still Waters
     },
     pois = {
@@ -385,7 +389,7 @@ local Talthonei = Class('Talthonei', Rare, {
     }
 }) -- Talthonei Ashwisper
 
--- map.nodes[34605500] = Talthonei() -- wowhead HOW? only with WQ?
+map.nodes[34605500] = Talthonei() -- wowhead HOW? only with WQ?
 map.nodes[35132264] = Talthonei()
 map.nodes[36922240] = Talthonei()
 map.nodes[59204360] = Talthonei() -- wowhead
@@ -413,7 +417,8 @@ map.nodes[38436213] = Rare({
     quest = 78214,
     location = L['in_small_cave'],
     rewards = {
-        Achievement({id = 19316, criteria = 64492}) -- Adventurer of the Emerald Dream
+        Achievement({id = 19316, criteria = 64492}), -- Adventurer of the Emerald Dream
+        Item({item = 208354, type = L['neck']}) -- Cerulean Turtle's Pendant
     },
     pois = {POI({38176157})} -- Entrance
 }) -- Voracious Mikanji

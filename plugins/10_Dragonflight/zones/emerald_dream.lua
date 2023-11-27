@@ -440,8 +440,19 @@ local Raszageth = Class('Raszageth', Rare, {
     fgroup = 'raszageth',
     -- note = L['raszageths_note'],
     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+    getters = {
+        rlabel = function(self)
+            if self.quest then
+                local completed = C_QuestLog.IsQuestFlaggedCompleted(
+                    self.quest[1])
+                local color = completed and ns.status.Green or ns.status.Gray
+                return color(L['weekly'])
+            end
+        end
+    },
     rewards = {
-        Currency({id = 2716, type = '+5'}) -- Drake's Dreaming Crests
+        Currency({id = 2716, type = '+5'}), -- Drake's Dreaming Crests
+        Item({item = 208373, type = L['ring']}) -- Band of Bated Breath
     }
 }) -- Raszageth's Last Breath
 
@@ -461,8 +472,19 @@ local Amalgamation = Class('Amalgamation', Rare, {
     fgroup = 'amalgamation',
     -- note = L['amalgamation_note'],
     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+    getters = {
+        rlabel = function(self)
+            if self.quest then
+                local completed = C_QuestLog.IsQuestFlaggedCompleted(
+                    self.quest[1])
+                local color = completed and ns.status.Green or ns.status.Gray
+                return color(L['weekly'])
+            end
+        end
+    },
     rewards = {
-        Currency({id = 2716, type = '+5'}) -- Drake's Dreaming Crests
+        Currency({id = 2716, type = '+5'}), -- Drake's Dreaming Crests
+        Item({item = 209953, type = L['trinket']}) -- Dancing Dream Blossoms
     }
 }) -- Amalgamation of Dreams
 
@@ -1032,7 +1054,7 @@ map.nodes[51555972] = Collectible({
     icon = 3939983,
     label = '{quest:78319}',
     vignette = 5813,
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
     rewards = {
         Achievement({id = 19312}), -- Super Duper Bloom
         Achievement({
@@ -1047,11 +1069,11 @@ map.nodes[51555972] = Collectible({
             id = 19315,
             criteria = {id = 1, qty = true, suffix = L['dream_chaser_suffix']}
         }), -- Dream Chaser
-        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 2600/8000'),
+        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 2667/8000'),
         Item({item = 211411}), -- Sprouting Dreamtrove
         Currency({id = 2650}), -- Emerald Dewdrop
         Spacer(), --
-        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 5300/8000'),
+        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 5334/8000'),
         Item({item = 211413}), -- Budding Dreamtrove
         DC.RenewedProtoDrake.GreenHair, --
         DC.WindingSlitherdrake.ClusterJawHorns, --
@@ -1072,7 +1094,9 @@ map.nodes[51555972] = Collectible({
         Transmog({item = 210662, slot = L['cosmetic']}), -- Ochre Ornament of the Grove
         Transmog({item = 210663, slot = L['cosmetic']}), -- Circlet of the Mother Tree
         Transmog({item = 210664, slot = L['cosmetic']}), -- Frost Sapling's Adornment
-        Transmog({item = 210666, slot = L['cosmetic']}) -- Crest of the Seething Flamekeeper
+        Transmog({item = 210666, slot = L['cosmetic']}), -- Crest of the Seething Flamekeeper
+        Spacer(), Section('{item:211389}'), -- Cache of Overblooming Treasures
+        Recipe({item = 210243, profession = 773}) -- Technique: Contract: Dream Wardens
     }
 })
 

@@ -610,7 +610,7 @@ L['naszuro_thaldraszus_peak'] = 'En un pico secundario de la montaña.'
 L['naszuro_temporal_conflux'] = 'En la cabeza de la estatua del dragón.'
 
 L['revival_catalyst_label'] = 'Catalizador de Reanimación'
-L['revival_catalyst_note'] = 'Convierte equipo del tier anterior en un objeto del nivel tier actual y de la ranura de equipo equivalente (incluyendo bonus de set para las ranuras que lo lleven).'
+L['revival_catalyst_note'] = 'Convierte equipo que no sea de tier en un objeto del tier actual y de la ranura de equipo equivalente.\n\nTemporada 3:\nRecibe automáticamente 1 carga cada 2 semanas hasta un máximo de 8 acumulaciones.\n{currency:2796}: %d/%d'
 
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
@@ -871,6 +871,7 @@ L['reefbreaker_moruud_note'] = 'Conecta las 6 {npc:210089} cercanas para atacar 
 L['splinterlimb_note'] = 'Se hace hostil tras recibir 8 acumulaciones del debuff {spell:420009}. El debuff se acumula por cada ronda completada. Mata los enemigos que le atacan para que pueda completar la ronda más rápidamente.'
 L['surging_lasher_note'] = 'Puede aparece durante el evento {location:Frenesí Esmeralda} en esta zona.'
 L['talthonei_ashwisper_note'] = 'Mata a los enemigos de los alrededores hasta que el enemigo matado diga "Seré vengado" para hacer aparecer el raro.'
+L['talthonei_ashwisper_wq_note'] = '{note:Sólo puede aparecer aquí si está activa la misión del mundo {wq:Pánico en los portales}.}'
 
 L['in_a_tree'] = 'Encima del árbol.'
 L['inside_building'] = 'En el edificio.'

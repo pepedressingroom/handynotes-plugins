@@ -612,7 +612,7 @@ L['naszuro_thaldraszus_peak'] = 'На второстепенной вершин�
 L['naszuro_temporal_conflux'] = 'На голове статуи дракона.'
 
 L['revival_catalyst_label'] = 'Катализатор возрождения'
-L['revival_catalyst_note'] = 'Преобразование не сетового снаряжения в предмет эквивалентного уровня но сетового качества.'
+L['revival_catalyst_note'] = 'Преобразование не сетового снаряжения в предмет эквивалентного уровня но сетового качества.\n\nSeason 3:\nAutomatically receive 1 charge every 2 weeks, accumulating up to a cap of 8.\n{currency:2796}: %d/%d'
 
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
@@ -872,6 +872,7 @@ L['reefbreaker_moruud_note'] = nil
 L['splinterlimb_note'] = nil
 L['surging_lasher_note'] = nil
 L['talthonei_ashwisper_note'] = nil
+L['talthonei_ashwisper_wq_note'] = nil
 
 L['in_a_tree'] = 'На дереве.'
 L['inside_building'] = 'В здании.'
@@ -993,7 +994,7 @@ L['thorn_beast_stag'] = '{item:%d} ({npc:Олень})'
 L['thorn_beast_saber'] = '{item:%d} ({npc:Саблезуб})'
 L['thorn_beast_bear'] = '{item:%d} ({npc:Медведь})'
 
-L['thornbeast_disclaimer'] = nil
+L['thornbeast_disclaimer'] = '{note:Напоминание, каждый тип зверя имеет уникальный {item:%s} и приведет к подходящему шипастому зверю.}'
 
 L['thorn_laden_heart_note_1'] = nil
 L['thorn_laden_heart_note_2'] = nil
@@ -1001,7 +1002,7 @@ L['thorn_laden_heart_note_2'] = nil
 L['athainne_note_1'] = nil
 L['athainne_note_2'] = nil
 
-L['ulfar_note_1'] = nil
+L['ulfar_note_1'] = 'Попросите {npc:149386} использовать {item:209863} чтобы создать {item:209866}.'
 L['ulfar_note_2'] = nil
 
 L['thorn_stag_note'] = nil

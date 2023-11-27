@@ -610,7 +610,7 @@ L['naszuro_thaldraszus_peak'] = 'On a secondary peak of the mountain.'
 L['naszuro_temporal_conflux'] = 'On the head of the dragon statue.'
 
 L['revival_catalyst_label'] = 'Revival Catalyst'
-L['revival_catalyst_note'] = 'Convert non-tier gear into an equivalent item level and gear slot Tier piece.'
+L['revival_catalyst_note'] = 'Convert non-tier gear into an equivalent item level and gear slot Tier piece.\n\nSeason 3:\nAutomatically receive 1 charge every 2 weeks, accumulating up to a cap of 8.\n{currency:2796}: %d/%d'
 
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
@@ -871,6 +871,7 @@ L['reefbreaker_moruud_note'] = 'Connect all 6 of the nearby {npc:210089} to atta
 L['splinterlimb_note'] = 'Becomes hostile after 8 stacks of the {spell:420009} debuff. The debuff stacks per completed round. Kill the mobs that attack him so that he can complete his round faster.'
 L['surging_lasher_note'] = 'Can spawn during the {location:Emerald Frenzy} event in this area.'
 L['talthonei_ashwisper_note'] = 'Kill mobs in the surrounding area until the killed mob says "I will be avenged" to spawn the rare.'
+L['talthonei_ashwisper_wq_note'] = '{note:Can only spawn here if the world quest {wq:Portal Panic} is active.}'
 
 L['in_a_tree'] = 'Up in a tree.'
 L['inside_building'] = 'In the building.'

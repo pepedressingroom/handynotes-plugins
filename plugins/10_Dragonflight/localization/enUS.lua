@@ -168,6 +168,20 @@ L['dreamsurge_sublabel'] = '{note:Only available while a {location:Dreamsurge} i
 L['celestine_vendor_note'] = 'Exchange {item:207026} for a mount, toys, pets, and transmog.'
 L['renewed_magmammoth_note'] = 'Collect 20x {item:209419} from the final boss of a {location:Dreamsurge} and combine to create {item:192807}.'
 
+L['dragon_pepe_label'] = 'Dragon Pepe'
+L['dragon_pepe_note'] = 'Perched on the pillar to the left of the stairs leading to the {location:Seat of the Aspects}.'
+L['explorer_pepe_label'] = 'Explorer Pepe'
+L['explorer_pepe_note'] = 'Perched on top of the large tent at {location:Dragonscale Basecamp}.'
+L['tuskarr_pepe_label'] = 'Tuskarr Pepe'
+L['tuskarr_pepe_note'] = 'Perched on the building near {npc:196544} and {npc:187680}.'
+
+L['end_of_august'] = '{note:Only available before end of August.}'
+
+L['rich_soil_label'] = 'Rich Soil'
+L['rich_soil_note'] = 'Plant various seedlings in a patch of {object:Rich Soil} on the {location:Dragon Isles} to sprout random rewards.\n\n{item:200506} - Grow random standard {location:Dragon Isles} herbs\n\n{item:200508} - Grow random Rousing Essences\n\n{item:200507} - Grow random decayed herbs\n\n{item:200509} - Spawn {npc:198571} for various random herbs and essences'
+L['options_icons_rich_soil'] = 'Rich Soil'
+L['options_icons_rich_soil_desc'] = 'Display locations for {object:Rich Soil}.'
+
 -------------------------------------------------------------------------------
 ------------------------------- THE AZURE SPAN --------------------------------
 -------------------------------------------------------------------------------
@@ -613,6 +627,8 @@ L['naszuro_temporal_conflux'] = 'On the head of the dragon statue.'
 L['revival_catalyst_label'] = 'Revival Catalyst'
 L['revival_catalyst_note'] = 'Convert non-tier gear into an equivalent item level and gear slot Tier piece.\n\nSeason 3:\nAutomatically receive 1 charge every 2 weeks, accumulating up to a cap of 8.\n{currency:2796}: %d/%d'
 
+L['provisioner_aristta_note'] = 'Exchange {currency:2657} for transmogs and a mount.'
+
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
 -------------------------------------------------------------------------------
@@ -936,6 +952,7 @@ L['moonkin_hatchling_note'] = 'Requires Worldquest {wq:Claws for Concern} to be 
 L['druid_glyphs_label'] = 'Druid Glyphs'
 L['druid_glyphs_sublabel'] = '{note:This is NOT a Druid Glyph. Just a checklist!}'
 L['druid_glyphs_note'] = 'Collect {note:Druid Glyphs} from various activities around the {location:Emerald Dream}.'
+L['druid_glyphs_checklist_note'] = 'Track daily kills for rares in the {location:Emerald Dream}. Only {npc:NPCs} with needed loot will appear in the list.\n\nDaily kills will be marked as ' .. ns.status.Green('Completed') .. '.'
 
 L['pollenfused_bristlebruin_fur_sample_note'] = 'Loot the {object:Pollenfused Bristlebruin Fur Sample} found near the bottom of the tree in {location:The Char}.'
 
@@ -1025,6 +1042,15 @@ L['thorn_bear_note'] = '1. Kill {npc:210977}, then use {item:209868} on the corp
 L['nahqi_note'] = 'It requires the {item:211314} to use {spell:1515} with {npc:210908}, that is obtained from the mount {item:210061}.\n\n{npc:210908}{npc:<Ember of Regrowth>} flies in the sky around {location:Amirdrassil} in a {note:counter clockwise} route, taking 17:30 minutes to complete a lap.\nIt has a minimum respawn timer of 30 minutes.\n\n{note:It is a {npc:Spirit Beast}. Only Beast Mastery Hunters can tame it.}'
 
 L['sulraka_note'] = '{npc:210868}{npc:<Daughter of Kimbul>} patrols the area to the east of {location:Amirdrassil} in a {note:counter clockwise} route, taking 17 minutes to complete a lap.\nIt has a minimum respawn timer of 30 minutes.\n\nIt leaves behind {object:Heavy Tracks} while walking which lasts 3 minutes.\nWalks always in stealth, so you will need to use {spell:1543} in front of a freshly {object:Heavy Tracks} to reveal her.\nCast {spell:257284} and/or {spell:187650} and attempt to {spell:1515}.\n\n{note:It is important to trap it or to reveal her because {npc:210868} will not stop moving, even when attacked. Can get out of range of the {spell:1543} cancelling the skill.}\n\n{note:It is a {npc:Spirit Beast}. Only Beast Mastery Hunters can tame it.}'
+
+L['alarashinu_note'] = '{item:210961}, a hidden fel-tinged nature warglaive.\n\n{note:Special Visual Effects:}\nYou leave behind a trail of flowers when using {spell:195072}/ {spell:189110}/ {spell:198793} with Alara\'shinu equipped or transmogged!'
+L['alarashinu_note_stage1'] = 'Speak with {npc:213029} at {location:Central Encampment} in {location:Emerald Dream}.'
+L['alarashinu_note_stage2'] = 'Head to {location:The Lost Temple} in {location:Broken Shore}, witness a {npc:213114}.'
+L['alarashinu_note_stage3'] = 'Head to {location:Temple of Elune} in {location:Val\'sharah}, witness another {npc:213186}.'
+L['alarashinu_note_stage4'] = 'After the memory plays out, a {npc:213248} will appear carrying his Warlgiave.'
+L['alarashinu_note_stage5'] = 'Imbue {npc:213308} with your fel flame.'
+L['alarashinu_note_stage6'] = 'Loot {npc:213381} and receive {item:210961}.'
+L['alarashinu_note_end'] = 'Return to {npc:213029}, and he has a bonus dialog after you get this warglaive.'
 
 -------------------------------------------------------------------------------
 ----------------------------- SECRETS OF AZEROTH ------------------------------
@@ -1245,3 +1271,31 @@ L['wr_dur_foil_01'] = 'Behind some supply crates.'
 
 L['options_icons_warcraft_rumble'] = 'Warcraft Rumble'
 L['options_icons_warcraft_rumble_desc'] = 'Display {object:Rumble Coin Bag} and {object:Rumble Foil Bag} locations for the {object:Warcraft Rumble} crossover promotion.'
+
+-------------------------------------------------------------------------------
+--------------------------------- AMIRDRASSIL ---------------------------------
+-------------------------------------------------------------------------------
+
+L['kaldorei_backpack_label'] = 'Kaldorei Backpack'
+L['kaldorei_bag_label'] = 'Kaldorei Bag'
+L['kaldorei_bedroll_label'] = 'Kaldorei Bedroll'
+L['kaldorei_dagger_label'] = 'Kaldorei Dagger'
+L['kaldorei_horn_label'] = 'Kaldorei Horn'
+L['kaldorei_moon_bow_label'] = 'Kaldorei Moon Bow'
+L['kaldorei_shield_label'] = 'Kaldorei Shield'
+L['kaldorei_spear_label'] = 'Kaldorei Spear'
+L['kaldorei_spyglass_label'] = 'Kaldorei Spyglass'
+
+L['blue_kaldorei_backpack_note'] = 'On top of a crate in the harbor shop at {location:Belanaar}.'
+L['blue_kaldorei_bedroll_note'] = 'Behind the table near the moonwell.'
+L['blue_kaldorei_pouch_note'] = 'On a barrel outside the building filled with portals.'
+L['kaldorei_bow_carver_note'] = 'On a table at the top of the {location:Twilight Watchtower} near {npc:216731}.'
+L['kaldorei_sentinels_spyglass_note'] = 'On top of a crate at the end of the dock in {location:Belanaar}.'
+L['night_elven_bow_note'] = 'Leaning against the weapon rack in {location:Arlithrien Lodge}.'
+L['night_elven_horn_note'] = 'On a crate at the top of the {location:Dawning Watchtower} near {npc:216752}.'
+L['night_elven_shield_note'] = 'Leaning against a crate near {npc:216269} the mining trainer.'
+L['night_elven_signal_note'] = 'Hanging on a brazier atop the steps.'
+L['night_elven_spear_note'] = 'Leaning against the wall of the {location:Keen-Edge Hall}.'
+L['violet_kaldorei_pouch_note'] = 'Near the bottom of the arch behind the moonwell.'
+
+L['moon_priestess_lasara_note'] = 'Exchange {currency:2003} for transmog.'

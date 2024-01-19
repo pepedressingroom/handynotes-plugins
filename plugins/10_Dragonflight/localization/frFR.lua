@@ -169,6 +169,20 @@ L['dreamsurge_sublabel'] = '{note:Uniquement disponible lorsqu\'un événement d
 L['celestine_vendor_note'] = 'Échangez vos {item:207026} contre une monture, des jouets, des mascottes et des objets de transmogrification.'
 L['renewed_magmammoth_note'] = 'Récupérez 20x {item:209419} sur les boss de fin des événements de {location:Poussée onirique} et combinez-les pour créer un {item:192807}.'
 
+L['dragon_pepe_label'] = 'Pépé le Dragon'
+L['dragon_pepe_note'] = 'Perché sur un pilier à gauche de l\'escalier menant au {location:Siège des Aspects}.'
+L['explorer_pepe_label'] = 'Pépé l\'explorateur'
+L['explorer_pepe_note'] = 'Perché au sommet de la grande tente au {location:Camp de base du Dracaret}.'
+L['tuskarr_pepe_label'] = 'Pépé le Rohart'
+L['tuskarr_pepe_note'] = 'Perché à droite du bâtiment près de {npc:196544} et {npc:187680}.'
+
+L['end_of_august'] = '{note:Disponible uniquement jusqu\'à fin août.}'
+
+L['rich_soil_label'] = 'Sol riche'
+L['rich_soil_note'] = 'Semez des germes sur les parcelles de {object:Sols riches} dans les {location:Îles aux Dragons} pour obtenir des récompenses aléatoires.\n\n{item:200506} - Faites pousser des herbes ordinaires aléatoires provenant des {location:Îles aux Dragons}.\n\n{item:200508} - Faites pousser des Essences agitées aléatoires.\n\n{item:200507} - Faites pousser des herbes décomposées aléatoires.\n\n{item:200509} - Fait apparaître une {npc:198571} donnant en butin diverses herbes et essences aléatoires.'
+L['options_icons_rich_soil'] = 'Sol riche'
+L['options_icons_rich_soil_desc'] = 'Afficher les emplacements des {object:Sols riches}.'
+
 -------------------------------------------------------------------------------
 ------------------------------- THE AZURE SPAN --------------------------------
 -------------------------------------------------------------------------------
@@ -614,6 +628,8 @@ L['naszuro_temporal_conflux'] = 'Sur la tête de la statue du dragon.'
 L['revival_catalyst_label'] = 'Catalyseur de Renouveau'
 L['revival_catalyst_note'] = 'Transforme des pièces d\'armures ne faisant pas partie d\'un ensemble en une nouvelle pièce d’ensemble du même niveau.\n\nSeason 3:\nAutomatically receive 1 charge every 2 weeks, accumulating up to a cap of 8.\n{currency:2796}: %d/%d'
 
+L['provisioner_aristta_note'] = 'Échangez vos {currency:2657} contre des objets de transmogrification et une monture.'
+
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
 -------------------------------------------------------------------------------
@@ -934,6 +950,7 @@ L['moonkin_hatchling_note'] = 'Nécessite que l\'expédition {wq:Griffes d’inq
 L['druid_glyphs_label'] = 'Glyphes de druide'
 L['druid_glyphs_sublabel'] = '{note:Ceci n\'est PAS un glyphe de druide. Il s\'agit simplement d\'une liste !}'
 L['druid_glyphs_note'] = 'Récupérez des {note:Glyphes de druide} grâce à diverses activités au sein du {location:Rêve d\'Émeraude}.'
+L['druid_glyphs_checklist_note'] = 'Retrouvez ici les rares du {location:Rêve d\'Émeraude} et l\'information indiquant si ils ont été tués pour la journée. Seuls les {npc:PNJs} dont le butin est nécessaire apparaîtront dans la liste.\n\nLes monstres tuables quotidiennement seront marqués comme ' .. ns.status.Green('Complété') .. '.'
 
 L['pollenfused_bristlebruin_fur_sample_note'] = 'Récupérez l\'{object:Échantillon de fourrure d\'hoursute amalgamée de pollen} trouvé au pied de l\'arbre à {location:La Calcination}.'
 
@@ -1023,6 +1040,15 @@ L['thorn_bear_note'] = '1. Tuez un {npc:210977}, puis utilisez le {item:209868} 
 L['nahqi_note'] = 'La {item:211314} est nécessaire afin d\'utiliser {spell:1515} sur {npc:210908}, cet objet est obtenu grâce à la monture {item:210061}.\n\n{npc:210908} {npc:<Braise de rétablissement>} vole dans le ciel autour d\'{location:Amirdrassil} sur un trajet en {note:sens inverse des aiguilles d\'une montre}, prenant 17min et 30sec pour faire un tour complet.\nIl possède un temps de réapparition minimum de 30 minutes.\n\n{note:Il s\'agit d\'un {npc:Esprit de bête}. Seuls les Chasseurs Maîtrise des bêtes peuvent l\'apprivoiser}.'
 
 L['sulraka_note'] = '{npc:210868} {npc:<Fille de Kimbul>} patrouille dans la zone à l\'est d\'{location:Amirdrassil} sur un trajet en {note:sens inverse des aiguilles d\'une montre}, prenant 17 minutes pour compléter un tour.\nElle possède un temps de réapparition minimum de 30 minutes.\n\nElle laisse derrière elle des {object:Empreintes profondes} en marchant, qui durent 3 minutes.\nElle se déplace toujours furtivement, vous devrez donc utiliser le sort {spell:1543} devant des {object:Empreintes profondes} fraîchement apparues pour la révéler.\nUtilisez votre {spell:257284} et/ou un {spell:187650} et tentez d\'utiliser le sort {spell:1515}.\n\n{note:Il est important de la piéger ou de la révéler car {npc:210868} ne s\'arrêtera pas de bouger, même lorsqu\'elle est attaquée. Elle peut sortir de la portée du sort {spell:1543}, ce qui l\'annule.}\n\n{note:Il s\'agit d\'un {npc:Esprit de bête}. Seuls les Chasseurs Maîtrise des bêtes peuvent l\'apprivoiser}.'
+
+L['alarashinu_note'] = '{item:210961}, un glaive de guerre secret, à l\'apparence mêlant nature et teintes gangrenées.\n\n{note:Effets visuels spéciaux :}\nVous laissez derrière vous une traînée de fleurs lorsque vous utilisez {spell:195072}/ {spell:189110}/ {spell:198793} avec {item:210961} équipé ou transmogrifié !'
+L['alarashinu_note_stage1'] = 'Parlez à {npc:213029} au {location:Campement Central} dans le {location:Rêve d’émeraude}.'
+L['alarashinu_note_stage2'] = 'Rendez-vous au {location:Temple Perdu} au {location:Rivage Brisé}, assistez au {npc:213114}.'
+L['alarashinu_note_stage3'] = 'Rendez-vous au {location:Temple d’Élune} à {location:Val\'sharah}, assistez à un autre {npc:213186}.'
+L['alarashinu_note_stage4'] = 'Une fois le souvenir terminé, un {npc:213248} portant son glaive de guerre apparaîtra.'
+L['alarashinu_note_stage5'] = 'Imprégnez le {npc:213308} avec votre gangreflamme.'
+L['alarashinu_note_stage6'] = 'Récupérez le {npc:213381} et recevez {item:210961}.'
+L['alarashinu_note_end'] = 'Retournez voir {npc:213029}, il aura une ligne de dialogue supplémentaire une fois que vous aurez obtenu ce glaive de guerre.'
 
 -------------------------------------------------------------------------------
 ----------------------------- SECRETS OF AZEROTH ------------------------------
@@ -1244,3 +1270,31 @@ L['wr_dur_foil_01'] = 'Derrière des caisses de fournitures.'
 
 L['options_icons_warcraft_rumble'] = 'Warcraft Rumble'
 L['options_icons_warcraft_rumble_desc'] = 'Afficher les emplacements des {object:Sac de pièces Rumble} et des {object:Sac de Rumble métallisé} liés à la campagne promotionnelle de {object:Warcraft Rumble}.'
+
+-------------------------------------------------------------------------------
+--------------------------------- AMIRDRASSIL ---------------------------------
+-------------------------------------------------------------------------------
+
+L['kaldorei_backpack_label'] = 'Sac à dos kaldorei'
+L['kaldorei_bag_label'] = 'Sac kaldorei'
+L['kaldorei_bedroll_label'] = 'Sac de couchage kaldorei'
+L['kaldorei_dagger_label'] = 'Dague kaldorei'
+L['kaldorei_horn_label'] = 'Corne kaldorei'
+L['kaldorei_moon_bow_label'] = 'Arc de lune kaldorei'
+L['kaldorei_shield_label'] = 'Bouclier kaldorei'
+L['kaldorei_spear_label'] = 'Lance kaldorei'
+L['kaldorei_spyglass_label'] = 'Longue-vue kaldorei'
+
+L['blue_kaldorei_backpack_note'] = 'Sur une caisse dans la boutique du port à {location:Belanaar}.'
+L['blue_kaldorei_bedroll_note'] = 'Derrière la table près du puits de lune.'
+L['blue_kaldorei_pouch_note'] = 'Sur un tonneau à l\'extérieur du bâtiment rempli de portails.'
+L['kaldorei_bow_carver_note'] = 'Sur une table au sommet de la {location:Tour de guet du Crépuscule} près de {npc:216731}.'
+L['kaldorei_sentinels_spyglass_note'] = 'Sur une caisse au bout du quai à {location:Belanaar}.'
+L['night_elven_bow_note'] = 'Appuyé contre le râtelier d\'armes au {location:Pavillon d\'Arlithrien}.'
+L['night_elven_horn_note'] = 'Sur une caisse au sommet de la {location:Tour de guet du Point-du-jour} près du {npc:216752}.'
+L['night_elven_shield_note'] = 'Posé contre une caisse près de {npc:216269}, la maîtresse de minage.'
+L['night_elven_signal_note'] = 'Accroché à un brasero en haut des marches.'
+L['night_elven_spear_note'] = 'Adossée au mur de la {location:Salle de Fil-Tranchant}.'
+L['violet_kaldorei_pouch_note'] = 'Au pied de l\'arche, derrière le puits de lune.'
+
+L['moon_priestess_lasara_note'] = 'Échangez vos {currency:2003} contre des objets de transmogrification.'

@@ -26,6 +26,7 @@ local PM = ns.node.ProfessionMasters
 local PrettyNeat = ns.node.PrettyNeat
 local PT = ns.node.ProfessionTreasures
 local RareElite = ns.node.RareElite
+local RichSoil = ns.node.RichSoil
 local Safari = ns.node.Safari
 local Scoutpack = ns.node.Scoutpack
 local SignalTransmitter = ns.node.SignalTransmitter
@@ -2320,6 +2321,24 @@ map.nodes[34624668] = Collectible({
 }) -- Broken Waygate
 
 -------------------------------------------------------------------------------
+---------------------------------- RICH SOIL ----------------------------------
+-------------------------------------------------------------------------------
+
+map.nodes[60006400] = RichSoil()
+map.nodes[56006800] = RichSoil()
+map.nodes[53506400] = RichSoil()
+map.nodes[54476895] = RichSoil()
+map.nodes[54355753] = RichSoil()
+map.nodes[53376028] = RichSoil()
+map.nodes[57006000] = RichSoil()
+map.nodes[54305700] = RichSoil()
+map.nodes[53005200] = RichSoil()
+map.nodes[54606584] = RichSoil()
+map.nodes[55875764] = RichSoil()
+map.nodes[59456104] = RichSoil()
+map.nodes[60645668] = RichSoil()
+
+-------------------------------------------------------------------------------
 -------------------------------- MISCELLANEOUS --------------------------------
 -------------------------------------------------------------------------------
 
@@ -2651,5 +2670,16 @@ map.nodes[24556089] = ns.node.Node({
 
 map.nodes[58446784] = ns.node.Celestine()
 map.nodes[41197748] = ns.node.RenewedMagmammoth()
+
+-------------------------------- EXPLORER PEPE --------------------------------
+
+map.nodes[47308270] = Collectible({
+    label = L['explorer_pepe_label'],
+    note = L['explorer_pepe_note'],
+    icon = 1044996,
+    rewards = {
+        Item({item = 213202, quest = 79550}) -- A Tiny Explorer's Hat
+    }
+}) -- Explorer Pepe
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

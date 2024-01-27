@@ -2075,7 +2075,7 @@ local Khadin = Class('Khadin', NPC, {
 
 function Khadin.getters:note()
     local n = GetItemCount(191784, true, nil, true)
-    local note = L['khadin_note'] .. '\n' .. format(PROFESSIONS_SPECIALIZATION_CURRENCY_TOTAL, n)
+    local note = L['khadin_note'] .. '\n' .. format(_G.PROFESSIONS_SPECIALIZATION_CURRENCY_TOTAL, n)
     local DFprof = {
         [171] = {variant = 2823, spell = 2259, max = 510, currency = 2024}, -- Alchemy
         [164] = {variant = 2822, spell = 2018, max = 800, currency = 2023}, -- Blacksmithing
@@ -2091,6 +2091,7 @@ function Khadin.getters:note()
     }
     local KPneed = function(prof)
         local cfg = C_ProfSpecs.GetConfigIDForSkillLine(DFprof[prof].variant)
+        if cfg == 0 then return end
         local spec = C_ProfSpecs.GetSpecTabIDsForSkillLine(DFprof[prof].variant)
         local tree = C_Traits.GetTreeCurrencyInfo(cfg, spec[1], true)
         local spent = tree[1].spent

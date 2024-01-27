@@ -1042,16 +1042,16 @@ L['thorn_bear_note'] = nil
 
 L['nahqi_note'] = nil
 
-L['sulraka_note'] = nil
+L['sulraka_note'] = '{npc:210868}{npc:<Дочь Кимбулы>} патрулирует территорию к востоку от {location:Амирдрассила} маршрут {note:против часовой стрелки}, на прохождение круга уходит 17 минут.\nМинимальный таймер возрождения составляет 30 минут.\n\nОна оставляет позади {object:Глубокие следы} во время ходьбы, которые остаются на 3 минуты.\nХодит всегда скрытно, поэтому вам нужно будет использовать {spell:1543} перед свежими {object:Глубокими следами} чтобы раскрыть ее.\nИспользуйте {spell:257284} и/или {spell:187650} и попытайтесь использовать {spell:1515}.\n\n{note:Важно поймать ее или раскрыть, потому что {npc:210868} не перестанет двигаться, даже если на нее нападут. Может выйти за пределы зоны действия навыка {spell:1543}.}\n\n{note:Это {npc:Дух зверя}. Только охотники со специализацией Повелитель зверей могут его приручить.}'
 
 L['alarashinu_note'] = nil
-L['alarashinu_note_stage1'] = nil
-L['alarashinu_note_stage2'] = nil
-L['alarashinu_note_stage3'] = nil
-L['alarashinu_note_stage4'] = nil
-L['alarashinu_note_stage5'] = nil
-L['alarashinu_note_stage6'] = nil
-L['alarashinu_note_end'] = nil
+L['alarashinu_note_stage1'] = 'Поговорите с {npc:213029} в {location:Центральном лагере} в {location:Изумрудном Сне}.'
+L['alarashinu_note_stage2'] = 'Отправляйтесь в {location:Разрушенный храм} на {location:Расколотом берегу}, и станьте свидетелем {npc:213114}.'
+L['alarashinu_note_stage3'] = 'Отправляйтесь в {location:Храм Элуны} в {location:Валь\'шаре}, и станьте свидетелем {npc:213186}.'
+L['alarashinu_note_stage4'] = 'После того, как воспоминания иссякнут, {npc:213248} появится со своим Парными клинками.'
+L['alarashinu_note_stage5'] = 'Наполните {npc:213308} своим пламенем Скверны.'
+L['alarashinu_note_stage6'] = 'Обыщите {npc:213381} и получите {item:210961}.'
+L['alarashinu_note_end'] = 'Вернитесь к {npc:213029} после того, как вы получите эти Парные клинки, у него появится бонусный диалог.'
 
 -------------------------------------------------------------------------------
 ----------------------------- SECRETS OF AZEROTH ------------------------------
@@ -1277,26 +1277,26 @@ L['options_icons_warcraft_rumble_desc'] = 'Отображать {object:Мешо
 --------------------------------- AMIRDRASSIL ---------------------------------
 -------------------------------------------------------------------------------
 
-L['kaldorei_backpack_label'] = nil
-L['kaldorei_bag_label'] = nil
-L['kaldorei_bedroll_label'] = nil
-L['kaldorei_dagger_label'] = nil
-L['kaldorei_horn_label'] = nil
-L['kaldorei_moon_bow_label'] = nil
-L['kaldorei_shield_label'] = nil
-L['kaldorei_spear_label'] = nil
-L['kaldorei_spyglass_label'] = nil
+L['kaldorei_backpack_label'] = 'Калдорайский рюкзак'
+L['kaldorei_bag_label'] = 'Калдорайская сумка'
+L['kaldorei_bedroll_label'] = 'Калдорайская походная постель'
+L['kaldorei_dagger_label'] = 'Калдорайский кинжал'
+L['kaldorei_horn_label'] = 'Калдорайский рог'
+L['kaldorei_moon_bow_label'] = 'Калдорайский лунный лук'
+L['kaldorei_shield_label'] = 'Калдорайский щит'
+L['kaldorei_spear_label'] = 'Калдорайское копье'
+L['kaldorei_spyglass_label'] = 'Калдорайская подзорная труба'
 
-L['blue_kaldorei_backpack_note'] = nil
-L['blue_kaldorei_bedroll_note'] = nil
-L['blue_kaldorei_pouch_note'] = nil
+L['blue_kaldorei_backpack_note'] = 'На ящике в портовом магазине в {location:Беланааре}.'
+L['blue_kaldorei_bedroll_note'] = 'За столом возле лунного колодца.'
+L['blue_kaldorei_pouch_note'] = 'На бочке возле здания, с порталами.'
 L['kaldorei_bow_carver_note'] = nil
-L['kaldorei_sentinels_spyglass_note'] = nil
+L['kaldorei_sentinels_spyglass_note'] = 'На ящике в конце дока в {location:Беланааре}.'
 L['night_elven_bow_note'] = nil
 L['night_elven_horn_note'] = nil
-L['night_elven_shield_note'] = nil
-L['night_elven_signal_note'] = nil
+L['night_elven_shield_note'] = 'Прелсланен к ящику который возле {npc:216269}, учителя по горному делу.'
+L['night_elven_signal_note'] = 'Висит на жаровне на ступеньках.'
 L['night_elven_spear_note'] = nil
-L['violet_kaldorei_pouch_note'] = nil
+L['violet_kaldorei_pouch_note'] = 'Около нижней части арки за лунным колодцем.'
 
-L['moon_priestess_lasara_note'] = nil
+L['moon_priestess_lasara_note'] = 'Обмен {currency:2003} на трансмогрификацию.'

@@ -60,6 +60,8 @@ L['options_icons_tuskarr_tacklebox_desc'] = '显示 {object:海象人工具盒} 
 L['squirrels_note'] = '必须使用表情 {emote:/爱}，{emote:/love} 给非战斗宠物的小动物。'
 L['options_icons_squirrels'] = '{achievement:16729}'
 L['options_icons_squirrels_desc'] = '显示 {achievement:16729} 成就中小动物的位置。'
+L['options_icons_zaralek_squirrels'] = '{achievement:18361}'
+L['options_icons_zaralek_squirrels_desc'] = '显示 {achievement:18361} 成就中小动物的位置。'
 
 L['hnj_sublabel'] = '需要本地席卡尔洪荒狩猎'
 L['hnj_western_azure_span_hunt'] = '死树顶上。'
@@ -144,6 +146,10 @@ L['frostbound_chest'] = '霜缚宝箱'
 L['options_icons_frostbound_chest'] = '霜缚宝箱'
 L['options_icons_frostbound_chest_desc'] = '显示 {object:霜缚宝箱} 可能的位置。'
 
+L['war_supply_chest_note'] = '一个 {npc:135181} 每隔45分钟就会在头顶飞过一次，并空投一个 {npc:135238} 到潜在可能的几个位置之一。'
+L['options_icons_war_supplies_desc'] = '显示 {npc:135238} 的空投位置。'
+L['options_icons_war_supplies'] = '{npc:135238}'
+
 L['fyrakk_assault_label'] = '菲莱克突袭'
 L['fyrakk_secured_shipment'] = '夺得的货物'
 
@@ -181,6 +187,15 @@ L['rich_soil_label'] = '肥沃的土壤'
 L['rich_soil_note'] = '在 {location:巨龙群岛} 的 {object:肥沃的土壤} 中种植各种幼苗，发芽随机奖励。\n\n{item:200506} - 种植随机标准的 {location:巨龙群岛} 草药\n\n{item:200508} - 种植随机活力精华\n\n{item:200507} - 种植随机腐烂草药\n\n{item:200509} - 出现 {npc:198571} 以获得各种随机草药和精华'
 L['options_icons_rich_soil'] = '肥沃的土壤'
 L['options_icons_rich_soil_desc'] = '显示 {object:肥沃的土壤} 的位置。'
+
+L['information_stuffed_clue'] = '满载信息的线索'
+L['clued_in_note'] = '{npc:210079} 于事件 {note:盛大发掘}，以及3个世界任务 {wq:研究：……} 期间刷新。'
+L['options_icons_clued_in'] = '{achievement:19787}'
+L['options_icons_clued_in_desc'] = '显示成就 {achievement:19787} 中 {npc:210079} 的位置。'
+
+L['goggle_wobble_note'] = '在引导任务线或世界任务 {wq:科技占卜：……} 期间，穿戴 {item:202247} 的同时与 {npc:207763} {emote:/跳舞}({emote:/dance})。'
+L['options_icons_goggle_wobble'] = '{achievement:19791}'
+L['options_icons_goggle_wobble_desc'] = '显示成就 {achievement:19791} 中 {npc:207763} 的位置。'
 
 -------------------------------------------------------------------------------
 ------------------------------- THE AZURE SPAN --------------------------------
@@ -298,6 +313,16 @@ L['naszuro_azure_archives'] = '山的一侧，一块小石头上。'
 L['naszuro_hudsons_rock'] = '小石山顶上。'
 
 L['ferry_to_iskaara'] = '乘船前往伊斯卡拉'
+
+L['options_icons_vegetarian_diet'] = '{achievement:16762}'
+L['options_icons_vegetarian_diet_desc'] = '显示 {achievement:16762} 成就中 {object:肉类仓库} 的位置。'
+
+L['meat_storage_label'] = '肉类仓库'
+L['meat_storage_note'] = '从 {location:蕨皮山谷} 内的 {object:肉类仓库} 解救所有12个 {npc:186766} 后，将收到来自 {npc:196267} 的邮件，其中包含 {item:200631}。'
+
+L['meat_storage_location_a'] = '在被 {npc:96239} 包围的海滩上。'
+L['meat_storage_location_b'] = '靠近 {npc:187192} 后面的一个洞穴。'
+L['meat_storage_location_c'] = '在 {npc:197130} 和 {npc:186226} 后面的一个小洞穴里。'
 
 -------------------------------------------------------------------------------
 ------------------ FORBIDDEN REACH (DRACTHYR STARTING ZONE) -------------------
@@ -431,6 +456,12 @@ L['trader_hagarth_note'] = '将 {item:190456} 换成匠人珍玩配方。'
 
 L['naszuro_caldera_of_the_menders'] = '在塔顶。'
 
+L['sun_bleached_vase'] = '久经日晒的花瓶'
+L['untranslated_tome'] = '未翻译的魔典'
+L['untranslated_tome_note'] = '在建筑里，入口位于桥下。'
+L['mysterious_boot'] = '神秘的靴子'
+L['mysterious_boot_note'] = '在上层。'
+
 -------------------------------------------------------------------------------
 ------------------------------ OHN'AHRAN PLAINS -------------------------------
 -------------------------------------------------------------------------------
@@ -538,8 +569,11 @@ L['bloodgullet_note'] = '在 {location:森步岗哨} 的帐篷中从 {object:觉
 L['naszuro_windsong_rise'] = '石柱上。'
 L['naszuro_emerald_gardens'] = '瀑布旁的草地上。'
 
-L['prismatic_leaper_school_label'] = nil
-L['prismatic_leaper_school_note'] = nil
+L['prismatic_leaper_school_label'] = '棱光跃鲑鱼群'
+L['prismatic_leaper_school_note'] = '与 {location:伊斯卡拉} 的 {npc:195935} 交谈以进行升级。\n\n从整个 {location:欧恩哈拉平原} 的 {object:棱光跃鲑鱼群} 中钓取以下物品：\n\n{item:%d}\n{item:%d}\n{item:%d}\n{item:%d}\n{item:%d}'
+
+L['aylaag_spear'] = '艾拉格长矛'
+L['dedication_plaquard'] = '奉献壁橱'
 
 -------------------------------------------------------------------------------
 --------------------------------- THALDRASZUS ---------------------------------
@@ -590,7 +624,17 @@ L['new_perspective_note'] = '用自拍神器与景点合影。一旦进入相机
 L['options_icons_new_perspective'] = '{achievement:16634}'
 L['options_icons_new_perspective_desc'] = '显示 {achievement:16634} 成就中景点的位置。'
 
+L['fringe_benefits_note'] = '完成8个日常任务即可获得成就。'
+L['options_icons_fringe_benefits'] = '{achievement:19507}'
+L['options_icons_fringe_benefits_desc'] = '显示 {achievement:19507} 成就中可以接受日常任务的位置。'
+
+L['little_scales_daycare_note'] = '必须在多天内完成任务线，从 {npc:197478} 的 {quest:72664} 开始，才能获得此成就和宠物。'
+L['options_icons_whelp'] = '{achievement:18384}'
+L['options_icons_whelp_desc'] = '显示 {achievement:18384} 成就中可以接受日常任务的位置。'
+
 L['ruby_feast_gourmand'] = '每天，一位随机的客座厨师都会提供不同的食品和饮料。'
+L['options_icons_ruby_feast_gourmand'] = '{achievement:16556}'
+L['options_icons_ruby_feast_gourmand_desc'] = '显示 {achievement:16556} 成就中可以接受日常任务的位置。'
 
 L['sorotis_note'] = '用 {item:199906} 换取 {faction:2510} 声望。'
 L['lillian_brightmoon_note'] = '用 {item:201412} 换取 {faction:2507} 声望。'
@@ -620,7 +664,6 @@ L['living_mud_mask_note'] = [[
 回到 {npc:198062}，坐在长椅上，交付 {item:200872} 的任务。
 ]]
 
-L['little_scales_daycare_note'] = '必须在多天内完成任务线，从 {npc:197478} 的 {quest:72664} 开始，才能获得此成就和宠物。'
 L['naszuro_veiled_ossuary'] = '神龛边上。'
 L['naszuro_algethar_academy'] = '在塔顶的壁架上。'
 L['naszuro_vault_of_the_incarnates'] = '雕像脚下。'
@@ -631,6 +674,13 @@ L['revival_catalyst_label'] = '复苏化生'
 L['revival_catalyst_note'] = '将非套装装备转换为同等物品等级和装备槽套装装备。\n\n第三赛季：\n每2周自动获得1层充能，最多累积8层。\n{currency:2796}: %d/%d'
 
 L['provisioner_aristta_note'] = '用 {currency:2657} 兑换幻化和坐骑。'
+
+L['investigators_pocketwatch_note_a'] = '1. 从 {location:纪元边界} 的 {location:万时旅店} 楼上的 {npc:204990} ({dot:Green}) 借用 {item:208449}。\n\n{note:必须之前已完成她的任务链。}'
+L['investigators_pocketwatch_note_b'] = '2. 在 {location:纪元边界} 的 {location:万时旅店} 楼下的 {npc:203769} ({dot:Blue}) 附近使用 {item:208449} 并从 {npc:207463} 购买 {item:208448}。\n\n{note:{item:208448} 的持续时间为30秒。快点！}'
+L['investigators_pocketwatch_note_c'] = '3. 快速到达瀑布并喝 {item:208448}。与新可见的 {object:时间浸透的钟} 交互以出现 {npc:201664}。'
+
+L['ominous_portal_label'] = '{npc:214985}'
+L['ominous_portal_note'] = '每30分钟就会出现一个 {npc:214985}。\n\n5分钟后 {npc:214984} 将出现多个首领。击败 {npc:215141}、{npc:215147} 和 {npc:215146}，就有机会获得奖励。\n\n{note:没有每日拾取锁定。}'
 
 -------------------------------------------------------------------------------
 ------------------------------ THE WAKING SHORE -------------------------------
@@ -875,6 +925,11 @@ L['zaralek_event_inactive'] = ns.color.Orange('此区域事件今日不开始，
 
 L['options_icons_zone_event'] = '区域事件'
 L['options_icons_zone_event_desc'] = '显示区域事件的位置。'
+
+L['djaradin_scroll'] = '贾拉丁卷轴'
+L['forgotten_incense'] = '被遗忘的熏香'
+L['forgotten_incense_note'] = '{note:由于任务边界的问题难以到达。}'
+L['historied_heirloom'] = '历史传家宝'
 
 -------------------------------------------------------------------------------
 ------------------------------- Emerald Dream ---------------------------------

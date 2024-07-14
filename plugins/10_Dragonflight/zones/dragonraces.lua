@@ -113,7 +113,7 @@ end
 local DragonridingVendor = Class('DragonridingVendor', Vendor, {
     note = L['dr_vendor_note'],
     rewards = {
-        DC.SetCount(DC.DragonIslesDrakes.EndlessPossibility, 50),
+        ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
         DC.SetCount(DC.WindborneVelocidrake.TealScales, 50),
         DC.SetCount(DC.WindingSlitherdrake.BlondeHair, 25),
         DC.SetCount(DC.WindingSlitherdrake.CurvedNoseHorn, 25),
@@ -139,15 +139,15 @@ local DragonridingVendor = Class('DragonridingVendor', Vendor, {
         Transmog({item = 206593, slot = L['cosmetic'], count = 20}), -- Drake Racer's Leggings
         Transmog({item = 206594, slot = L['cosmetic'], count = 20}), -- Drake Racer's Boots
         Spacer(), --
-        Transmog({item = 211877, slot = L['cosmetic'], count = 20}), -- Drake Racer's Scarf
-        Transmog({item = 211881, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Helmet
-        Transmog({item = 211882, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Shoulderpads
-        Transmog({item = 211883, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Jersey
-        Transmog({item = 211884, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Handwraps
-        Transmog({item = 211885, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Belt
-        Transmog({item = 211886, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Leggings
-        Transmog({item = 211887, slot = L['cosmetic'], count = 20}), -- Outlandish Drake Racer's Boots
-        Transmog({item = 211888, slot = L['cosmetic'], count = 20}) -- Outlandish Drake Racer's Scarf
+        Transmog({item = 211877, slot = L['cosmetic'], count = 5}), -- Drake Racer's Scarf
+        Transmog({item = 211881, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Helmet
+        Transmog({item = 211882, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Shoulderpads
+        Transmog({item = 211883, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Jersey
+        Transmog({item = 211884, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Handwraps
+        Transmog({item = 211885, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Belt
+        Transmog({item = 211886, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Leggings
+        Transmog({item = 211887, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Boots
+        Transmog({item = 211888, slot = L['cosmetic'], count = 5}) -- Outlandish Drake Racer's Scarf
     }
 }) -- Dragonriding Vendor
 
@@ -900,7 +900,7 @@ EmeraldDream.nodes[62808812] = Dragonrace({
     rewards = EmeraldDream_Rewards(5, 5, 5)
 }) -- Canopy Concours
 
-EmeraldDream.nodes[32354820] = Dragonrace({
+EmeraldDream.nodes[32364825] = Dragonrace({
     label = '{quest:78115}',
     normal = {2681, 89, 84},
     advanced = {2687, 73, 70},

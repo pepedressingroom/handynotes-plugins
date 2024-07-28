@@ -495,23 +495,10 @@ map.nodes[22743226] = Rare({
 local Raszageth = Class('Raszageth', Rare, {
     id = 209912,
     quest = 77859,
-    fgroup = 'raszageth',
+    fgroup = 'raszageth'
     -- note = L['raszageths_note'],
     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
-    getters = {
-        rlabel = function(self)
-            if self.quest then
-                local completed = C_QuestLog.IsQuestFlaggedCompleted(
-                    self.quest[1])
-                local color = completed and ns.status.Green or ns.status.Gray
-                return color(L['weekly'])
-            end
-        end
-    },
-    rewards = {
-        Currency({id = 2716, type = '+5'}), -- Drake's Dreaming Crests
-        Item({item = 208373, type = L['ring']}) -- Band of Bated Breath
-    }
+    -- rewards = {}
 }) -- Raszageth's Last Breath
 
 map.nodes[24203240] = Raszageth({vignette = 5808}) -- wowhead coords
@@ -527,23 +514,10 @@ map.nodes[67606620] = Raszageth() -- wowhead coords
 local Amalgamation = Class('Amalgamation', Rare, {
     id = 209915,
     quest = 77856,
-    fgroup = 'amalgamation',
+    fgroup = 'amalgamation'
     -- note = L['amalgamation_note'],
     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
-    getters = {
-        rlabel = function(self)
-            if self.quest then
-                local completed = C_QuestLog.IsQuestFlaggedCompleted(
-                    self.quest[1])
-                local color = completed and ns.status.Green or ns.status.Gray
-                return color(L['weekly'])
-            end
-        end
-    },
-    rewards = {
-        Currency({id = 2716, type = '+5'}), -- Drake's Dreaming Crests
-        Item({item = 209953, type = L['trinket']}) -- Dancing Dream Blossoms
-    }
+    -- rewards = {}
 }) -- Amalgamation of Dreams
 
 map.nodes[39615386] = Amalgamation({vignette = 5807})
@@ -1691,6 +1665,7 @@ map.nodes[39002520] = WarSupply({fgroup = 'supply_emerald_dream'})
 map.nodes[47202180] = WarSupply({fgroup = 'supply_emerald_dream'})
 map.nodes[52703340] = WarSupply({fgroup = 'supply_emerald_dream'})
 map.nodes[62206172] = WarSupply({fgroup = 'supply_emerald_dream'})
+map.nodes[47984506] = WarSupply({fgroup = 'supply_emerald_dream'})
 
 -------------------------------------------------------------------------------
 ---------------------------- EMERALD DREAM SAFARI -----------------------------
@@ -2182,7 +2157,7 @@ map.nodes[58305820] = NPC({
     }
 }) -- Sul'raka
 
--------------------- DEAMON HUNTER WARGLAIVES: ALARA'SHINU --------------------
+--------------------- DEMON HUNTER WARGLAIVES: ALARA'SHINU --------------------
 
 local Alarashinu = Class('Alarashinu', Collectible, {
     icon = 5061798,

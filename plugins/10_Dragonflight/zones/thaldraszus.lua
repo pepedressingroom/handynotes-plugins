@@ -1710,6 +1710,68 @@ val.nodes[57048156] = AncientStone({
 }) -- Valdrakken
 
 
+map.nodes[52198159] = Collectible({
+    icon = 4630470,
+    label = '{achievement:19507}',
+    note = L['fringe_benefits_note'],
+    group = ns.groups.FRINGE_BENEFITS,
+    rewards = {
+        Achievement({
+            id = 19507,
+            criteria = {
+                64642, 64643, 64644, 64645, 64646, 64647, 64648, 64649, 64650,
+                64651, 64654, 60757, 64657, 64658, 64659, 64660
+            }
+        })
+    }
+}) -- Fringe Benefits
+
+val.nodes[61261096] = Collectible({
+    icon = 629060,
+    label = '{achievement:16556}',
+    note = L['ruby_feast_gourmand'] .. '\n\n' .. L['rumiastrasza_note'],
+    group = ns.groups.RUBY_FEAST_GOURMAND,
+    rewards = {
+        Achievement({
+            id = 16556,
+            criteria = {
+                55714, 55715, 55716, 55717, 55718, 55719, 55720, 55721, 55722,
+                55723, 55724, 55725, 55726, 55728, 55729, 55730, 55731, 55732,
+                55733, 55734
+            }
+        })
+    }
+}) -- Great Gourmand of the Ruby Feast
+
+val.nodes[13005740] = Collectible({
+    icon = 4719556,
+    label = '{achievement:18384}',
+    note = L['little_scales_daycare_note'],
+    group = ns.groups.WHELP,
+    requires = {
+        ns.requirement.Quest(72664), -- Eggs in Abundance
+        ns.requirement.Quest(72665), -- Whelptender's Wisdom
+        ns.requirement.Quest(72666) -- Daycare Director Agapanthus
+    },
+    rewards = {
+        Achievement({
+            id = 18384,
+            criteria = {
+                60132, 60133, 60134, 60135, 60136, 60137, 60138, 60139, 60140,
+                60141, 60142, 60143, 60144, 60145, 60146, 60147
+            }
+        }), -- Whelp, There It Is
+        Pet({item = 205165, id = 3555}) -- Axel
+    }
+}) -- Whelp, There It Is
+
+------------------------------------------------------------------------------
+--------------------------------- DREAMSURGE ---------------------------------
+------------------------------------------------------------------------------
+
+map.nodes[51134337] = ns.node.Celestine()
+map.nodes[61792619] = ns.node.RenewedMagmammoth()
+
 -------------------------------------------------------------------------------
 ---------------------------------- RICH SOIL ----------------------------------
 -------------------------------------------------------------------------------
@@ -1717,6 +1779,9 @@ val.nodes[57048156] = AncientStone({
 map.nodes[71007200] = RichSoil()
 map.nodes[49366061] = RichSoil()
 map.nodes[32406920] = RichSoil()
+map.nodes[46235962] = RichSoil()
+map.nodes[63238021] = RichSoil()
+map.nodes[34687230] = RichSoil()
 
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
@@ -1923,11 +1988,11 @@ map.nodes[54648589] = Collectible({
 
 local Catalyst = Class('Catalyst', ns.node.Node, {
     label = L['revival_catalyst_label'],
-    icon = 1394953
+    icon = 348536 -- Season 4
 }) -- Revival Catalyst
 
 function Catalyst.getters:note()
-    local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(2796)
+    local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(2912) -- Season 4
     local q = currencyInfo.quantity
     local m = currencyInfo.maxQuantity
     local note = format(L['revival_catalyst_note'], q, m)

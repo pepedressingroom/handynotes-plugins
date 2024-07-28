@@ -936,6 +936,7 @@ L['the_gift_of_cheese_note_2'] = 'Interact with {item:204871} to receive {item:2
 L['the_gift_of_cheese_note_3'] = 'Once you have 30x {item:204872} combine the scraps to receive the recipe.'
 L['the_gift_of_cheese_note_4'] = '{note:This rat loves cheese and will consume one {item:3927} roughly every three minutes. Plan accordingly!}'
 L['the_gift_of_cheese_note_5'] = 'Once you can can craft {item:204848} simply feed 50 {npc:4075} found around Azeroth to complete the achievement.'
+L['rat_teach_alts_recipe'] = 'Once you collect {item:204894}, you can summon {npc:204036} on a character with {spell:366246} {note:skill 50}, our befriended {npc:202982} will now train them the recipes for {item:204072} and {item:204848} without needing to locate him again in {location:Zskera Vaults} or {location:Zaralek Cavern}.'
 
 L['zaralek_rare_active'] = ns.color.Blue('This Rare can spawn today.')
 L['zaralek_rare_inactive'] = ns.color.Orange('This Rare will not spawn today, come back tomorrow.')

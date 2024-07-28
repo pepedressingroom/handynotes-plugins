@@ -1080,7 +1080,11 @@ local RecipeRat = Class('RecipeRat', Collectible, {
 }) -- Recipe Rat
 
 function RecipeRat.getters:note()
-    local note = L['recipe_rat_note_1']
+    local note = ''
+    if C_PetJournal.GetNumCollectedInfo(3493) > 0 then
+        return note .. L['rat_teach_alts_recipe']
+    end
+    note = note .. L['recipe_rat_note_1']
     note = note .. ItemStatus(202252, 1, L['recipe_rat_note_2'])
     note = note .. ItemStatus(204340, 30, L['recipe_rat_note_3'])
     note = note .. ItemStatus(3927, '?', L['recipe_rat_note_4'])

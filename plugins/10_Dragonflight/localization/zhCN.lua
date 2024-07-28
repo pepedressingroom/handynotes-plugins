@@ -938,6 +938,7 @@ L['the_gift_of_cheese_note_2'] = '与 {item:204871} 互动得到 {item:204872}�
 L['the_gift_of_cheese_note_3'] = '当拥有30个 {item:204872} 后，将残页合并即可获得食谱。'
 L['the_gift_of_cheese_note_4'] = '{note:这只老鼠喜欢奶酪，大约每三分钟就会吃掉一个 {item:3927}。合理应对！}'
 L['the_gift_of_cheese_note_5'] = '一旦可以制作 {item:204848}，只需在全艾泽拉斯找到并喂食50个 {npc:4075} 即可完成成就。'
+L['rat_teach_alts_recipe'] = '你已经收集了{item:204894}, 用一个 {spell:366246} 达到 {note:技能50} 的其他角色召唤 {npc:204036} ， 咱们友善的 {npc:202982} 将教会他们 {item:204072} 以及 {item:204848} 的配方，而不再需要去 {location:兹斯克拉宝库} 或 {location:查拉雷克洞窟} 了。'
 
 L['zaralek_rare_active'] = ns.color.Blue('此稀有今日出现。')
 L['zaralek_rare_inactive'] = ns.color.Orange('此稀有今日不出现，明日再来。')

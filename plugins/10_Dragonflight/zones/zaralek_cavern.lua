@@ -1350,7 +1350,11 @@ local TheGiftOfCheese = Class('TheGiftOfCheese', Collectible, {
 }) -- The Gift of Cheese
 
 function TheGiftOfCheese.getters:note()
-    local note = L['the_gift_of_cheese_note_1']
+    local note = ''
+    if C_PetJournal.GetNumCollectedInfo(3493) > 0 then
+        return note .. L['rat_teach_alts_recipe']
+    end
+    note = note .. L['the_gift_of_cheese_note_1']
     note = note .. ItemStatus(204871, 1, L['the_gift_of_cheese_note_2'])
     note = note .. ItemStatus(204872, 30, L['the_gift_of_cheese_note_3'])
     note = note .. ItemStatus(3927, '?', L['the_gift_of_cheese_note_4'])

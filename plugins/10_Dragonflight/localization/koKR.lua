@@ -872,6 +872,7 @@ L['the_gift_of_cheese_note_2'] = nil
 L['the_gift_of_cheese_note_3'] = nil
 L['the_gift_of_cheese_note_4'] = nil
 L['the_gift_of_cheese_note_5'] = nil
+L['rat_teach_alts_recipe'] = nil
 
 L['zaralek_rare_active'] = nil
 L['zaralek_rare_inactive'] = nil

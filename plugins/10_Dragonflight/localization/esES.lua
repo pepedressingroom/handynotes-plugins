@@ -936,6 +936,7 @@ L['the_gift_of_cheese_note_2'] = 'Interactúa con la {item:204871} para consegui
 L['the_gift_of_cheese_note_3'] = 'Una vez tengas los 30x {item:204872} combínalos para conseguir la receta.'
 L['the_gift_of_cheese_note_4'] = '{note:Esta rata ama el queso y se comerá ansiosamente un {item:3927} cada tres minutos. ¡Planifícalo bien!}'
 L['the_gift_of_cheese_note_5'] = 'Cuando puedas crear {item:204848}, alimenta a 50 {npc:4075} a lo largo de Azeroth para completar el logro.'
+L['rat_teach_alts_recipe'] = nil
 
 L['zaralek_rare_active'] = ns.color.Blue('Este Raro puede aparecer hoy.')
 L['zaralek_rare_inactive'] = ns.color.Orange('Este Raro no aparecerá hoy, vuelve mañana.')

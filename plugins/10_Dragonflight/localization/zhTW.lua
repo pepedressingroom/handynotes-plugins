@@ -936,6 +936,7 @@ L['the_gift_of_cheese_note_2'] = '和 {item:204871} 互動會取得 {item:204872
 L['the_gift_of_cheese_note_3'] = '當你有30個 {item:204872} 後, 組合這些碎片來取得圖樣.'
 L['the_gift_of_cheese_note_4'] = '{note:這隻老鼠喜歡起司, 大約每3分鐘會吃掉一個 {item:3927}. 好好計畫!}'
 L['the_gift_of_cheese_note_5'] = '當你能製造 {item:204848} 後, 餵給在艾澤拉斯找到的50個 {npc:4075} 來完成成就.'
+L['rat_teach_alts_recipe'] = '你已經收集了{item:204894},  登入一個 {spell:366246} 達到 {note:技能點50} 的其他角色召喚 {npc:204036},  咱們友善的 {npc:202982} 將教會他們 {item:204072} 以及 {item:204848} 的配方,  而不再需要去 {location:澤斯克拉密庫} 或 {location:扎拉萊克洞窟} 了.'
 
 L['zaralek_rare_active'] = ns.color.Blue('此稀有今日會刷新.')
 L['zaralek_rare_inactive'] = ns.color.Orange('此稀有今日不會刷新, 明日再來.')

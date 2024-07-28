@@ -1406,7 +1406,7 @@ local Interval = Class('Interval', ns.Interval, {
 })
 
 ns.Intervals.Interval14h = Class('Interval14h', Interval, {
-    initial = {eu = 1676237400, us = 1677335400, tw = 1675701000}, -- initial spawn time of the first rare to calculate other rares
+    initial = {eu = 1676237400, us = 1677335400, tw = 1675701000, cn = 1675701000}, -- initial spawn time of the first rare to calculate other rares
     offset = 1800, -- time between rares
     interval = 50400, -- inverval of a single rare
     yellow = 14400,
@@ -1415,7 +1415,7 @@ ns.Intervals.Interval14h = Class('Interval14h', Interval, {
 })
 
 ns.Intervals.BrackenhideInterval = Class('BrackenhideInterval', Interval, {
-    initial = {us = 1672531800, eu = 1672531200, tw = 1677162000},
+    initial = {us = 1672531800, eu = 1672531200, tw = 1677162000, cn = 1677162000},
     offset = 600,
     interval = 2400,
     yellow = 1200,
@@ -1424,17 +1424,18 @@ ns.Intervals.BrackenhideInterval = Class('BrackenhideInterval', Interval, {
 })
 
 ns.Intervals.FeastInterval = Class('FeastInterval', Interval, {
-    initial = {us = 1677164400, eu = 1677168000, tw = 1677166200},
+    initial = {us = 1677164400, eu = 1677168000, tw = 1677166200, cn = 1677166200},
     offset = 5400,
     interval = 5400,
     id = 0,
+    duration = 900,
     yellow = 3600,
     green = 600,
     text = L['bisquis_note']
 })
 
 ns.Intervals.AylaagCampInterval = Class('AylaagCampInterval', Interval, {
-    initial = {us = 1677456000, eu = 1677502800, tw = 1677571200},
+    initial = {us = 1677456000, eu = 1677502800, tw = 1677571200, cn = 1677571200},
     offset = 270000,
     interval = 810000,
     id = 0,
@@ -1443,6 +1444,19 @@ ns.Intervals.AylaagCampInterval = Class('AylaagCampInterval', Interval, {
     text = L['aylaag_camp_note']
 })
 
+ns.Intervals.DreamSurgeInterval = Class('DreamSurgeInterval', Interval, {
+    initial = {us = 1693926000, eu = 1693972800, tw = 1694041255, cn = 1694041255},
+    offset = 604800,
+    interval = 2419200,
+    duration = 604800
+}) -- id = 0:2022, 1:2023, 2:2024, 3:2025
+
+ns.Intervals.FyrakkAssaultInterval = Class('FyrakkAssaultInterval', Interval, {
+    initial = {us = 1683644400, eu = 1683691200, tw = 1683759655, cn = 1683759655},
+    offset = 604800,
+    interval = 1209600,
+    duration = 604800
+}) -- id = 0:2023, 1:2024
 -------------------------------------------------------------------------------
 ------------------------------ ELEMENTAL STORMS -------------------------------
 -------------------------------------------------------------------------------
@@ -2058,6 +2072,10 @@ local Celestine = Class('Celestine', Vendor, {
     id = 210608,
     sublabel = L['dreamsurge_sublabel'],
     note = L['celestine_vendor_note'],
+    IsEnabled = function(self)
+        if not ns.Interval.IsActive(self.interval) then return false end
+        return ns.node.Collectible.IsEnabled(self)
+    end,
     rewards = {
         Mount({item = 198824, id = 1671, count = '1000'}), -- Duskwing Ohuna
         Toy({item = 209858, count = '500'}), -- Dreamsurge Remnant
@@ -2074,6 +2092,10 @@ local RenewedMagmammoth = Class('RenewedMagmammoth', Collectible, {
     icon = 4034837,
     vignette = 5751,
     sublabel = L['dreamsurge_sublabel'],
+    IsEnabled = function(self)
+        if not ns.Interval.IsActive(self.interval) then return false end
+        return ns.node.Collectible.IsEnabled(self)
+    end,
     rewards = {
         Mount({item = 192807, id = 1645}) -- Renewed Magmammoth
     }
@@ -2085,6 +2107,68 @@ function RenewedMagmammoth.getters:note()
 end
 
 ns.node.RenewedMagmammoth = RenewedMagmammoth
+
+-------------------------------------------------------------------------------
+------------------------------- FYRAKK ASSAULT --------------------------------
+-------------------------------------------------------------------------------
+
+local FyrakkAssault = Class('FyrakkAssault', Collectible, {
+    -- icon = 4914672,
+    note = L['fyrakk_assault_label'],
+    rewards = {
+        Achievement({id = 17506}), -- Still Standing in the Fire
+        Mount({item = 211084, id = 1944}), -- Test, to to removed
+        Achievement({id = 17735, criteria = {id = 1, qty = true}}), -- We Didn't Start the Fire
+    },
+    IsEnabled = function(self)
+        if not ns.Interval.IsActive(self.interval) then return false end
+        return ns.node.Collectible.IsEnabled(self)
+    end
+})
+
+ns.node.FyrakkAssault = FyrakkAssault
+
+local DiscipleOfFyrakk = Class('DiscipleOfFyrakk', Rare, {
+    sublabel = L['fyrakk_assault_label'],
+    quest = 75467,
+    -- icon = 'star_skull_w',
+    -- scale = 1.5,
+    rewards = {
+        Mount({item = 211084, id = 1944}), -- Test, to to removed
+        Pet({item = 205002, id = 3511}), -- Blaise
+        Pet({item = 205003, id = 3512}), -- Ambre
+        Toy({item = 206043}), -- Fyrakk's Frenzy
+        DC.RenewedProtoDrake.BruiserHorns,
+        DC.RenewedProtoDrake.BlackAndRedArmor
+    },
+    IsEnabled = function(self)
+        if not ns.Interval.IsActive(self.interval) then return false end
+        return ns.node.Collectible.IsEnabled(self)
+    end
+})
+
+ns.node.DiscipleOfFyrakk = DiscipleOfFyrakk
+
+local SecuredShipment = Class('SecuredShipment', ns.node.Treasure, {
+    label = L['fyrakk_secured_shipment'],
+    sublabel = L['fyrakk_assault_label'],
+    -- icon = 'star_chest_b',
+    -- scale = 1.5,
+    rewards = {
+        Mount({item = 211084, id = 1944}), -- Test, to to removed
+        DC.RenewedProtoDrake.BronzeAndPinkArmor,
+        DC.WindborneVelocidrake.BronzeAndGreenArmor,
+        DC.HighlandDrake.BronzeAndGreenArmor,
+        DC.CliffsideWylderdrake.BronzeAndTealArmor,
+        DC.WindingSlitherdrake.GreenAndBronzeArmor
+    },
+    IsEnabled = function(self)
+        if not ns.Interval.IsActive(self.interval) then return false end
+        return ns.node.Collectible.IsEnabled(self)
+    end
+})
+
+ns.node.SecuredShipment = SecuredShipment
 
 -------------------------------------------------------------------------------
 ---------------------------------- RICH SOIL ----------------------------------

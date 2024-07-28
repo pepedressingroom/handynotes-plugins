@@ -2750,6 +2750,17 @@ map.nodes[24556089] = ns.node.Node({
     end
 }) -- The Earth-Warder's Forge
 
+------------------------------------------------------------------------------
+--------------------------------- DREAMSURGE ---------------------------------
+------------------------------------------------------------------------------
+
+map.nodes[58446784] = ns.node.Celestine({
+    interval = ns.Intervals.DreamSurgeInterval({id = 0})
+})
+map.nodes[41197748] = ns.node.RenewedMagmammoth({
+    interval = ns.Intervals.DreamSurgeInterval({id = 0})
+})
+
 -------------------------------- EXPLORER PEPE --------------------------------
 
 map.nodes[47308270] = Collectible({
@@ -2761,11 +2772,5 @@ map.nodes[47308270] = Collectible({
     }
 }) -- Explorer Pepe
 
-------------------------------------------------------------------------------
---------------------------------- DREAMSURGE ---------------------------------
-------------------------------------------------------------------------------
-
-map.nodes[58446784] = ns.node.Celestine()
-map.nodes[41197748] = ns.node.RenewedMagmammoth()
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

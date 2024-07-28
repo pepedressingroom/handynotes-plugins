@@ -1802,8 +1802,12 @@ val.nodes[13005740] = Collectible({
 --------------------------------- DREAMSURGE ---------------------------------
 ------------------------------------------------------------------------------
 
-map.nodes[51134337] = ns.node.Celestine()
-map.nodes[61792619] = ns.node.RenewedMagmammoth()
+map.nodes[51134337] = ns.node.Celestine({
+    interval = ns.Intervals.DreamSurgeInterval({id = 3})
+})
+map.nodes[61792619] = ns.node.RenewedMagmammoth({
+    interval = ns.Intervals.DreamSurgeInterval({id = 3})
+})
 
 -------------------------------------------------------------------------------
 ---------------------------------- RICH SOIL ----------------------------------
@@ -2202,12 +2206,5 @@ local Xiulan = Class('Xiulan', Vendor, {
 }) -- Ms. Xiulan <Madam Goya's Assistant>
 
 val.nodes[19215029] = Xiulan()
-
-------------------------------------------------------------------------------
---------------------------------- DREAMSURGE ---------------------------------
-------------------------------------------------------------------------------
-
-map.nodes[51134337] = ns.node.Celestine()
-map.nodes[61792619] = ns.node.RenewedMagmammoth()
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

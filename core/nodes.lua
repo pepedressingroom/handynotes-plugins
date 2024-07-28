@@ -584,7 +584,22 @@ function Interval:Next()
     return NextSpawn, TimeLeft
 end
 
+function Interval:IsActive()
+    if not (self.id and self.initial and self.interval and self.duration) then return false end
+    local CurrentTime = GetServerTime()
+    local SpawnTime = self.SpawnTime
+
+    local LastSpawn = SpawnTime +
+                          math.floor((CurrentTime - SpawnTime) / self.interval) *
+                          self.interval
+    local DespawnTime = LastSpawn + self.duration
+
+    return DespawnTime > CurrentTime
+end
+
 function Interval:GetText()
+    if not self.text then return '' end
+
     local TimeFormat = ns:GetOpt('use_standard_time') and self.format_12hrs or
                            self.format_24hrs
 

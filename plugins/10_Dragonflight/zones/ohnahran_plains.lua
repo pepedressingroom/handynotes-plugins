@@ -2280,57 +2280,8 @@ map.nodes[47037119] = Collectible({
 ------------------------------- FYRAKK ASSAULT --------------------------------
 -------------------------------------------------------------------------------
 
--- local FyrakkAssault = Class('FyrakkAssault', ns.requirement.Requirement, {
---     text = L['fyrakk_assault_label'],
---     IsMet = function()
---         local validPOIs = {7429, 7471, 7473, 7486, 7487}
---         local activePOIs = C_AreaPoiInfo.GetAreaPOIForMap(map.id)
---         for _, activePOI in ipairs(activePOIs) do
---             for _, validPOI in pairs(validPOIs) do
---                 if activePOI == validPOI then return true end
---             end
---         end
---         return false
---     end
--- })()
-
--- map.nodes[76156952] = Collectible({
---     label = L['fyrakk_assault_label'],
---     icon = 4914672,
---     quest = {75467, 75525}, -- Kretchenwrath, Secured Shipment
---     vignette = 5610, -- Disciple of Fyrakk
---     requires = FyrakkAssault,
---     rewards = {
---         Achievement({id = 17506}), -- Still Standing in the Fire
---         Achievement({id = 17735, criteria = {id = 1, qty = true}}), -- We Didn't Start the Fire
---         Section('{npc:201673}'), -- Kretchenwrath
---         Pet({item = 205002, id = 3511}), -- Blaise
---         Pet({item = 205003, id = 3512}), -- Ambre
---         Toy({item = 206043}), -- Fyrakk's Frenzy
---         DC.RenewedProtoDrake.BruiserHorns,
---         DC.RenewedProtoDrake.BlackAndRedArmor, Spacer(),
---         Section(L['fyrakk_secured_shipment']),
---         DC.RenewedProtoDrake.BronzeAndPinkArmor,
---         DC.WindborneVelocidrake.BronzeAndGreenArmor,
---         DC.HighlandDrake.BronzeAndGreenArmor,
---         DC.CliffsideWylderdrake.BronzeAndTealArmor,
---         DC.WindingSlitherdrake.GreenAndBronzeArmor
---     }
--- }) -- Fyrakk Assault
-
--- local FyrakkAssault = Class('FyrakkAssault', Collectible, {
---     sublabel = L['fyrakk_assault_label'],
---     -- vignette = 5611, -- Disciple of Fyrakk
---     interval = ns.Intervals.FyrakkAssaultInterval({id = 0}),
---     IsEnabled = function(self)
---         if not ns.Interval.IsActive(self.interval) then return false end
---         return ns.node.Collectible.IsEnabled(self)
---     end
--- })
-
 map.nodes[75456924] = ns.node.FyrakkAssault({
     label = '{quest:74501}', -- Suffusion Camp: Cinderwind
-    sublabel = '{npc:201861}', -- Tigari Khan
     interval = ns.Intervals.FyrakkAssaultInterval({id = 0})
 })
 
@@ -2349,54 +2300,50 @@ map.nodes[73777248] = ns.node.SecuredShipment({
 
 map.nodes[72277242] = Node({
     label = L['shadowflame_forge_label'],
+    sublabel = L['fyrakk_assault_label'],
     icon = 4622286,
     note = L['shadowflame_forge_note'],
-    -- requires = FyrakkAssault,
     interval = ns.Intervals.FyrakkAssaultInterval({id = 0}),
     IsEnabled = function(self) -- Blacksmithing
         if not ns.PlayerHasProfession(164) then return false end
-        -- return ns.node.Item.IsEnabled(self)
         return ns.Interval.IsActive(self.interval)
     end
 }) -- Shadowflame Forge
 
 map.nodes[73387083] = Node({
     label = L['shadowflame_blacksmithing_anvil_label'],
+    sublabel = L['fyrakk_assault_label'],
     icon = 4914678, --
     note = L['shadowflame_blacksmithing_anvil_note'],
-    -- requires = FyrakkAssault,
     interval = ns.Intervals.FyrakkAssaultInterval({id = 0}),
     IsEnabled = function(self) -- Blacksmithing, Engineering
         local bs = ns.PlayerHasProfession(164)
         local en = ns.PlayerHasProfession(202)
         if not bs and not en then return false end
-        -- return ns.node.Item.IsEnabled(self)
         return ns.Interval.IsActive(self.interval)
     end
 }) -- Shadowflame Blacksmithing Anvil
 
 map.nodes[74727194] = Node({
     label = L['shadowflame_leatherworking_table_label'],
+    sublabel = L['fyrakk_assault_label'],
     icon = 5088848,
     note = L['shadowflame_leatherworking_table_note'],
-    -- requires = FyrakkAssault,
     interval = ns.Intervals.FyrakkAssaultInterval({id = 0}),
     IsEnabled = function(self) -- Leatherworking
         if not ns.PlayerHasProfession(165) then return false end
-        -- return ns.node.Item.IsEnabled(self)
         return ns.Interval.IsActive(self.interval)
     end
 }) -- Shadowflame Leatherworking Table
 
 map.nodes[73337238] = Node({
     label = L['shadowflame_incantation_table_label'],
+    sublabel = L['fyrakk_assault_label'],
     icon = 4620672,
     note = L['shadowflame_incantation_table_note'],
     interval = ns.Intervals.FyrakkAssaultInterval({id = 0}),
-    -- requires = FyrakkAssault,
     IsEnabled = function(self) -- Enchanting
         if not ns.PlayerHasProfession(333) then return false end
-        -- return ns.node.Item.IsEnabled(self)
         return ns.Interval.IsActive(self.interval)
     end
 }) -- Shadowflame Incantation Table

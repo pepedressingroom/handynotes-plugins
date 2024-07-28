@@ -2113,12 +2113,11 @@ ns.node.RenewedMagmammoth = RenewedMagmammoth
 -------------------------------------------------------------------------------
 
 local FyrakkAssault = Class('FyrakkAssault', Collectible, {
-    -- icon = 4914672,
-    note = L['fyrakk_assault_label'],
+    icon = 132839,
+    sublabel = L['fyrakk_assault_label'],
     rewards = {
-        Achievement({id = 17506}), -- Still Standing in the Fire
-        Mount({item = 211084, id = 1944}), -- Test, to to removed
-        Achievement({id = 17735, criteria = {id = 1, qty = true}}), -- We Didn't Start the Fire
+        -- Achievement({id = 17506}), -- Still Standing in the Fire
+        Achievement({id = 17735, criteria = {id = 1, qty = true}}) -- We Didn't Start the Fire
     },
     IsEnabled = function(self)
         if not ns.Interval.IsActive(self.interval) then return false end
@@ -2131,10 +2130,7 @@ ns.node.FyrakkAssault = FyrakkAssault
 local DiscipleOfFyrakk = Class('DiscipleOfFyrakk', Rare, {
     sublabel = L['fyrakk_assault_label'],
     quest = 75467,
-    -- icon = 'star_skull_w',
-    -- scale = 1.5,
     rewards = {
-        Mount({item = 211084, id = 1944}), -- Test, to to removed
         Pet({item = 205002, id = 3511}), -- Blaise
         Pet({item = 205003, id = 3512}), -- Ambre
         Toy({item = 206043}), -- Fyrakk's Frenzy
@@ -2152,11 +2148,10 @@ ns.node.DiscipleOfFyrakk = DiscipleOfFyrakk
 local SecuredShipment = Class('SecuredShipment', ns.node.Treasure, {
     label = L['fyrakk_secured_shipment'],
     sublabel = L['fyrakk_assault_label'],
-    -- icon = 'star_chest_b',
-    -- scale = 1.5,
     requires = ns.requirement.Item(203710, 3), -- Everburning Key
     rewards = {
-        Mount({item = 211084, id = 1944}), -- Test, to to removed
+        Pet({item = 205002, id = 3511}), -- Blaise
+        Pet({item = 205003, id = 3512}), -- Ambre
         DC.RenewedProtoDrake.BronzeAndPinkArmor,
         DC.WindborneVelocidrake.BronzeAndGreenArmor,
         DC.HighlandDrake.BronzeAndGreenArmor,

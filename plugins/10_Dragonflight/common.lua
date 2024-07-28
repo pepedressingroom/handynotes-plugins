@@ -727,6 +727,10 @@ ns.DRAGON_CUSTOMIZATIONS = {
             item = 201792,
             quest = 72371
         }),
+        EmbodimentOfTheDraconicGladiator = Manuscript({
+            item = 216710,
+            quest = 80014
+        }),
         EmbodimentOfTheHellforged = Manuscript({item = 205876, quest = 75967}),
         FinnedBack = Manuscript({item = 197098, quest = 69299}),
         FinnedHead = Manuscript({item = 197106, quest = 69307}),
@@ -824,6 +828,7 @@ ns.DRAGON_CUSTOMIZATIONS = {
         ManedJaw = Manuscript({item = 196983, quest = 69183}),
         ManedNeck = Manuscript({item = 197023, quest = 69223}),
         ManedTail = Manuscript({item = 197016, quest = 69216}),
+        MidsummerFireFestivalArmor = Manuscript({item = 224163, quest = 82741}),
         NarrowStripesPattern = Manuscript({item = 197008, quest = 69208}),
         PlatedBrow = Manuscript({item = 196972, quest = 69172}),
         PlatedNose = Manuscript({item = 197006, quest = 69206}),
@@ -925,6 +930,7 @@ ns.DRAGON_CUSTOMIZATIONS = {
         ThornHorns = Manuscript({item = 203337, quest = 73827}),
         TripleJawHorns = Manuscript({item = 203342, quest = 73833}),
         VisageOfTheInfinite = Manuscript({item = 208106, quest = 77259}),
+        VoidScales = Manuscript({item = 213561, quest = 79690}),
         WhiteAndGoldArmor = Manuscript({item = 203298, quest = 73786}),
         WhiteHair = Manuscript({item = 203324, quest = 73812}),
         WhiteHorns = Manuscript({item = 203328, quest = 73816}),

@@ -111,45 +111,140 @@ end
 -------------------------------------------------------------------------------
 
 local DragonridingVendor = Class('DragonridingVendor', Vendor, {
-    note = L['dr_vendor_note'],
-    rewards = {
-        ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
-        DC.SetCount(DC.WindborneVelocidrake.TealScales, 50),
-        DC.SetCount(DC.WindingSlitherdrake.BlondeHair, 25),
-        DC.SetCount(DC.WindingSlitherdrake.CurvedNoseHorn, 25),
-        DC.SetCount(DC.WindingSlitherdrake.HornedBrow, 25),
-        DC.SetCount(DC.WindingSlitherdrake.PairedHorns, 25),
-        DC.SetCount(DC.WindingSlitherdrake.SharkFinnedTail, 25),
-        DC.SetCount(DC.WindingSlitherdrake.YellowScales, 50), --
-        Spacer(), --
-        DC.SetCount(DC.CliffsideWylderdrake.CurledHeadHorns, 25),
-        DC.SetCount(DC.CliffsideWylderdrake.LargeTailSpikes, 25), -- 10.2.5
-        DC.SetCount(DC.HighlandDrake.CurledBackHorns, 25),
-        DC.SetCount(DC.HighlandDrake.SweptSpikedHead, 25), -- 10.2.5
-        DC.SetCount(DC.RenewedProtoDrake.DualHornedCrest, 25), -- 10.2.5
-        DC.SetCount(DC.RenewedProtoDrake.ProngedTail, 25),
-        DC.SetCount(DC.WindborneVelocidrake.CurledHorns, 25), -- 10.2.5
-        DC.SetCount(DC.WindborneVelocidrake.HookedSnout, 25), --
-        Spacer(), --
-        Transmog({item = 206588, slot = L['cosmetic'], count = 20}), -- Drake Racer's Helmet
-        Transmog({item = 206589, slot = L['cosmetic'], count = 20}), -- Drake Racer's Shoulderpads
-        Transmog({item = 206590, slot = L['cosmetic'], count = 20}), -- Drake Racer's Jersey
-        Transmog({item = 206591, slot = L['cosmetic'], count = 20}), -- Drake Racer's Handwraps
-        Transmog({item = 206592, slot = L['cosmetic'], count = 20}), -- Drake Racer's Belt
-        Transmog({item = 206593, slot = L['cosmetic'], count = 20}), -- Drake Racer's Leggings
-        Transmog({item = 206594, slot = L['cosmetic'], count = 20}), -- Drake Racer's Boots
-        Spacer(), --
-        Transmog({item = 211877, slot = L['cosmetic'], count = 5}), -- Drake Racer's Scarf
-        Transmog({item = 211881, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Helmet
-        Transmog({item = 211882, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Shoulderpads
-        Transmog({item = 211883, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Jersey
-        Transmog({item = 211884, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Handwraps
-        Transmog({item = 211885, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Belt
-        Transmog({item = 211886, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Leggings
-        Transmog({item = 211887, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Boots
-        Transmog({item = 211888, slot = L['cosmetic'], count = 5}) -- Outlandish Drake Racer's Scarf
-    }
-}) -- Dragonriding Vendor
+    note = L['dr_vendor_note']
+    -- rewards = {
+    --     ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
+    --     DC.SetCount(DC.WindborneVelocidrake.TealScales, 50),
+    --     DC.SetCount(DC.WindingSlitherdrake.BlondeHair, 25),
+    --     DC.SetCount(DC.WindingSlitherdrake.CurvedNoseHorn, 25),
+    --     DC.SetCount(DC.WindingSlitherdrake.HornedBrow, 25),
+    --     DC.SetCount(DC.WindingSlitherdrake.PairedHorns, 25),
+    --     DC.SetCount(DC.WindingSlitherdrake.SharkFinnedTail, 25),
+    --     DC.SetCount(DC.WindingSlitherdrake.YellowScales, 50), --
+    --     Spacer(), --
+    --     DC.SetCount(DC.CliffsideWylderdrake.CurledHeadHorns, 25),
+    --     DC.SetCount(DC.CliffsideWylderdrake.LargeTailSpikes, 25), -- 10.2.5
+    --     DC.SetCount(DC.HighlandDrake.CurledBackHorns, 25),
+    --     DC.SetCount(DC.HighlandDrake.SweptSpikedHead, 25), -- 10.2.5
+    --     DC.SetCount(DC.RenewedProtoDrake.DualHornedCrest, 25), -- 10.2.5
+    --     DC.SetCount(DC.RenewedProtoDrake.ProngedTail, 25),
+    --     DC.SetCount(DC.WindborneVelocidrake.CurledHorns, 25), -- 10.2.5
+    --     DC.SetCount(DC.WindborneVelocidrake.HookedSnout, 25), --
+    --     Spacer(), --
+    --     Transmog({item = 206588, slot = L['cosmetic'], count = 20}), -- Drake Racer's Helmet
+    --     Transmog({item = 206589, slot = L['cosmetic'], count = 20}), -- Drake Racer's Shoulderpads
+    --     Transmog({item = 206590, slot = L['cosmetic'], count = 20}), -- Drake Racer's Jersey
+    --     Transmog({item = 206591, slot = L['cosmetic'], count = 20}), -- Drake Racer's Handwraps
+    --     Transmog({item = 206592, slot = L['cosmetic'], count = 20}), -- Drake Racer's Belt
+    --     Transmog({item = 206593, slot = L['cosmetic'], count = 20}), -- Drake Racer's Leggings
+    --     Transmog({item = 206594, slot = L['cosmetic'], count = 20}), -- Drake Racer's Boots
+    --     Spacer(), --
+    --     Transmog({item = 211877, slot = L['cosmetic'], count = 5}), -- Drake Racer's Scarf
+    --     Transmog({item = 211881, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Helmet
+    --     Transmog({item = 211882, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Shoulderpads
+    --     Transmog({item = 211883, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Jersey
+    --     Transmog({item = 211884, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Handwraps
+    --     Transmog({item = 211885, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Belt
+    --     Transmog({item = 211886, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Leggings
+    --     Transmog({item = 211887, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Boots
+    --     Transmog({item = 211888, slot = L['cosmetic'], count = 5}) -- Outlandish Drake Racer's Scarf
+    -- }
+})-- Dragonriding Vendor
+
+-- Event ID for Skyriding races
+-- 1395 Kalimdor Cup
+-- 1400 Eastern Kingdoms Cup
+-- 1407 Outland Cup
+-- 1429 Northrend Cup
+-- 1430 Pandaria Cup
+-- 1431 Broken Isles Cup
+function DragonridingVendor.getters:rewards()
+
+    local r = {}
+    if ns.IsCalendarEventActive(1395) then -- Kalimdor Cup
+        r = {
+            ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
+            DC.SetCount(DC.WindborneVelocidrake.TealScales, 50),
+            DC.SetCount(DC.WindingSlitherdrake.BlondeHair, 25),
+            DC.SetCount(DC.WindingSlitherdrake.CurvedNoseHorn, 25),
+            Spacer(), --
+            Transmog({item = 206588, slot = L['cosmetic'], count = 20}), -- Drake Racer's Helmet
+            Transmog({item = 206589, slot = L['cosmetic'], count = 20}), -- Drake Racer's Shoulderpads
+            Transmog({item = 206590, slot = L['cosmetic'], count = 20}), -- Drake Racer's Jersey
+            Transmog({item = 206591, slot = L['cosmetic'], count = 20}), -- Drake Racer's Handwraps
+            Transmog({item = 206592, slot = L['cosmetic'], count = 20}), -- Drake Racer's Belt
+            Transmog({item = 206593, slot = L['cosmetic'], count = 20}), -- Drake Racer's Leggings
+            Transmog({item = 206594, slot = L['cosmetic'], count = 20}), -- Drake Racer's Boots
+            Transmog({item = 211877, slot = L['cosmetic'], count = 5}) -- Drake Racer's Scarf
+        }
+
+    elseif ns.IsCalendarEventActive(1400) then -- Eastern Kingdoms Cup
+        r = {
+            ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
+            DC.SetCount(DC.WindingSlitherdrake.YellowScales, 50),
+            DC.SetCount(DC.WindingSlitherdrake.HornedBrow, 25),
+            DC.SetCount(DC.WindingSlitherdrake.PairedHorns, 25),
+            DC.SetCount(DC.WindingSlitherdrake.SharkFinnedTail, 25),
+            Spacer(), --
+            Transmog({item = 206588, slot = L['cosmetic'], count = 20}), -- Drake Racer's Helmet
+            Transmog({item = 206589, slot = L['cosmetic'], count = 20}), -- Drake Racer's Shoulderpads
+            Transmog({item = 206590, slot = L['cosmetic'], count = 20}), -- Drake Racer's Jersey
+            Transmog({item = 206591, slot = L['cosmetic'], count = 20}), -- Drake Racer's Handwraps
+            Transmog({item = 206592, slot = L['cosmetic'], count = 20}), -- Drake Racer's Belt
+            Transmog({item = 206593, slot = L['cosmetic'], count = 20}), -- Drake Racer's Leggings
+            Transmog({item = 206594, slot = L['cosmetic'], count = 20}), -- Drake Racer's Boots
+            Transmog({item = 211877, slot = L['cosmetic'], count = 5}) -- Drake Racer's Scarf
+        }
+
+    elseif ns.IsCalendarEventActive(1407) then -- Outland Cup
+        r = {
+            ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
+            DC.SetCount(DC.CliffsideWylderdrake.LargeTailSpikes, 25), -- 10.2.5
+            DC.SetCount(DC.HighlandDrake.SweptSpikedHead, 25), -- 10.2.5
+            DC.SetCount(DC.RenewedProtoDrake.DualHornedCrest, 25), -- 10.2.5
+            DC.SetCount(DC.WindborneVelocidrake.CurledHorns, 25), -- 10.2.5
+            Spacer(), -- Following manuscripts are also rewarded by world quests
+            DC.SetCount(DC.CliffsideWylderdrake.CurledHeadHorns, 25),
+            DC.SetCount(DC.HighlandDrake.CurledBackHorns, 25),
+            DC.SetCount(DC.RenewedProtoDrake.ProngedTail, 25),
+            DC.SetCount(DC.WindborneVelocidrake.HookedSnout, 25), --
+            Spacer(), --
+            -- Transmog({item = 211877, slot = L['cosmetic'], count = 5}), -- Drake Racer's Scarf
+            Transmog({item = 211881, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Helmet
+            Transmog({item = 211882, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Shoulderpads
+            Transmog({item = 211883, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Jersey
+            Transmog({item = 211884, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Handwraps
+            Transmog({item = 211885, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Belt
+            Transmog({item = 211886, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Leggings
+            Transmog({item = 211887, slot = L['cosmetic'], count = 15}), -- Outlandish Drake Racer's Boots
+            Transmog({item = 211888, slot = L['cosmetic'], count = 5}) -- Outlandish Drake Racer's Scarf
+        }
+
+    elseif ns.IsCalendarEventActive(1429) then -- 1429 Northrend Cup
+        r = {
+            ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
+            Transmog({item = 213635, slot = L['cosmetic'], count = 25}), -- Checkered Pennant
+            Spacer(), -- Following manuscripts are also rewarded by world quests
+            DC.SetCount(DC.GrottoNetherwingDrake.VolatilePattern, 25),
+            DC.SetCount(DC.CliffsideWylderdrake.FlaredCheek, 25),
+            DC.SetCount(DC.HighlandDrake.SweptHorns, 25),
+            DC.SetCount(DC.RenewedProtoDrake.PlatedBrow, 25),
+            DC.SetCount(DC.WindborneVelocidrake.SmallEars, 25),
+            DC.SetCount(DC.WindingSlitherdrake.PointedNose, 25),
+            Spacer(), --
+            Transmog({item = 213592, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Helmet
+            Transmog({item = 213591, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Shoulderpads
+            Transmog({item = 213590, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Jersey
+            Transmog({item = 213589, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Handwraps
+            Transmog({item = 213588, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Belt
+            Transmog({item = 213587, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Leggings
+            Transmog({item = 213586, slot = L['cosmetic'], count = 15}), -- Icy Drake Racer's Boots
+            Transmog({item = 213585, slot = L['cosmetic'], count = 5}) -- Icy Drake Racer's Scarf
+        }
+
+        return r
+    end
+
 
 Orgimmar.nodes[52006000] = DragonridingVendor({
     id = 212027, -- Dathendrash (Horde)

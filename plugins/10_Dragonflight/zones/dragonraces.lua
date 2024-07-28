@@ -220,7 +220,7 @@ function DragonridingVendor.getters:rewards()
             Transmog({item = 211888, slot = L['cosmetic'], count = 5}) -- Outlandish Drake Racer's Scarf
         }
 
-    elseif ns.IsCalendarEventActive(1429) then -- 1429 Northrend Cup
+    elseif ns.IsCalendarEventActive(1429) then -- Northrend Cup
         r = {
             ns.reward.Toy({item = 212518, count = 40}), -- Vial of Endless Draconic Scales
             Transmog({item = 213635, slot = L['cosmetic'], count = 25}), -- Checkered Pennant
@@ -244,6 +244,7 @@ function DragonridingVendor.getters:rewards()
 
         return r
     end
+end
 
 
 Orgimmar.nodes[52006000] = DragonridingVendor({
@@ -259,6 +260,33 @@ Stormwind.nodes[59806620] = DragonridingVendor({
 Valdrakken.nodes[27004760] = DragonridingVendor({
     id = 206744 -- Maztha
 })
+
+-- -- 423 Love is in the Air
+-- DC.RenewedProtoDrake.LoveArmor,
+
+-- -- 327 Lunar Festival
+-- DC.WindingSlitherdrake.LunarFestivalArmor,
+
+-- -- 341 Midsummer Fire Festival
+-- DC.CliffsideWylderdrake.MidsummerFireFestivalArmor,
+
+-- -- 141 Feast of Winter Veil
+-- DC.HighlandDrake.WinterVeilArmor,
+
+-- -- 398 Pirates' Day
+-- DC.HighlandDrake.PiratesDayArmor,
+
+-- -- 409 Day of the Dead
+-- DC.CliffsideWylderdrake.DayOfTheDeadArmor,
+
+-- -- 324 Hallow's End
+-- DC.WindborneVelocidrake.HallowsEndArmor,
+
+-- -- 372 Brewfest
+-- DC.RenewedProtoDrake.BrewfestArmor,
+
+-- -- 181 Noblegarden
+-- ns.reward.Toy({item = 204675}), -- A Drake's Big Basket of Eggs
 
 -------------------------------------------------------------------------------
 -------------------------------- DRAGON ISLES ---------------------------------

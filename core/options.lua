@@ -25,6 +25,7 @@ ns.optionDefaults = {
         show_notes = true,
 
         -- rewards
+        show_achievements_rewards = true,
         show_skinning_rewards = true,
         show_manuscript_rewards = true,
         show_mount_rewards = true,
@@ -136,9 +137,9 @@ ns.options = {
                 },
                 show_achievement_rewards = {
                     type = 'toggle',
-                    arg = 'show_achievement_rewards',
-                    name = L['options_achievement_rewards'],
-                    desc = L['options_achievement_rewards_desc'],
+                    arg = 'show_achievements_rewards',
+                    name = L['options_achievements_rewards'],
+                    desc = L['options_achievements_rewards_desc'],
                     order = 11,
                     width = 'full'
                 },

@@ -492,43 +492,43 @@ map.nodes[22743226] = Rare({
     }
 }) -- Balboan
 
-local Raszageth = Class('Raszageth', Rare, {
-    id = 209912,
-    quest = 77859,
-    fgroup = 'raszageth'
-    -- note = L['raszageths_note'],
-    -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
-    -- rewards = {}
-}) -- Raszageth's Last Breath
+-- local Raszageth = Class('Raszageth', Rare, {
+--     id = 209912,
+--     quest = 77859,
+--     fgroup = 'raszageth'
+--     -- note = L['raszageths_note'],
+--     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+--     -- rewards = {}
+-- }) -- Raszageth's Last Breath
 
-map.nodes[24203240] = Raszageth({vignette = 5808}) -- wowhead coords
-map.nodes[26402800] = Raszageth() -- wowhead coords
-map.nodes[39965108] = Raszageth()
-map.nodes[46203560] = Raszageth() -- wowhead coords
-map.nodes[47081991] = Raszageth()
-map.nodes[50603820] = Raszageth() -- wowhead coords
-map.nodes[63593476] = Raszageth()
-map.nodes[65604320] = Raszageth() -- wowhead coords
-map.nodes[67606620] = Raszageth() -- wowhead coords
+-- map.nodes[24203240] = Raszageth({vignette = 5808}) -- wowhead coords
+-- map.nodes[26402800] = Raszageth() -- wowhead coords
+-- map.nodes[39965108] = Raszageth()
+-- map.nodes[46203560] = Raszageth() -- wowhead coords
+-- map.nodes[47081991] = Raszageth()
+-- map.nodes[50603820] = Raszageth() -- wowhead coords
+-- map.nodes[63593476] = Raszageth()
+-- map.nodes[65604320] = Raszageth() -- wowhead coords
+-- map.nodes[67606620] = Raszageth() -- wowhead coords
 
-local Amalgamation = Class('Amalgamation', Rare, {
-    id = 209915,
-    quest = 77856,
-    fgroup = 'amalgamation'
-    -- note = L['amalgamation_note'],
-    -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
-    -- rewards = {}
-}) -- Amalgamation of Dreams
+-- local Amalgamation = Class('Amalgamation', Rare, {
+--     id = 209915,
+--     quest = 77856,
+--     fgroup = 'amalgamation'
+--     -- note = L['amalgamation_note'],
+--     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+--     -- rewards = {}
+-- }) -- Amalgamation of Dreams
 
-map.nodes[39615386] = Amalgamation({vignette = 5807})
-map.nodes[41202620] = Amalgamation() -- Review
-map.nodes[48404880] = Amalgamation() -- wowhead coords
-map.nodes[51805740] = Amalgamation() -- wowhead coords
-map.nodes[58004560] = Amalgamation() -- wowhead coords
-map.nodes[58806700] = Amalgamation()
-map.nodes[59005860] = Amalgamation() -- wowhead coords
-map.nodes[62805200] = Amalgamation() -- wowhead coords
-map.nodes[63806380] = Amalgamation() -- wowhead coords
+-- map.nodes[39615386] = Amalgamation({vignette = 5807})
+-- map.nodes[41202620] = Amalgamation() -- Review
+-- map.nodes[48404880] = Amalgamation() -- wowhead coords
+-- map.nodes[51805740] = Amalgamation() -- wowhead coords
+-- map.nodes[58004560] = Amalgamation() -- wowhead coords
+-- map.nodes[58806700] = Amalgamation()
+-- map.nodes[59005860] = Amalgamation() -- wowhead coords
+-- map.nodes[62805200] = Amalgamation() -- wowhead coords
+-- map.nodes[63806380] = Amalgamation() -- wowhead coords
 
 ---------------------------------- WORLD BOSS ---------------------------------
 
@@ -1101,11 +1101,11 @@ map.nodes[51555972] = Collectible({
             id = 19315,
             criteria = {id = 1, qty = true, suffix = L['dream_chaser_suffix']}
         }), -- Dream Chaser
-        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 2667/8000'),
+        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 2600/8000'),
         Item({item = 211411}), -- Sprouting Dreamtrove
-        Currency({id = 2650}), -- Emerald Dewdrop
+        Currency({id = 2650, note = '+50'}), -- Emerald Dewdrop
         Spacer(), --
-        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 5334/8000'),
+        Section(PVP_PROGRESS_REWARDS_HEADER .. ': 5300/8000'),
         Item({item = 211413}), -- Budding Dreamtrove
         DC.RenewedProtoDrake.GreenHair, --
         DC.WindingSlitherdrake.ClusterJawHorns, --
@@ -1128,6 +1128,7 @@ map.nodes[51555972] = Collectible({
         Transmog({item = 210664, slot = L['cosmetic']}), -- Frost Sapling's Adornment
         Transmog({item = 210666, slot = L['cosmetic']}), -- Crest of the Seething Flamekeeper
         Spacer(), Section('{item:211389}'), -- Cache of Overblooming Treasures
+        Item({item = 211417, type = '+1000 ' .. L['rep'], weekly = 78319}), -- Dream Wardens Insignia
         Recipe({item = 210243, profession = 773}) -- Technique: Contract: Dream Wardens
     }
 })
@@ -1276,13 +1277,13 @@ map.nodes[70002700] = DruidGlyph({
         DG.Guardian.DarkUmbraclaw:Note('{npc:210070}'),
         DG.Guardian.HibernatingRunebear:Note('{npc:209574}'),
         DG.Guardian.LoamyUmbraclaw:Note('{npc:212903}'),
-        DG.Guardian.SnowyUmbraclaw:Note('{npc:211265}'),
+        DG.Guardian.SnowyUmbraclaw:Note('{quest:78206}'),
         DG.Guardian.VerdantBristlebruin:Note('{npc:210045}'),
         Spacer(),
         Section('{spell:783}'), -- Travel
         DG.Travel.AuricDreamstag:Note('{spell:45357}'),
-        DG.Travel.AuroralDreamtalon:Note('{npc:211265}'),
-        DG.Travel.BorealDreamtalon:Note('{npc:211265}'),
+        DG.Travel.AuroralDreamtalon:Note('{quest:78206}'),
+        DG.Travel.BorealDreamtalon:Note('{quest:78206}'),
         DG.Travel.DreamtalonMatriarch:Note('{npc:210051}'),
         DG.Travel.LushDreamstag:Note('{npc:212903}'),
         DG.Travel.SableDreamtalon:Note('{npc:210161}'),
@@ -1363,7 +1364,8 @@ map.nodes[50054897] = DruidGlyph({
 
 map.nodes[63743916] = DruidGlyph({
     label = '{item:210727}',
-    note = L['pollenfused_bristlebruin_fur_sample_note'],
+    note = L['pollenfused_bristlebruin_fur_sample_note'], -- to add more
+    requires = ns.requirement.Quest(78046), -- Overseer Oversight
     rewards = {DG.Guardian.AshenBristlebruin} -- Pollenfused Bristlebruin Fur Sample
 }) -- Pollenfused Bristlebruin Fur Sample
 
@@ -1572,7 +1574,7 @@ for num, vial in ipairs(EMPTY_VIALS) do
 end
 
 -------------------------------------------------------------------------------
--------------------------------- SMALL SOMNUTS --------------------------------
+----------------------------------- SOMNUTS -----------------------------------
 -------------------------------------------------------------------------------
 -- Laden Somnut -- Renown 11 --Review what's difference between Laden and small
 
@@ -1827,6 +1829,14 @@ map.nodes[58434177] = ElusiveCreature({
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
 
+map.nodes[49616287] = Vendor({
+    -- icon = 4620676, -- Inscription
+    id = 208170, -- Mythrin'dir <Trade Goods>
+    rewards = {
+        Recipe({item = 211399, profession = 773}) -- Technique: Glyph of the Lunar Chameleon
+    }
+})
+
 local SeedbloomVendor = Class('SeedbloomVendor', Vendor, {
     note = L['sylvia_vendor_note'],
     rewards = {
@@ -2024,6 +2034,7 @@ local Athainne = Class('Athainne', NPC, {
     icon = 960685,
     class = 'HUNTER',
     IsEnabled = function(self)
+        if self.class and self.class ~= ns.class then return false end
         local spawn = 'nighttime'
         local hour, _ = GetGameTime()
         if hour >= 5 and hour < 19 then spawn = 'daytime' end

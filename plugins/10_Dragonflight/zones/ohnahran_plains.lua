@@ -857,6 +857,7 @@ map.nodes[33205532] = Treasure({
     },
     rewards = {
         Achievement({id = 16299, criteria = 54700}), --
+        Recipe({item = 194648, profession = 755}), -- Design: Jeweled Emerald Whelpling
         Item({item = 200865}) -- Glimmering Ysemerald Cluster
     }
 }) -- Emerald Gem Cluster
@@ -1740,7 +1741,10 @@ map.nodes[58632082] = PrettyNeat({
 
 map.nodes[60407140] = PrettyNeat({
     id = 195895,
-    rewards = {Achievement({id = 16446, criteria = 55400})},
+    rewards = {
+        Achievement({id = 16446, criteria = 55400}),
+        Skin({item = 193224, quest = 74166, count = 4}) -- Lustrous Scaled Hide
+    },
     pois = {
         Path({
             60607560, 59407520, 58407480, 57807360, 58607120, 60407140,

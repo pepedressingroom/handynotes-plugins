@@ -932,6 +932,7 @@ map.nodes[29454699] = Treasure({
     },
     rewards = {
         Achievement({id = 16297, criteria = 55448}), --
+        Recipe({item = 194650, profession = 755}), -- Design: Jeweled Onyx Whelpling
         Item({item = 200867}) -- Glimmering Neltharite Cluster
     },
     pois = {POI({46948289, 29335248, 30535144})}
@@ -961,6 +962,7 @@ map.nodes[61347079] = Treasure({
     },
     rewards = {
         Achievement({id = 16297, criteria = 54713}), --
+        Recipe({item = 194647, profession = 755}), -- Design: Jeweled Ruby Whelpling
         Item({item = 200864}) -- Glimmering Alexstraszite Cluster
     }
 }) -- Ruby Gem Cluster
@@ -1505,7 +1507,7 @@ local DjaradinCache = Class('DjaradinCache', ns.node.Node, {
         Transmog({item = 201432, slot = L['cosmetic']}), -- Obsidian Dragontooth
         Transmog({item = 201433, slot = L['cosmetic']}), -- Citadel Wardens Mace
         Transmog({item = 201434, slot = L['cosmetic']}), -- Obsidian Barrier
-        Item({item = 199230}), -- Schematic: Projectile Propulsion Pinion
+        Recipe({item = 199230, profession = 202}), -- Schematic: Projectile Propulsion Pinion
         Item({item = 194540, quest = 67046}), -- Nokhud Armorer's Notes
         Item({item = 199066, quest = 70535}), -- Letter of Caution
         Item({item = 199065, quest = 70534}), -- Sorrowful Letter

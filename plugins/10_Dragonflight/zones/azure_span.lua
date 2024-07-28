@@ -384,7 +384,8 @@ map.nodes[58095471] = Rare({
         Toy({item = 200249}), -- Mage's Chewed Wand
         DC.CliffsideWylderdrake.HeadMane, DC.HighlandDrake.ManedHead,
         Skin({item = 193218, quest = 74131, count = 3}) -- Dense Hide
-    }
+    },
+    pois = {Path({57965414, 57905450, 57785460, 57435456, 57365446, 57345368, 57965414})}
 }) -- Mucka the Raker
 
 map.nodes[20584943] = Rare({
@@ -832,6 +833,7 @@ map.nodes[48632466] = Treasure({
     },
     rewards = {
         Achievement({id = 16300, criteria = 54806}), --
+        Recipe({item = 194649, profession = 755}), -- Design: Jeweled Sapphire Whelpling
         Item({item = 200866}) -- Glimmering Malygite Cluster
     }
 }) -- Sapphire Gem Cluster
@@ -2288,6 +2290,7 @@ local Eadweard = Class('Eadweard', Collectible, {
                 65421 -- Just One More Thing
             }
         }), -- The Archives Called, You Answered
+        -- Currency({id = 2657}),  +5000 {currency:2657} once/per account weekly:79664
         Mount({item = 212645, id = 2038}), -- Clayscale Hornstrider
         Transmog({item = 212692, slot = L['cosmetic']}), -- Excavator's Dusky Fedora
         Transmog({item = 212638, slot = L['cosmetic']}), -- Excavator's Work Shirt
@@ -2305,6 +2308,7 @@ function Eadweard.getters:rlabel()
     return color(L['weekly'])
 end
 
-tra.nodes[55335134] = Eadweard({parent = map.id})
+map.nodes[26964646] = Eadweard()
+tra.nodes[55335134] = Eadweard()
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

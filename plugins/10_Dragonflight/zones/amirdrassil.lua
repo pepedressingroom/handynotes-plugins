@@ -105,7 +105,7 @@ map.nodes[46507063] = Vendor({
     rewards = {
         Transmog({
             item = 210424,
-            slot = L['cosmetic'],
+            slot = _G.INVTYPE_TABARD,
             count = 250,
             faction = 'Alliance'
         }), -- Darnassian Tabard

@@ -1930,7 +1930,8 @@ local GRAND_HUNT_AREA_POIS = {
 local GRAND_HUNT_BAG_REWARDS = {
     Mount({item = 192791, id = 1635}), -- Plainswalker Bearer
     Pet({item = 200276, id = 3311}), -- Ohuna Companion
-    Pet({item = 200290, id = 3325}) -- Bakar Companion
+    Pet({item = 200290, id = 3325}), -- Bakar Companion
+    Recipe({item = 201732, profession = 165}) -- Pattern: Fierce Armor Kit
 }
 
 local GrandHunt = Class('GrandHunt', Collectible, {

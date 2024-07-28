@@ -300,7 +300,7 @@ map.nodes[59806100] = Rare({
         Transmog({item = 200299, slot = L['1h_sword']}), -- Strange Clockwork Gladius
         Transmog({item = 200303, slot = L['staff']}), -- Dreamweaver Acolyte's Staff
         Transmog({item = 200758, slot = L['plate']}), -- Breastplate of Storied Antiquity
-        Pet({item = 200263, id = 3310}), -- Echo of the Heights
+        -- Pet({item = 200263, id = 3310}), -- Echo of the Heights
         DC.HighlandDrake.CrestedBrow, DC.HighlandDrake.StripedPattern,
         DC.WindborneVelocidrake.SpikedBack
     }
@@ -369,7 +369,11 @@ map.nodes[50404840] = Rare({
     },
     pois = {
         Path({
-            53264403, 53344332, 52894297, 52414382, 51544449, 50594557, 50105027
+            51364439, 50744494, 50704540, 50564578, 50514654, 50284712,
+            50164840, 50054954, 49875003, 49945034, 50215012, 50384960,
+            50334872, 50634812, 51214704, 51794640, 51984591, 52144536,
+            52514496, 53284400, 53194363, 53254338, 53524292, 53454266,
+            53144250, 52874298, 52484367, 51364439
         })
     }
 }) -- Razk'vex the Untamed
@@ -740,6 +744,7 @@ map.nodes[52607673] = Treasure({
     },
     rewards = {
         Achievement({id = 16301, criteria = 54812}), -- Treasures of Thaldraszus
+        Recipe({item = 194651, profession = 755}), -- Design: Jeweled Amber Whelpling
         Item({item = 200863}) -- Glimmering Nozdorite Cluster
     }
 }) -- Amber Gem Cluster
@@ -806,6 +811,20 @@ val.nodes[09535629] = Treasure({
     }
 }) -- Tasty Hatchling's Treat
 
+map.nodes[58473668] = Treasure({
+    quest = 72356,
+    label = L['inconspicuous_bookmark'],
+    icon = 1500870,
+    scale = 1.0,
+    note = L['inconspicuous_bookmark_note'],
+    rewards = {
+        Recipe({item = 194654, profession = 755}) -- Design: Convergent Prism
+    },
+    IsEnabled = function(self) -- Jewelcrafting
+        if not ns.PlayerHasProfession(755) then return false end
+        return ns.node.Item.IsEnabled(self)
+    end
+}) -- Inconspicuous Bookmark
 -------------------------------------------------------------------------------
 
 tpf.nodes[28002590] = ns.node.ElementalChest({
@@ -821,6 +840,20 @@ tpf.nodes[28002590] = ns.node.ElementalChest({
     },
     pois = {POI({29282604})} -- Entrance
 }) -- Chest of the Elements
+
+---------------------------- TOY: SHUFFLING SANDS -----------------------------
+
+local Usodormu = Class('Usodormu', Vendor, {
+    id = 198470,
+    rewards = {Toy({item = 201435})} -- Shuffling Sands
+}) -- Usodormu
+
+function Usodormu:PrerequisiteCompleted()
+    return C_QuestLog.IsQuestFlaggedCompleted(65962) == self.questDepValue
+end
+
+map.nodes[60337972] = Usodormu({questDepValue = true})
+map.nodes[57297892] = Usodormu({questDepValue = false})
 
 -------------------------------------------------------------------------------
 ---------------------------- DRACTHYR SUPPLY CHEST ----------------------------
@@ -1905,7 +1938,7 @@ local HearthstoneEvent = Class('HearthstoneEvent', Collectible, {
         Transmog({item = 212607, type = L['cosmetic']}), -- Reno's Lucky Hat
         Transmog({item = 212644, type = L['cosmetic']}), -- Taverner's Belt
         Transmog({item = 212336, type = L['cosmetic']}), -- The Tavern's Tabard
-        Item({item = 212335, note = L['bag']}) -- Collectors Carryall
+        Item({item = 212335, note = L['bag'], bag = true}) -- Collectors Carryall
     },
     IsEnabled = function() return ns.IsCalendarEventActive(1462) end
 }) -- Heathstone Event

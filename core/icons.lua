@@ -18,7 +18,6 @@ local DEFAULT_GLOW = Glow('square_icon')
 
 ns.icons = { -- name => path
 
-    skin = {Icon('skin'), Glow('skin')},
     bag = {Icon('bag'), Glow('bag')},
 
     -- Red, Blue, Yellow, Purple, Green, Pink, Lime, Navy, Teal
@@ -81,6 +80,13 @@ ns.icons = { -- name => path
     war_mode_swords = {Icon('war_mode_swords'), nil},
 
     ------------------------------ MISCELLANEOUS ------------------------------
+
+    -- interface/cursor/crosshair
+    skin = {Icon('skin'), Glow('skin')},
+    mine = {Icon('mine'), Glow('mine')},
+    gatherherbs = {Icon('gatherherbs'), Glow('gatherherbs')},
+    engineerskin = {Icon('engineerskin'), Glow('engineerskin')},
+    fishing = {Icon('fishing'), Glow('fishing')},
 
     alliance = {Icon('alliance'), nil},
     horde = {Icon('horde'), nil},

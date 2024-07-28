@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = 'Display the location of {npc:198118s} for the {achievement:16584} achievement.'
 
 L['disturbed_dirt'] = 'Disturbed Dirt'
+L['expedition_shovel'] = 'Expedition Shovel'
 L['options_icons_disturbed_dirt'] = 'Disturbed Dirt'
 L['options_icons_disturbed_dirt_desc'] = 'Display possible locations of {object:Disturbed Dirt}.'
 
@@ -115,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = 'You currently have %s {currency:2118}
 L['options_icons_elemental_storm'] = 'Elemental Storms'
 L['options_icons_elemental_storm_desc'] = 'Display rewards for Elemental Storms.'
 
+L['creature_bait'] = 'Creature Bait'
 L['elusive_creature_note'] = '{object:Mastery Rank 40/40} in {object:Bait Crafter} enables you to create {item:193906} which can be used to summon and skin each creature once a day.'
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = 'Display locations for elusive creatures summoned with {item:193906}.'
@@ -602,6 +604,8 @@ L['cracked_hourglass_note'] = '{item:199068} can be found in {object:Expedition 
 L['sandy_wooden_duck_note'] = 'Collect {item:199069} and use it.'
 
 L['tasty_hatchling_treat_note'] = 'In a barrel behind the bookshelf.'
+L['inconspicuous_bookmark'] = 'Inconspicuous Bookmark'
+L['inconspicuous_bookmark_note'] = 'On the right side of the table with the pile of books, the fat green book will have a tiny bookmark sticking out.\nCast {spell:382499} may help see it highlighted in purple, or use Interact Key (default: F) to loot it.'
 
 L['pm_mining_bridgette_holdug'] = 'On top of a grassy rock pillar.'
 L['pm_tailor_elysa_raywinder'] = 'On a ledge halfway up the tower.'

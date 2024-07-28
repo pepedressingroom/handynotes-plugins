@@ -1073,7 +1073,8 @@ local Disturbeddirt = Class('Disturbed_dirt', Node, {
     group = ns.groups.DISTURBED_DIRT,
     requires = {
         ns.requirement.Quest(70813), -- Digging Up Treasure
-        ns.requirement.Item(191294) -- Small Expedition Shovel
+        ns.requirement.ItemAny(L['expedition_shovel'], 191294, 191304) -- Small/Sturdy Expedition Shovel
+        -- ns.requirement.Item(191294) -- Small Expedition Shovel
     },
     rewards = {
         Item({item = 190453}), -- Spark of Ingenuity
@@ -1836,7 +1837,8 @@ ns.node.SkinableRare = SkinableRare
 
 local ElusiveCreature = ns.Class('ElusiveCreature', ns.node.Node, {
     icon = 644271,
-    requires = ns.requirement.Item(193906), -- Elusive Creature Bait
+    requires = ns.requirement.ItemAny(L['creature_bait'], 193906, 198804, 198805, 198806, 198807), -- Elusive /Frost-/Earth-/Decay-/Titan-Infused Creature Bait
+    -- requires = ns.requirement.Item(193906), -- Elusive Creature Bait
     group = ns.groups.ELUSIVE_CREATURE,
     note = L['elusive_creature_note']
 }) -- Elusive Creature
@@ -2086,7 +2088,11 @@ local RichSoil = Class('RichSoil', Node, {
     label = L['rich_soil_label'],
     icon = 4554355,
     group = ns.groups.RICH_SOIL,
-    note = L['rich_soil_note']
+    requires = {
+        ns.requirement.ItemAny('{item:200506}', 200506, 200508, 200507, 200509) -- Roused Seedling
+    },
+    note = L['rich_soil_note'],
+    rewards = {Item({item = 200509, quest = 74121, note = '{npc:198571}'})} -- Enraged Sprout {npc:198571} can only be gathered once a day
 }) -- Rich Soil
 
 ns.node.RichSoil = RichSoil

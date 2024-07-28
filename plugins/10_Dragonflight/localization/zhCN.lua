@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = '显示 {achievement:16584} 成就中 {npc:198118} 的位置。'
 
 L['disturbed_dirt'] = '翻动过的泥土'
+L['expedition_shovel'] = '探险锹'
 L['options_icons_disturbed_dirt'] = '翻动过的泥土'
 L['options_icons_disturbed_dirt_desc'] = '显示 {object:翻动过的泥土} 可能的位置。'
 
@@ -115,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = '当前有 %s {currency:2118}。'
 L['options_icons_elemental_storm'] = '元素风暴'
 L['options_icons_elemental_storm_desc'] = '显示元素风暴奖励。'
 
+L['creature_bait'] = '生物诱饵'
 L['elusive_creature_note'] = '{object:制皮律法} 中 {object:精通等级 40/40} 将能够制造 {item:193906} 可以用来每天召唤和剥皮每个生物一次。'
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = '显示 {item:193906} 召唤的隐秘生物位置。'
@@ -602,6 +604,10 @@ L['cracked_hourglass_note'] = '{item:199068} 可以从 {object:探险队斥候�
 L['sandy_wooden_duck_note'] = '收集 {item:199069} 并使用它。'
 
 L['tasty_hatchling_treat_note'] = '在书架后面的一个桶里。'
+L['inconspicuous_bookmark'] = '不起眼的书签'
+L['inconspicuous_bookmark_note'] = '在叠着一堆书的桌面右侧, 有本绿封的厚书夹着一片很小的书签。\n施放 {spell:382499} 能帮你看清紫色的高亮边框，或者使用互动键去拾取(默认: 按键F)。'
+
+L['tempo_questline_requirement'] = '接受 {npc:195773} {dot:Yellow} 给的从 {quest:76350} 开始的任务线。'
 
 L['pm_mining_bridgette_holdug'] = '在长满草的石柱上。'
 L['pm_tailor_elysa_raywinder'] = '在塔的中间的一个壁架上。'
@@ -1037,12 +1043,12 @@ L['pollenfused_bristlebruin_fur_sample_note'] = '在 {location:焦烬之壤} 的
 L['mbc_note_start'] = '拾取 {object:一箱小瓶子}，得到{item:210991}。\n\n你得到6个 {item:210839}，需要用来自各大陆的月亮井水来装满。'
 L['mbc_note_end'] = '混合6个 {item:210876} 制造{item:210977}，然后来到 {location:阿梅达希尔} 的 {object:野性梦境石}。\n\n使用 {item:210977} 并拾取 {object:月福之爪}，得到 {item:210728}。'
 
-L['mbc_vial_b'] = '破碎群岛'
-L['mbc_vial_d'] = '德拉诺'
-L['mbc_vial_e'] = '东部王国'
-L['mbc_vial_k'] = '卡利姆多'
-L['mbc_vial_n'] = '诺森德'
-L['mbc_vial_o'] = '外域'
+L['mbc_vial_b'] = '破'
+L['mbc_vial_d'] = '德'
+L['mbc_vial_e'] = '东'
+L['mbc_vial_k'] = '卡'
+L['mbc_vial_n'] = '诺'
+L['mbc_vial_o'] = '外'
 
 L['mbc_vial_d_location'] = '星落哨站'
 L['mbc_vial_e_location'] = '黎明森林'

@@ -770,7 +770,8 @@ local SmellyTreasureChest = Class('SmellyTreasureChest', ns.node.Node, {
     group = ns.groups.SMELLY_TREASURE_CHEST,
     requires = {
         ns.requirement.Reputation(2564, 11, true), -- Loamm Niffen
-        ns.requirement.Item(191294) -- Small Expedition Shovel
+        ns.requirement.ItemAny(L['expedition_shovel'], 191294, 191304) -- Small/Sturdy Expedition Shovel
+        -- ns.requirement.Item(191294) -- Small Expedition Shovel
     },
     rewards = {
         DC.RenewedProtoDrake.PlatedJaw, -- Renewed Proto-Drake: Plated Jaw

@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = 'Muestra dónde están las {npc:198118} para el logro {achievement:16584}.'
 
 L['disturbed_dirt'] = 'Tierra Revuelta'
+L['expedition_shovel'] = 'Pala de expedición'
 L['options_icons_disturbed_dirt'] = 'Tierra Revuelta'
 L['options_icons_disturbed_dirt_desc'] = 'Muestrá dónde puede haber {object:Tierra Revuelta}.'
 
@@ -115,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = 'Actualmente tienes %s {currency:2118}
 L['options_icons_elemental_storm'] = 'Tormentas Elementales'
 L['options_icons_elemental_storm_desc'] = 'Muestra las recompensas para las Tormentas Elementales.'
 
+L['creature_bait'] = 'Cebo de criaturas'
 L['elusive_creature_note'] = 'Con un {object:Rango de Maestría 40/40} en {object:Fabricación de Cebos} activas el poder crear un {item:193906} que puede ser usado para invocar y desollar cada criatura una vez al día.'
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = 'Muestra dónde están las criaturas esquivas invocadas con el {item:193906}.'
@@ -602,6 +604,8 @@ L['cracked_hourglass_note'] = 'La {item:199068} se puede encontrar en las {objec
 L['sandy_wooden_duck_note'] = 'Recoge el {item:199069} y úsalo.'
 
 L['tasty_hatchling_treat_note'] = 'En un barril detrás de la librería.'
+L['inconspicuous_bookmark'] = 'Marcapáginas discreto'
+L['inconspicuous_bookmark_note'] = nil
 
 L['pm_mining_bridgette_holdug'] = 'Encima de un pilar de roca cubierto de hierba.'
 L['pm_tailor_elysa_raywinder'] = 'En una repisa a media altura de la torre.'

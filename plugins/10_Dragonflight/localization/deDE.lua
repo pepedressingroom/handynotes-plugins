@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = 'Zeigt die Positionen der {npc:198118} für den Erfolg {achievement:16584} an.'
 
 L['disturbed_dirt'] = 'Bewegte Erde'
+L['expedition_shovel'] = 'Expeditionsschaufel'
 L['options_icons_disturbed_dirt'] = 'Bewegte Erde'
 L['options_icons_disturbed_dirt_desc'] = 'Zeigt die möglichen Positionen für {object:Bewegte Erde} an.'
 
@@ -602,6 +603,8 @@ L['cracked_hourglass_note'] = '{item:199068} kann in Expeditionsspäherpacks und
 L['sandy_wooden_duck_note'] = 'Sammel {item:199069} und benutze diese.'
 
 L['tasty_hatchling_treat_note'] = 'In einem Fass hinter dem Bücherregal.'
+L['inconspicuous_bookmark'] = 'Unauffälliges Lesezeichen'
+L['inconspicuous_bookmark_note'] = nil
 
 L['pm_mining_bridgette_holdug'] = 'Auf einem grasbewachsenen Felspfeiler.'
 L['pm_tailor_elysa_raywinder'] = 'Auf einem Vorsprung auf halber Höhe des Turms.'

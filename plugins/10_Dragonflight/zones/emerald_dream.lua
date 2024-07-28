@@ -993,7 +993,7 @@ map.nodes[60101818] = AgelessBlossom()
 local EmeraldBounty = Class('EmeraldBounty', Node, {
     note = L['dreamseed_soil_note'],
     requires = {
-        ns.requirement.Item(208066) -- Small Dreamseed
+        ns.requirement.ItemAny('{spell:429182}', 208066, 208067, 208047) -- Small/Plump/Gigantic Dreamseed
     },
     icon = 464030,
     group = ns.groups.DREAM_OF_SEEDS,

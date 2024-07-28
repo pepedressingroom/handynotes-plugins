@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = '顯示成就 {achievement:16584} 所需的 {npc:198118} 位置.'
 
 L['disturbed_dirt'] = '挖過的土'
+L['expedition_shovel'] = '遠征隊鏟子'
 L['options_icons_disturbed_dirt'] = '挖過的土'
 L['options_icons_disturbed_dirt_desc'] = '顯示 {object:挖過的土} 可能的位置.'
 
@@ -115,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = '你現在有 %s 個 {currency:2118}.'
 L['options_icons_elemental_storm'] = '元素風暴'
 L['options_icons_elemental_storm_desc'] = '顯示元素風暴的獎勵.'
 
+L['creature_bait'] = '生物誘餌'
 L['elusive_creature_note'] = '在 {object:餌食工匠} 升級到 {object:專精等級 40/40} 可以讓你每天用所製造的 {item:193906} 召喚並剝皮獨特的難捉動物一次.'
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = '顯示 {item:193906} 所召喚出來的難捉的動物的位置.'
@@ -602,6 +604,8 @@ L['cracked_hourglass_note'] = '{item:199068} 可以在 {object:遠征隊斥侯�
 L['sandy_wooden_duck_note'] = '拾取 {item:199069} 並使用它.'
 
 L['tasty_hatchling_treat_note'] = '在書架後的一個桶子內.'
+L['inconspicuous_bookmark'] = '不起眼的書籤'
+L['inconspicuous_bookmark_note'] = nil
 
 L['pm_mining_bridgette_holdug'] = '在一個長草的石柱頂端.'
 L['pm_tailor_elysa_raywinder'] = '在塔中間的平台上.'

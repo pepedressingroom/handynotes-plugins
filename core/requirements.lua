@@ -122,6 +122,24 @@ end
 function Item:IsMet() return ns.PlayerHasItem(self.id, self.count) end
 
 -------------------------------------------------------------------------------
+----------------------------------- ITEMANY -----------------------------------
+-------------------------------------------------------------------------------
+
+local ItemAny = Class('ItemAny', Requirement, {type = L['item']})
+
+function ItemAny:Initialize(name, ...)
+    self.text, self.ids = name, {...}
+end
+
+function ItemAny:IsMet()
+    local x = false
+    for i = 1, #self.ids do
+        x = x or ns.PlayerHasItem(self.ids[i])
+    end
+    return x
+end
+
+-------------------------------------------------------------------------------
 --------------------------------- PROFESSION ----------------------------------
 -------------------------------------------------------------------------------
 
@@ -225,6 +243,7 @@ ns.requirement = {
     GarrisonTalent = GarrisonTalent,
     GarrisonTalentRank = GarrisonTalentRank,
     Item = Item,
+    ItemAny = ItemAny,
     Profession = Profession,
     Quest = Quest,
     Reputation = Reputation,

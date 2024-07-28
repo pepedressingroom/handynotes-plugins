@@ -41,6 +41,7 @@ L['options_icons_kite'] = '{achievement:16584}'
 L['options_icons_kite_desc'] = '{achievement:16584} 업적을 위한 {npc:198118} 위치를 표시합니다.'
 
 L['disturbed_dirt'] = '흐트러진 흙'
+L['expedition_shovel'] = '원정대 삽'
 L['options_icons_disturbed_dirt'] = '흐트러진 흙'
 L['options_icons_disturbed_dirt_desc'] = '{object:흐트러진 흙}의 위치를 표시합니다.'
 
@@ -115,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = nil
 L['options_icons_elemental_storm'] = nil
 L['options_icons_elemental_storm_desc'] = nil
 
+L['creature_bait'] = '생명체 미끼'
 L['elusive_creature_note'] = nil
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = nil
@@ -575,6 +577,8 @@ L['cracked_hourglass_note'] = '{item:199068}은 {object:원정대 정찰병의 �
 L['sandy_wooden_duck_note'] = nil
 
 L['tasty_hatchling_treat_note'] = '책장 뒤에 있는 통에서 얻을 수 있음'
+L['inconspicuous_bookmark'] = '눈에 띄지 않는 서표'
+L['inconspicuous_bookmark_note'] = nil
 
 L['pm_mining_bridgette_holdug'] = '풀이 우거진 바위 기둥 위에 있음'
 L['pm_tailor_elysa_raywinder'] = '탑 위로 중간쯤 튀어나온 선반 위에 있음'

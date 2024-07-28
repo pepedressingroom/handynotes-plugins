@@ -2154,6 +2154,7 @@ local SecuredShipment = Class('SecuredShipment', ns.node.Treasure, {
     sublabel = L['fyrakk_assault_label'],
     -- icon = 'star_chest_b',
     -- scale = 1.5,
+    requires = ns.requirement.Item(203710, 3), -- Everburning Key
     rewards = {
         Mount({item = 211084, id = 1944}), -- Test, to to removed
         DC.RenewedProtoDrake.BronzeAndPinkArmor,

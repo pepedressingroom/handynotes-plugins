@@ -123,7 +123,7 @@ map.nodes[64178399] = Rare({
     quest = 77867,
     vignette = {5806, 5814},
     note = L['reefbreaker_moruud_note'],
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19316, criteria = 62931}), -- Adventurer of the Emerald Dream
         Transmog({item = 208334, type = L['plate']}), -- Legplates of the Krakken
@@ -147,7 +147,7 @@ map.nodes[34716316] = Rare({
     quest = 77878,
     vignette = 5816,
     note = L['envoy_of_winter_note'],
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19316, criteria = 62933}), -- Adventurer of the Emerald Dream
         Transmog({item = 208365, type = L['polearm']}), -- Winter's Stand
@@ -172,7 +172,7 @@ map.nodes[29862077] = Rare({
     id = 209893,
     quest = 78015,
     vignette = 5835,
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19316, criteria = 62930}), -- Adventurer of the Emerald Dream
         Transmog({item = 209881, type = L['dagger']}), -- Fystia's Fiery Kris
@@ -210,7 +210,7 @@ map.nodes[54034142] = Rare({
     quest = 77982,
     vignette = {5817, 5969},
     note = L['greedy_gessie_note'],
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19316, criteria = 62932}), -- Adventurer of the Emerald Dream
         Item({item = 208355, type = L['neck']}), -- String of Delicacies
@@ -352,7 +352,7 @@ map.nodes[61747187] = Rare({
     quest = 77570,
     note = L['nuoberon_note'],
     vignette = 5786,
-    rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19316, criteria = 62929}), -- Adventurer of the Emerald Dream
         Transmog({item = 209880, type = L['bow']}) -- Curve of Starry Dusks
@@ -499,7 +499,7 @@ map.nodes[22743226] = Rare({
 --     quest = 77859,
 --     fgroup = 'raszageth'
 --     -- note = L['raszageths_note'],
---     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+--     -- rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens -- NOT confirm yet
 --     -- rewards = {}
 -- }) -- Raszageth's Last Breath
 
@@ -518,7 +518,7 @@ map.nodes[22743226] = Rare({
 --     quest = 77856,
 --     fgroup = 'amalgamation'
 --     -- note = L['amalgamation_note'],
---     -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']), -- NOT confirm yet
+--     -- rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens -- NOT confirm yet
 --     -- rewards = {}
 -- }) -- Amalgamation of Dreams
 
@@ -588,7 +588,7 @@ map.nodes[72002700] = Node({
 map.nodes[39146553] = Treasure({
     quest = 77950,
     location = L['in_a_tree'],
-    rlabel = ns.status.LightBlue('+200 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19317, criteria = 62954}), -- Treasures of The Emerald Dream
         Item({item = 208047, note = '50%'}) -- Gigantic Dreamseed
@@ -599,7 +599,7 @@ map.nodes[47493485] = Treasure({
     label = L['hidden_moonkin_stash_label'],
     quest = 77858,
     location = L['in_a_tree'],
-    rlabel = ns.status.LightBlue('+200 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19317, criteria = 62953}), -- Treasures of The Emerald Dream
         Toy({item = 210725}) -- Owl Post
@@ -609,7 +609,7 @@ map.nodes[47493485] = Treasure({
 map.nodes[61625960] = Treasure({
     quest = 78005,
     note = L['magical_bloom_note'],
-    rlabel = ns.status.LightBlue('+200 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19317, criteria = 62960}), -- Treasures of The Emerald Dream
         Item({item = 208047}) -- Gigantic Dreamseed
@@ -620,7 +620,7 @@ map.nodes[61625960] = Treasure({
 map.nodes[55275726] = Treasure({
     quest = 78006,
     location = L['in_a_tree'],
-    rlabel = ns.status.LightBlue('+200 ' .. L['rep']),
+    rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19317, criteria = 62961}), -- Treasures of The Emerald Dream
         Item({item = 208067}) -- Plump Dreamseed
@@ -731,7 +731,7 @@ local UnwakingEcho = Class('UnwakingEcho', Treasure, {
     label = L['unwaking_echo_label'],
     note = L['unwaking_echo_note'],
     requires = ns.requirement.Spell(421216), -- Dreaming
-    rlabel = ns.status.LightBlue('+200 ' .. L['rep'])
+    rlabel = ns.tooltip.ReputationGain(200, 2574) -- Dream Wardens
 }) -- Unwaking Echo
 
 map.nodes[46408615] = UnwakingEcho({
@@ -1098,7 +1098,7 @@ map.nodes[51555972] = Collectible({
     icon = 3939983,
     label = '{quest:78319}',
     vignette = 5813,
-    -- rlabel = ns.status.LightBlue('+50 ' .. L['rep']),
+    -- rlabel = ns.tooltip.ReputationGain(50, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19312}), -- Super Duper Bloom
         Achievement({

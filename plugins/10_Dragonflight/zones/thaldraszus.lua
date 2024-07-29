@@ -969,7 +969,10 @@ map.nodes[56206450] = ns.node.FrostboundChest()
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[37337483] = WarSupply({fgroup = 'supply_thaldraszus'})
+map.nodes[37337483] = WarSupply({
+    fgroup = 'supply_thaldraszus',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[41974893] = WarSupply({fgroup = 'supply_thaldraszus'})
 map.nodes[43806980] = WarSupply({fgroup = 'supply_thaldraszus'})
 map.nodes[49405770] = WarSupply({fgroup = 'supply_thaldraszus'})

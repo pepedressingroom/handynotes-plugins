@@ -826,7 +826,10 @@ map.nodes[65205530] = SmellyTreasureChest()
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[41903760] = WarSupply({fgroup = 'supply_zaralek_cavern'})
+map.nodes[41903760] = WarSupply({
+    fgroup = 'supply_zaralek_cavern',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[44502840] = WarSupply({fgroup = 'supply_zaralek_cavern'})
 map.nodes[46205880] = WarSupply({fgroup = 'supply_zaralek_cavern'})
 map.nodes[47104430] = WarSupply({fgroup = 'supply_zaralek_cavern'})

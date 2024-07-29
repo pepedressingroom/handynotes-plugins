@@ -881,6 +881,12 @@ map.nodes[68085669] = Rare({
     }
 }) -- Disoriented Watcher -- just be like a rare
 
+map.nodes[29407820] = Rare({ -- 30557913 -- npcs are killing it most of the time
+    id = 193177,
+    quest = 73902,
+    rewards = {Skin({item = 193224, quest = 74217, count = 3}), } -- Lustrous Scaled Hide
+}) -- Beakers
+
 -------------------------------------------------------------------------------
 ---------------------------------- TREASURES ----------------------------------
 -------------------------------------------------------------------------------
@@ -1037,7 +1043,10 @@ map.nodes[68005890] = ns.node.DracthyrSupplyChest()
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[24227983] = WarSupply({fgroup = 'supply_waking_shore'})
+map.nodes[24227983] = WarSupply({
+    fgroup = 'supply_waking_shore',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[32006370] = WarSupply({fgroup = 'supply_waking_shore'})
 map.nodes[32605100] = WarSupply({fgroup = 'supply_waking_shore'})
 map.nodes[47997652] = WarSupply({fgroup = 'supply_waking_shore'})

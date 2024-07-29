@@ -638,7 +638,10 @@ map.nodes[48947352] = ns.node.ElementalChest({
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[15001480] = WarSupply({fgroup = 'supply_forbidden_reach'})
+map.nodes[15001480] = WarSupply({
+    fgroup = 'supply_forbidden_reach',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[31405380] = WarSupply({fgroup = 'supply_forbidden_reach'})
 map.nodes[40801240] = WarSupply({fgroup = 'supply_forbidden_reach'})
 map.nodes[41203670] = WarSupply({fgroup = 'supply_forbidden_reach'})

@@ -44,6 +44,8 @@ local DC = ns.DRAGON_CUSTOMIZATIONS
 
 local map = Map({id = 2200, settings = true})
 local bor = Map({id = 2254, settings = false}) -- Barrows of Reverie
+local wel = ns.maps[2232] or Map({id = 2232, settings = false}) -- Wellspring Atrium
+local tsh = ns.maps[2244] or Map({id = 2244, settings = false}) -- The Scorched Hall
 
 -------------------------------------------------------------------------------
 -------------------------------- DRUID GLYPHS ---------------------------------
@@ -529,6 +531,16 @@ map.nodes[22743226] = Rare({
 -- map.nodes[59005860] = Amalgamation() -- wowhead coords
 -- map.nodes[62805200] = Amalgamation() -- wowhead coords
 -- map.nodes[63806380] = Amalgamation() -- wowhead coords
+
+tsh.nodes[62937081] = SkinableRare({
+    label = '{npc:210288}',
+    quest = 78824,
+    rewards = {
+        Section(_G.UNIT_SKINNABLE_LEATHER),
+        Skin({item = 193258}), -- Fire-Infused Hide
+        Skin({item = 193218}) -- Dense Hide
+    }
+}) -- Ancient Core Hound
 
 ---------------------------------- WORLD BOSS ---------------------------------
 
@@ -1395,7 +1407,7 @@ end
 
 map.nodes[29703103] = PrismaticWhiskerfish()
 
-local wel = ns.maps[2232] or Map({id = 2232, settings = false}) -- Wellspring Atrium
+-- local wel = ns.maps[2232] or Map({id = 2232, settings = false}) -- Wellspring Atrium
 
 wel.nodes[50706200] = PrismaticWhiskerfish({
     pois = {
@@ -1405,7 +1417,7 @@ wel.nodes[50706200] = PrismaticWhiskerfish({
     }
 })
 
-local tsh = ns.maps[2244] or Map({id = 2244, settings = false}) -- The Scorched Hall
+-- local tsh = ns.maps[2244] or Map({id = 2244, settings = false}) -- The Scorched Hall
 
 tsh.nodes[55006800] = PrismaticWhiskerfish({
     pois = {
@@ -1661,7 +1673,10 @@ map.nodes[66246327] = Somnut()
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[32402360] = WarSupply({fgroup = 'supply_emerald_dream'})
+map.nodes[32402360] = WarSupply({
+    fgroup = 'supply_emerald_dream',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[37705440] = WarSupply({fgroup = 'supply_emerald_dream'})
 map.nodes[39002520] = WarSupply({fgroup = 'supply_emerald_dream'})
 map.nodes[47202180] = WarSupply({fgroup = 'supply_emerald_dream'})

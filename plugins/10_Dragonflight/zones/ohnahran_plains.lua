@@ -1046,7 +1046,10 @@ map.nodes[67101270] = LightningBoundChest()
 ------------------------------ WAR SUPPLY CHESTS ------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[22406370] = WarSupply({fgroup = 'supply_ohnahran_plains'})
+map.nodes[22406370] = WarSupply({
+    fgroup = 'supply_ohnahran_plains',
+    vignette = {2967, 3689, 6066, 6067}
+})
 map.nodes[36003220] = WarSupply({fgroup = 'supply_ohnahran_plains'})
 map.nodes[35926292] = WarSupply({fgroup = 'supply_ohnahran_plains'})
 map.nodes[48512646] = WarSupply({fgroup = 'supply_ohnahran_plains'})

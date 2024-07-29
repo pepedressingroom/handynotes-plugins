@@ -1678,9 +1678,8 @@ map.nodes[56007100] = ElusiveCreature({
     label = '{npc:195518}',
     quest = 74231,
     rewards = {
-        Item({item = 193224}), -- Lustrous Scaled Hide
-        Item({item = 193215}), -- Adamant Scales
-        Item({item = 193255}), -- Pristine Vorquin Horn
+        Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
+        Skin({item = 193255, count = 3}), -- Pristine Vorquin Horn
         Achievement({id = 18833, criteria = 61479}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Cliffdweller Vorquin
@@ -1689,9 +1688,8 @@ map.nodes[48005100] = ElusiveCreature({
     label = '{npc:195472}',
     quest = 74189,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 193254}), -- Rockfang Leather
+        Skin({item = 193218, count = 3}), -- Dense Hide
+        Skin({item = 193254, count = 3}), -- Rockfang Leather
         Achievement({id = 18833, criteria = 61476}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Ferocious Titanfang

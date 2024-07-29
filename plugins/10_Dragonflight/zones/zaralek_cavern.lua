@@ -995,8 +995,7 @@ map.nodes[60233957] = ElusiveCreature({
     label = '{npc:204821}',
     quest = 74234,
     rewards = {
-        Item({item = 193215}), -- Adamant Scales
-        Item({item = 193224}), -- Lustrous Scaled Hide
+        Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
         Item({item = 205451, quest = 75866}), -- Flawless Crystal Scale
         Achievement({id = 18833, criteria = 61483}) -- Elusive Legends of the Dragon Isles
     },
@@ -1007,10 +1006,9 @@ map.nodes[44054787] = ElusiveCreature({
     label = '{npc:204831}',
     quest = 74235,
     rewards = {
-        Item({item = 193215}), -- Adamant Scales
-        Item({item = 193224}), -- Lustrous Scaled Hide
         Item({item = 204460}), -- Zaralek Glowspores
-        Item({item = 205413}), -- Obsidian Cobraskin
+        Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
+        Skin({item = 205413}), -- Obsidian Cobraskin
         Achievement({id = 18833, criteria = 61484}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Magma Cobra

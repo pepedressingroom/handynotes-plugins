@@ -881,10 +881,19 @@ map.nodes[68085669] = Rare({
     }
 }) -- Disoriented Watcher -- just be like a rare
 
-map.nodes[29407820] = Rare({ -- 30557913 -- npcs are killing it most of the time
+map.nodes[29407820] = Rare({ -- npcs are killing it most of the time
     id = 193177,
     quest = 73902,
-    rewards = {Skin({item = 193224, quest = 74217, count = 3}), } -- Lustrous Scaled Hide
+    rewards = {Skin({item = 193224, quest = 74217, count = 3})}, -- Lustrous Scaled Hide
+    pois = {
+        Path({
+            30307847, 30127828, 29937819, 29717825, 29317824, 29027828,
+            28757823, 28427818, 28087837, 27887832, 27637867, 27377862,
+            27087868, 26867900, 26967935, 27187981, 27417985, 27687960,
+            27867936, 28077898, 28357876, 28637863, 28867885, 29067938,
+            29307990, 29607991, 30307902, 30307847
+        })
+    }
 }) -- Beakers
 
 -------------------------------------------------------------------------------
@@ -2235,9 +2244,8 @@ map.nodes[54705860] = ElusiveCreature({
     label = '{npc:195492}',
     quest = 74191,
     rewards = {
-        Item({item = 193224}), -- Lustrous Scaled Hide
-        Item({item = 193215}), -- Adamant Scales
-        Item({item = 193252}), -- Salamanther Scales
+        Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
+        Skin({item = 193252, count = 3}), -- Salamanther Scales
         Achievement({id = 18833, criteria = 61477}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Deepwater Salamanther
@@ -2246,9 +2254,8 @@ map.nodes[45007700] = ElusiveCreature({
     label = '{npc:195509}',
     quest = 74190,
     rewards = {
-        Item({item = 193224}), -- Lustrous Scaled Hide
-        Item({item = 193215}), -- Adamant Scales
-        Item({item = 193259}), -- Flawless Proto Dragon Scale
+        Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
+        Skin({item = 193259, count = 3}), -- Flawless Proto Dragon Scale
         Achievement({id = 18833, criteria = 61478}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Proto Skyterror

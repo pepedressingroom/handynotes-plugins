@@ -1822,9 +1822,8 @@ map.nodes[43994990] = ElusiveCreature({
     label = '{npc:212090}',
     quest = 78394,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 210687}) -- Ironfur Sample
+        Skin({item = 193218, count = 3}), -- Dense Hide
+        Skin({item = 210687}) -- Ironfur Sample
     },
     pois = ({Path({Circle({origin = 43994990, radius = 3})})})
 }) -- Elusive Blooming Brierhide
@@ -1833,9 +1832,8 @@ map.nodes[58434177] = ElusiveCreature({
     label = '{npc:212133}',
     quest = 78397,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 210456}) -- Dreaming Antler Fragment
+        Skin({item = 193218, count = 3}), -- Dense Hide
+        Skin({item = 210456}) -- Dreaming Antler Fragment
     },
     pois = ({Path({Circle({origin = 58434177, radius = 3})})})
 }) -- Elusive Verdant Gladewarden

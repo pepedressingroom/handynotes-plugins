@@ -1701,8 +1701,7 @@ map.nodes[65002900] = ElusiveCreature({
     label = '{npc:194491}',
     quest = 74186,
     rewards = {
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 193218}), -- Dense Hide
+        Skin({item = 193218, count = 3}), -- Dense Hide
         Achievement({id = 18833, criteria = 61474}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Elder Frigidpelt
@@ -1711,9 +1710,8 @@ map.nodes[23203380] = ElusiveCreature({
     label = '{npc:194489}',
     quest = 74185,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 193053}), -- Contoured Fowlfeather
+        Skin({item = 193218, count = 3}), -- Dense Hide
+        Skin({item = 193053}), -- Contoured Fowlfeather
         Achievement({id = 18833, criteria = 61473}) -- Elusive Legends of the Dragon Isles
     }
 }) -- Elusive Elder Drake

@@ -953,8 +953,7 @@ map.nodes[41905742] = ElusiveCreature({
     label = '{npc:202436}',
     quest = 74232,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
+        Skin({item = 193218, count = 3}), -- Dense Hide
         Achievement({id = 18833, criteria = 61481}) -- Elusive Legends of the Dragon Isles
     },
     pois = {Path({ns.poi.Circle({origin = 41905742, radius = 4})})}
@@ -964,9 +963,8 @@ map.nodes[45804040] = ElusiveCreature({
     label = '{npc:202441}',
     quest = 74233,
     rewards = {
-        Item({item = 193218}), -- Dense Hide
-        Item({item = 193211}), -- Resilient Leather
-        Item({item = 204092}), -- Auric Fleece
+        Skin({item = 193218, count = 3}), -- Dense Hide
+        Skin({item = 204092}), -- Auric Fleece
         Achievement({id = 18833, criteria = 61482}) -- Elusive Legends of the Dragon Isles
     },
     pois = {Path({ns.poi.Circle({origin = 45804040, radius = 2})})}

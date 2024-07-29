@@ -1845,7 +1845,8 @@ local SkinableRare = Class('SkinableRare', ns.node.Node, {
     IsEnabled = function(self) -- Skinning
         if not ns.PlayerHasProfession(393) then return false end
         return ns.node.Node.IsEnabled(self)
-    end
+    end,
+    group = ns.groups.RARE
 })
 
 ns.node.SkinableRare = SkinableRare

@@ -26,6 +26,7 @@ local Skin = ns.reward.Skin
 local Mount = ns.reward.Mount
 local Pet = ns.reward.Pet
 local Recipe = ns.reward.Recipe
+local Knowledge = ns.reward.Knowledge
 local Section = ns.reward.Section
 local Spacer = ns.reward.Spacer
 local Toy = ns.reward.Toy
@@ -337,7 +338,8 @@ local Tectonus = Class('Tectonus', ProfessionRare, {
     summoningObject = L['pr_rumbling_deposit'], -- Rumbling Deposit
     fgroup = 'fgroup_tectonus',
     rewards = {
-        Achievement({id = 17525, criteria = 58474}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58474}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204233, profession = 186, weekly = 74926}) -- Impenetrable Elemental Core
     }
 }) -- Tectonus
 
@@ -366,7 +368,11 @@ local SirPinchalot = Class('SirPinchalot', ProfessionRare, {
     summoningObject = L['pr_empty_crab_trap'], -- Empty Crab Trap
     fgroup = 'fgroup_sirpinchalot',
     rewards = {
-        Achievement({id = 17525, criteria = 58475}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58475}), -- Champion of the Forbidden Reach
+        Item({item = 198438}), -- Draconic Recipe in a Bottle
+        Item({item = 199340}), -- Gold Coin of the Isles
+        Item({item = 199339}), -- Silver Coin of the Isles
+        Item({item = 199338}) -- Copper Coin of the Isles
     }
 }) -- Sir Pinchalot
 
@@ -385,7 +391,8 @@ local Manathema = Class('Manathema', ProfessionRare, {
     summoningRecipe = 203423, -- Formula: Glowing Crystal Bookmark
     fgroup = 'fgroup_manathema',
     rewards = {
-        Achievement({id = 17525, criteria = 58476}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58476}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204224, profession = 333, weekly = 74927}) -- Speck of Arcane Awareness
     }
 }) -- Manathema
 
@@ -413,9 +420,10 @@ local Snarfang = Class('Snarfang', ProfessionRare, {
     rewards = {
         Achievement({id = 17525, criteria = 58477}), -- Champion of the Forbidden Reach
         Skin({item = 193218, quest = 75879, count = 3}), -- Dense Hide
-        Item({item = 203648}), -- Primalist Necklace
-        Item({item = 190456}), -- Artisan's Mettle
-        Currency({id = 2118}) -- Elemental Overflow
+        Knowledge({item = 204232, profession = 165, weekly = 74928}) -- Slyvern Alpha Claw
+        -- Item({item = 203648}), -- Primalist Necklace
+        -- Item({item = 190456}), -- Artisan's Mettle
+        -- Currency({id = 2118}) -- Elemental Overflow
     }
 }) -- Snarfang
 
@@ -434,7 +442,8 @@ local Gareed = Class('Gareed', ProfessionRare, {
     summoningRecipe = 203428, -- Pattern: Morqut Kite
     fgroup = 'fgroup_gareed',
     rewards = {
-        Achievement({id = 17525, criteria = 58478}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58478}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204225, profession = 197, weekly = 74929}) -- Perfect Windfeather
     }
 }) -- Gareed
 
@@ -452,7 +461,8 @@ local Faunos = Class('Faunos', ProfessionRare, {
     fgroup = 'fgroup_faunos',
     rewards = {
         Achievement({id = 17525, criteria = 58479}), -- Champion of the Forbidden Reach
-        Skin({item = 193218, quest = 75881, count = 3}) -- Dense Hide
+        Skin({item = 193218, quest = 75881, count = 3}), -- Dense Hide
+        Knowledge({item = 204231, profession = 393, weekly = 74930}) -- Kingly Sheepskin Pelt
     }
 }) -- Faunos
 
@@ -471,7 +481,8 @@ local TidesmithZarviss = Class('TidesmithZarviss', ProfessionRare, {
     summoningRecipe = 203421, -- Plans: Ceremonial Trident
     fgroup = 'fgroup_tidesmithzarviss',
     rewards = {
-        Achievement({id = 17525, criteria = 58480}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58480}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204230, profession = 164, weekly = 74931}) -- Dense Seaforged Javelin
     }
 }) -- Tidesmith Zarviss
 
@@ -494,7 +505,8 @@ local Arcantrix = Class('Arcantrix', ProfessionRare, {
     summoningRecipe = 203425, -- Technique: Dispellng Rune
     fgroup = 'fgroup_arcantrix',
     rewards = {
-        Achievement({id = 17525, criteria = 58481}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58481}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204229, profession = 773, weekly = 74932}) -- Glimmering Rune of Arcantrix
     }
 }) -- Arcantrix
 
@@ -517,7 +529,8 @@ local Kangalo = Class('Kangalo', ProfessionRare, {
     summoningObject = L['pr_awakened_soil'], -- Awakened Soil
     fgroup = 'fgroup_kangalo',
     rewards = {
-        Achievement({id = 17525, criteria = 58482}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58482}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204228, profession = 182, weekly = 74933}) -- Undigested Hochenblume Petal
     }
 }) -- Kangalo
 
@@ -537,7 +550,8 @@ local Fimbul = Class('Fimbul', ProfessionRare, {
     summoningRecipe = 203424, -- Schematic: Gnomish Voicebox
     fgroup = 'fgroup_fimbul',
     rewards = {
-        Achievement({id = 17525, criteria = 58483}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58483}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204227, profession = 202, weekly = 74934}) -- Everflowing Antifreeze
     }
 }) -- Fimbul
 
@@ -556,7 +570,8 @@ local AgniBlazehoof = Class('AgniBlazehoof', ProfessionRare, {
     summoningRecipe = 203420, -- Recipe: Draconic Suppression Powder
     fgroup = 'fgroup_agniblazehoof',
     rewards = {
-        Achievement({id = 17525, criteria = 58484}) -- Champion of the Forbidden Reach
+        Achievement({id = 17525, criteria = 58484}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204226, profession = 171, weekly = 74935}) -- Blazehoof Ashes
     }
 }) -- Agni Blazehoof
 
@@ -597,6 +612,7 @@ local Amephyst = Class('Amephyst', ProfessionRare, {
     fgroup = 'fgroup_amephyst',
     rewards = {
         Achievement({id = 17525, criteria = 58486}), -- Champion of the Forbidden Reach
+        Knowledge({item = 204222, profession = 755, weekly = 74936}), -- Conductive Ametrine Shard
         Recipe({item = 204219, profession = 755}) -- Design: Unstable Elementium
     }
 }) -- Amephyst
@@ -995,6 +1011,7 @@ local ZSKERA_VAULTS_REWARDS = {
     Toy({item = 204262}), -- Holoviewer: The timeless One
     Toy({item = 203852}), -- Spore-Bound Essence
     Toy({item = 204687}), -- Obsidian Battle Horn
+    Toy({item = 204405}), -- Stuffed Bear
     Spacer(), -- Recipe
     Recipe({item = 204073, profession = 185}), -- Ratcipe: Deviously Deviled Eggs
     Spacer(), -- Mount

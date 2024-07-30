@@ -96,6 +96,7 @@ L['title'] = '칭호'
 L['toy'] = '장난감'
 L['currency'] = nil
 L['rep'] = '평판'
+L['knowledge'] = '지식'
 
 ---------------------------------- FOLLOWERS ----------------------------------
 L['follower_type_follower'] = '추종자'

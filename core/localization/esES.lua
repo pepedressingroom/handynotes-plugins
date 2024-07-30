@@ -96,6 +96,7 @@ L['title'] = 'Título'
 L['toy'] = 'Juguete'
 L['currency'] = 'Moneda'
 L['rep'] = 'Reputación'
+L['knowledge'] = 'Conocimiento'
 
 ---------------------------------- FOLLOWERS ----------------------------------
 L['follower_type_follower'] = 'Seguidor'

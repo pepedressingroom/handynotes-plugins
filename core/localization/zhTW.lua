@@ -96,6 +96,7 @@ L['title'] = '稱號'
 L['toy'] = '玩具'
 L['currency'] = '通貨'
 L['rep'] = '聲望'
+L['knowledge'] = '知識'
 
 ---------------------------------- FOLLOWERS ----------------------------------
 L['follower_type_follower'] = '追隨者'

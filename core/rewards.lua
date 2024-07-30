@@ -505,6 +505,25 @@ function Recipe:IsEnabled()
 end
 
 -------------------------------------------------------------------------------
+----------------------------------- KNOWLEDGE ---------------------------------
+-------------------------------------------------------------------------------
+
+local Knowledge = Class('Knowledge', Item, {type = L['knowledge']})
+
+function Knowledge:Initialize(attrs)
+    Item.Initialize(self, attrs)
+
+    if not self.profession then
+        error('Knowledge() reward requires a profession id to be set')
+    end
+end
+
+function Knowledge:IsEnabled()
+    if not Item.IsEnabled(self) then return false end
+    return ns.PlayerHasProfession(self.profession)
+end
+
+-------------------------------------------------------------------------------
 ------------------------------------ SPELL ------------------------------------
 -------------------------------------------------------------------------------
 
@@ -690,6 +709,7 @@ ns.reward = {
     Pet = Pet,
     Quest = Quest,
     Recipe = Recipe,
+    Knowledge = Knowledge,
     Spell = Spell,
     Title = Title,
     Toy = Toy,

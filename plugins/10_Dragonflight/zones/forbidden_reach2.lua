@@ -343,21 +343,21 @@ local Tectonus = Class('Tectonus', ProfessionRare, {
     }
 }) -- Tectonus
 
-map.nodes[62098142] = Tectonus()
+-- map.nodes[62098142] = Tectonus()
 
 map.nodes[43264887] = Tectonus({
     location = L['in_small_cave'],
     pois = {POI({45284287})} -- Entrance
 })
 
-map.nodes[78743554] = Tectonus({
-    location = L['in_dragonskull_island'],
-    pois = {POI({74353661})} -- Entrance
-})
+-- map.nodes[78743554] = Tectonus({
+--     location = L['in_dragonskull_island'],
+--     pois = {POI({74353661})} -- Entrance
+-- })
 
-dragonskullIsland.nodes[57157211] = Tectonus({
-    location = L['in_dragonskull_island']
-})
+-- dragonskullIsland.nodes[57157211] = Tectonus({
+--     location = L['in_dragonskull_island']
+-- })
 
 local SirPinchalot = Class('SirPinchalot', ProfessionRare, {
     id = 200620,
@@ -376,9 +376,9 @@ local SirPinchalot = Class('SirPinchalot', ProfessionRare, {
     }
 }) -- Sir Pinchalot
 
-map.nodes[70524149] = SirPinchalot()
+-- map.nodes[70524149] = SirPinchalot()
 map.nodes[23076701] = SirPinchalot()
-map.nodes[47789090] = SirPinchalot()
+-- map.nodes[47789090] = SirPinchalot()
 
 local Manathema = Class('Manathema', ProfessionRare, {
     id = 200621,
@@ -398,14 +398,14 @@ local Manathema = Class('Manathema', ProfessionRare, {
 
 map.nodes[55633611] = Manathema({location = L['in_the_lost_atheneum']})
 
-map.nodes[47106485] = Manathema()
+-- map.nodes[47106485] = Manathema()
 
-map.nodes[46207802] = Manathema({
-    location = L['in_the_war_creche'],
-    pois = {POI({51935970})} -- Entrance
-})
+-- map.nodes[46207802] = Manathema({
+--     location = L['in_the_war_creche'],
+--     pois = {POI({51935970})} -- Entrance
+-- })
 
-warCreche.nodes[43017871] = Manathema({location = L['in_the_war_creche']})
+-- warCreche.nodes[43017871] = Manathema({location = L['in_the_war_creche']})
 
 local Snarfang = Class('Snarfang', ProfessionRare, {
     id = 200622,
@@ -428,8 +428,8 @@ local Snarfang = Class('Snarfang', ProfessionRare, {
 }) -- Snarfang
 
 map.nodes[37134711] = Snarfang()
-map.nodes[48724945] = Snarfang()
-map.nodes[64967269] = Snarfang()
+-- map.nodes[48724945] = Snarfang()
+-- map.nodes[64967269] = Snarfang()
 
 local Gareed = Class('Gareed', ProfessionRare, {
     id = 200722,
@@ -447,9 +447,9 @@ local Gareed = Class('Gareed', ProfessionRare, {
     }
 }) -- Gareed
 
-map.nodes[57654840] = Gareed()
+-- map.nodes[57654840] = Gareed()
 map.nodes[31185342] = Gareed()
-map.nodes[60299154] = Gareed()
+-- map.nodes[60299154] = Gareed()
 
 local Faunos = Class('Faunos', ProfessionRare, {
     id = 200725,
@@ -467,8 +467,8 @@ local Faunos = Class('Faunos', ProfessionRare, {
 }) -- Faunos
 
 map.nodes[45013659] = Faunos()
-map.nodes[50488602] = Faunos()
-map.nodes[70664613] = Faunos()
+-- map.nodes[50488602] = Faunos()
+-- map.nodes[70664613] = Faunos()
 
 local TidesmithZarviss = Class('TidesmithZarviss', ProfessionRare, {
     id = 200730,
@@ -486,8 +486,8 @@ local TidesmithZarviss = Class('TidesmithZarviss', ProfessionRare, {
     }
 }) -- Tidesmith Zarviss
 
-map.nodes[67257598] = TidesmithZarviss()
-map.nodes[63096158] = TidesmithZarviss()
+-- map.nodes[67257598] = TidesmithZarviss()
+-- map.nodes[63096158] = TidesmithZarviss()
 
 map.nodes[80035881] = TidesmithZarviss({
     location = L['in_small_cave'],
@@ -510,15 +510,15 @@ local Arcantrix = Class('Arcantrix', ProfessionRare, {
     }
 }) -- Arcantrix
 
-map.nodes[61256441] = Arcantrix()
+-- map.nodes[61256441] = Arcantrix()
 map.nodes[49264174] = Arcantrix()
 
-map.nodes[48347324] = Arcantrix({
-    location = L['in_the_war_creche'],
-    pois = {POI({51935970})} -- Entrance
-})
+-- map.nodes[48347324] = Arcantrix({
+--     location = L['in_the_war_creche'],
+--     pois = {POI({51935970})} -- Entrance
+-- })
 
-warCreche.nodes[53105781] = Arcantrix({location = L['in_the_war_creche']})
+-- warCreche.nodes[53105781] = Arcantrix({location = L['in_the_war_creche']})
 
 local Kangalo = Class('Kangalo', ProfessionRare, {
     id = 200738,
@@ -534,10 +534,10 @@ local Kangalo = Class('Kangalo', ProfessionRare, {
     }
 }) -- Kangalo
 
-map.nodes[35354005] = Kangalo()
-map.nodes[40265336] = Kangalo()
+-- map.nodes[35354005] = Kangalo()
+-- map.nodes[40265336] = Kangalo()
 map.nodes[56435914] = Kangalo()
-map.nodes[75143190] = Kangalo()
+-- map.nodes[75143190] = Kangalo()
 
 local Fimbul = Class('Fimbul', ProfessionRare, {
     id = 200739,
@@ -555,8 +555,8 @@ local Fimbul = Class('Fimbul', ProfessionRare, {
     }
 }) -- Fimbul
 
-map.nodes[44307465] = Fimbul()
-map.nodes[54707279] = Fimbul()
+-- map.nodes[44307465] = Fimbul()
+-- map.nodes[54707279] = Fimbul()
 map.nodes[61172683] = Fimbul()
 
 local AgniBlazehoof = Class('AgniBlazehoof', ProfessionRare, {
@@ -576,8 +576,8 @@ local AgniBlazehoof = Class('AgniBlazehoof', ProfessionRare, {
 }) -- Agni Blazehoof
 
 map.nodes[56393902] = AgniBlazehoof()
-map.nodes[67256157] = AgniBlazehoof()
-map.nodes[69745464] = AgniBlazehoof()
+-- map.nodes[67256157] = AgniBlazehoof()
+-- map.nodes[69745464] = AgniBlazehoof()
 
 local Luttrok = Class('Luttrok', ProfessionRare, {
     id = 200742,
@@ -596,8 +596,8 @@ local Luttrok = Class('Luttrok', ProfessionRare, {
     }
 }) -- Luttrok
 
-map.nodes[40265337] = Luttrok()
-map.nodes[54484598] = Luttrok()
+-- map.nodes[40265337] = Luttrok()
+-- map.nodes[54484598] = Luttrok()
 map.nodes[55695153] = Luttrok()
 
 local Amephyst = Class('Amephyst', ProfessionRare, {
@@ -622,19 +622,19 @@ map.nodes[28925706] = Amephyst({
     pois = {POI({31006084})} -- Entrance
 })
 
-map.nodes[42694483] = Amephyst({
-    location = L['in_small_cave'],
-    pois = {POI({45284287})} -- Entrance
-})
+-- map.nodes[42694483] = Amephyst({
+--     location = L['in_small_cave'],
+--     pois = {POI({45284287})} -- Entrance
+-- })
 
-map.nodes[81193376] = Amephyst({
-    location = L['in_dragonskull_island'],
-    pois = {POI({74723614})} -- Entrance
-})
+-- map.nodes[81193376] = Amephyst({
+--     location = L['in_dragonskull_island'],
+--     pois = {POI({74723614})} -- Entrance
+-- })
 
-dragonskullIsland.nodes[84045351] = Amephyst({
-    location = L['in_dragonskull_island']
-})
+-- dragonskullIsland.nodes[84045351] = Amephyst({
+--     location = L['in_dragonskull_island']
+-- })
 
 -------------------------------------------------------------------------------
 ---------------------------------- TREASURES ----------------------------------

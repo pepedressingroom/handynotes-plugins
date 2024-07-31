@@ -9,6 +9,7 @@ local Map = ns.Map
 local Collectible = ns.node.Collectible
 local NPC = ns.node.NPC
 local Rare = ns.node.Rare
+local Vendor = ns.node.Vendor
 local Treasure = ns.node.Treasure
 
 local AncientStone = ns.node.AncientStone
@@ -43,6 +44,7 @@ local Mount = ns.reward.Mount
 local Pet = ns.reward.Pet
 local Recipe = ns.reward.Recipe
 local Section = ns.reward.Section
+local Spacer = ns.reward.Spacer
 local Toy = ns.reward.Toy
 local Transmog = ns.reward.Transmog
 
@@ -902,6 +904,7 @@ map.nodes[29407820] = Rare({ -- npcs are killing it most of the time
 
 map.nodes[40454136] = Treasure({ -- required 65537, 70599, 70527
     quest = 70599,
+    vignette = 5397,
     requires = {
         ns.requirement.Quest(72709), -- Funding a Treasure Hunt
         ns.requirement.Quest(70527, '{item:199061}') -- A Guide to Rare Fish
@@ -938,6 +941,7 @@ map.nodes[58525302] = Treasure({
 
 map.nodes[29454699] = Treasure({
     quest = 72020,
+    vignette = 5374,
     location = L['in_cave'],
     note = L['onyx_gem_cluster_note'],
     requires = {
@@ -955,6 +959,7 @@ map.nodes[29454699] = Treasure({
 
 map.nodes[65804182] = Treasure({
     quest = 70600,
+    vignette = 5367,
     note = L['golden_dragon_goblet_note'],
     requires = {
         ns.requirement.Quest(72709), -- Funding a Treasure Hunt
@@ -969,6 +974,7 @@ map.nodes[65804182] = Treasure({
 
 map.nodes[61347079] = Treasure({
     quest = 70598,
+    vignette = 5441,
     note = L['gem_cluster_note'],
     requires = {
         ns.requirement.Reputation(2507, 21, true), -- Dragonscale Expedition
@@ -1001,6 +1007,7 @@ map.nodes[44607010] = Treasure({
     label = L['lost_obsidian_cache'],
     icon = 'chest_gn',
     quest = 70018,
+    vignette = 5257,
     location = L['in_cave'],
     note = format('%s\n\n%s\n\n%s', L['lost_obsidian_cache_step1'],
         L['lost_obsidian_cache_step2'], L['lost_obsidian_cache_step3']),
@@ -1033,6 +1040,7 @@ map.nodes[44607010] = Treasure({
 
 map.nodes[43156737] = Treasure({
     quest = 65965,
+    vignette = 5046,
     requires = ns.requirement.Item(191122), -- Fullsails Supply Chest Key
     label = L['fullsails_supply_chest'],
     note = L['fullsails_supply_chest_note']
@@ -2788,5 +2796,88 @@ map.nodes[47308270] = Collectible({
     }
 }) -- Explorer Pepe
 
+------------------------ DRAGONSCALE EXPEDITION VENDORS ------------------------
+
+map.nodes[46948289] = Vendor({
+    id = 189065, -- Boss Magor <Orgrimmar Artisans Guild>
+    rewards = {
+        Recipe({item = 198101, profession = 185, count = 400}), -- Recipe: Salad on the Side
+        Recipe({item = 198719, profession = 164, count = 15}), -- Plans: Sturdy Expedition Shovel
+        Recipe({item = 199811, profession = 333, count = 50}), -- Formula: Enchant Cloak - Graceful Avoidance
+        Recipe({item = 199812, profession = 333, count = 50}), -- Formula: Enchant Boots - Rider's Reassurance
+        Recipe({item = 198781, profession = 202, count = 50}), -- Schematic: Gravitational Displacer
+        Recipe({item = 198784, profession = 202, count = 50}), -- Schematic: Primal Deconstruction Charge
+        Recipe({item = 198782, profession = 202, count = 500}), -- Schematic: Bottomless Mireslush Ore Satchel
+        Recipe({item = 198783, profession = 202, count = 500}), -- Schematic: Spring-Loaded Khaz'gorite Fabric Cutters
+        Recipe({item = 198785, profession = 202, count = 750}), -- Schematic: Quack-E
+        Recipe({item = 198901, profession = 773, count = 25}), -- Technique: Renewed Proto-Drake: Spined Crest
+        Recipe({item = 198788, profession = 773, count = 200}), -- Technique: Contract: Dragonscale Expedition
+        Recipe({item = 198909, profession = 773, count = 750}), -- Technique: Illusion Parchment: Magma Missile
+        Recipe({item = 194605, profession = 755, count = 50}), -- Design: Radiant Malygite
+        Recipe({item = 194606, profession = 755, count = 50}), -- Design: Energized Malygite
+        Recipe({item = 194613, profession = 755, count = 50}), -- Design: Sensei's Neltharite
+        Recipe({item = 194614, profession = 755, count = 50}), -- Design: Keen Neltharite
+        Recipe({item = 194632, profession = 755, count = 400}), -- Design: Idol of the Life-Binder
+        Recipe({item = 194635, profession = 755, count = 400}), -- Design: Idol of the Earth-Warder
+        Recipe({item = 194661, profession = 755, count = 500}), -- Design: Magnificent Margin Magnifier
+        Recipe({item = 194289, profession = 197, count = 500}), -- Pattern: Master's Wildercloth Chef's Hat
+        Recipe({item = 194291, profession = 197, count = 500}), -- Pattern: Master's Wildercloth Fishing Cap
+        Recipe({item = 194294, profession = 197, count = 750}), -- Pattern: Explorer's Banner of Herbology
+        Recipe({item = 194295, profession = 197, count = 750}), -- Pattern: Explorer's Banner of Geology
+        Recipe({item = 194268, profession = 197, count = 750}), -- Pattern: Dragonscale Expedition's Expedition Tent
+        Recipe({item = 194281, profession = 197, count = 750}), -- Pattern: Cold Cushion
+        Recipe({item = 194285, profession = 197, count = 750}), -- Pattern: Azureweave Expedition Pack
+        Recipe({item = 194283, profession = 197, count = 750}), -- Pattern: Duck-Stuffed Duck Lovie
+        Item({item = 200738, quest = 72021}) -- Onyx Gem Cluster Map
+    }
+})
+
+map.nodes[47918208] = Vendor({
+    id = 188265, -- Rae'ana <Historian and Research Supplier>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 3'),
+        -- ns.reward.Quest({id = 70335}), -- Simple Excavation Tools
+        Transmog({item = 198387, type = L['1h_mace']}), -- Excavator's Mallet
+        Transmog({item = 198717, type = L['dagger']}), -- Excavator's Punch
+        Transmog({item = 198718, type = L['dagger']}), -- Excavator's Chisel
+        Transmog({item = 199746, type = L['dagger']}), -- Excavator's Trowel
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 7'),
+        -- ns.reward.Quest({id = 70807}), -- Advanced Excavation Tools
+        Transmog({item = 194102, type = L['1h_axe']}), -- Expedition Excavator
+        Transmog({item = 194325, type = L['1h_mace']}), -- Researcher's Magnifier
+        Transmog({item = 194326, type = L['1h_mace']}), -- Trusty Sweeper
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 17'),
+        -- ns.reward.Quest({id = 70831}), -- Researching in Comfort
+        Toy({item = 198720}), -- Soft Purple Pillow
+        Toy({item = 198721}), -- Skinny Reliquary Pillow
+        Toy({item = 198722}), -- Small Triangular Pillow
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 9'),
+        -- ns.reward.Quest({id = 70808}), -- Initial Mysteries of the Dragon Isles Drakes
+        DC.RenewedProtoDrake.BrownHair, DC.RenewedProtoDrake.ManedCrest,
+        DC.RenewedProtoDrake.SpikedJaw, DC.RenewedProtoDrake.SpinedBrow,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 15'),
+        -- ns.reward.Quest({id = 70809}), -- Deeper Mysteries of the Dragon Isles Drakes
+        DC.RenewedProtoDrake.CurvedSpikedBrow, DC.RenewedProtoDrake.HarrierPattern,
+        DC.RenewedProtoDrake.SpikedClubTail, DC.RenewedProtoDrake.SweptHorns,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 22'),
+        -- ns.reward.Quest({id = 70810}), -- Broader Mysteries of the Dragon Isles Drakes
+        DC.WindborneVelocidrake.RedScales, DC.HighlandDrake.RedScales,
+        DC.CliffsideWylderdrake.RedScales, DC.WindingSlitherdrake.RedScales
+    }
+})
+
+map.nodes[47738323] = Vendor({
+    id = 187408, -- Granpap Whiskers <Innkeeper>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 11'),
+        -- ns.reward.Quest({id = 70820}), -- The Basecamp 'Pets'
+        Pet({item = 198725, id = 3381}), -- Gray Marmoni
+        Pet({item = 198726, id = 3380}), -- Black Skitterbug
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 25'),
+        -- ns.reward.Quest({id = 70821}), -- Skitterfly Riding
+        Mount({item = 192761, id = 1615}), -- Tamed Skitterfly
+        Mount({item = 192762, id = 1616}) -- Azure Skitterfly
+    }
+})
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

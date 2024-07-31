@@ -598,6 +598,7 @@ L['lord_epochbrgl_note'] = 'Click {npc:193257} to spawn the rare.'
 L['the_great_shellkhan_note'] = 'Collect {item:200949} from {location:Kauriq Gleamlet} in {location:The Azure Span}, go back to {npc:191416} within 3 minutes to return the item to activate the rare and get the achievement.\n\n{note:Make sure {npc:191416} and {npc:191305} are acutally there before you start. Only one character can pick up and return the item once a week to activate the rare, after which {npc:191416} will only thank you.}'
 L['weeping_vilomah_note'] = 'Talk to {npc:193206} to summon the rare.'
 L['woofang_note'] = 'Pet {npc:193156} to spawn the rare.'
+L['temporal_investigator_note'] = '1. {note:Complete quest chain start from {quest:75935} by {npc:204990}} {dot:Yellow}.\n\n2. Borrow a {item:208449} from {npc:204990} upstairs of the {location:Eon\'s Fringe Inn} {dot:Blue}.\n\n3. Use it near {npc:203769} downstairs, and buy an {item:208448} {note:(duration: 30sec)} from {npc:207463}.\n\n4. Go to the rare spot and drink the tea, with buff {spell:419536} {note:(duration: 30sec)}, there should now be a {object:Time-Soaked Clock}, click on it and {npc:201664} respawns'
 
 L['acorn_harvester_note'] = 'Collect an {object:Acorn} from the ground nearby to get {spell:388485} and then interact with {npc:196172}.\n\n{bug:(BUG: To click on {npc:196172} a reload might be necessary)}'
 L['cracked_hourglass_note'] = '{item:199068} can be found in {object:Expedition Scout\'s Packs} and {object:Disturbed Dirts}.'
@@ -606,6 +607,8 @@ L['sandy_wooden_duck_note'] = 'Collect {item:199069} and use it.'
 L['tasty_hatchling_treat_note'] = 'In a barrel behind the bookshelf.'
 L['inconspicuous_bookmark'] = 'Inconspicuous Bookmark'
 L['inconspicuous_bookmark_note'] = 'On the right side of the table with the pile of books, the fat green book will have a tiny bookmark sticking out.\nCast {spell:382499} may help see it highlighted in purple, or use Interact Key (default: F) to loot it.'
+
+L['tempo_questline_requirement'] = 'Begin the questline that start from {quest:76350} by {npc:195773} {dot:Yellow}.'
 
 L['pm_mining_bridgette_holdug'] = 'On top of a grassy rock pillar.'
 L['pm_tailor_elysa_raywinder'] = 'On a ledge halfway up the tower.'
@@ -917,7 +920,11 @@ L['big_slick_note'] = 'Complete daily quests from {npc:201752} to reach the repu
 L['grogul_note'] = 'Talk to {npc:204672} and choose a treat that you can use to encourage this snail to move faster.\n{note:The achievement can be obtained before Renown 7.}'
 
 L['saccratos_note'] = 'Exchange {item:204727} for a pet, mount, and more.'
-L['ponzo_note'] = 'Exchange {item:204985} for drake customizations, pet, mount, and more.'
+L['ponzo_note'] = 'Exchange {item:%d} for drake customizations, pet, mount, and more.'
+L['topper_cheapst_note'] = '\n\n{note:{npc:204693} now offer the lowest price for {item:205421}.}'
+L['topper_cutprice_note'] = '\n\n{note:Continue to bargain with {npc:204693} to get a lower price for {item:205421}.}'
+L['topper_askprice_note'] = '\n\n{note:Talk to {npc:204693} if he would like to sell his {item:205421}.}'
+L['topper_premise_note'] = '\n\n{note:After reaching Renown 12 and completing {quest:75728}, {item:205421} could be bought.}'
 
 L['smelly_trash_pile_label'] = 'Smelly Trash Pile'
 L['options_icons_smelly_trash_pile'] = 'Smelly Trash Pile'

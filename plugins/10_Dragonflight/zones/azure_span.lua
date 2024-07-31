@@ -773,6 +773,7 @@ map.nodes[46932204] = Rare({
 
 map.nodes[45125940] = Treasure({
     quest = 70603,
+    vignette = 5373,
     note = L['forgotten_jewel_box_note'],
     requires = {
         ns.requirement.Quest(72709), -- Funding a Treasure Hunt
@@ -825,6 +826,7 @@ map.nodes[54612932] = Treasure({
 
 map.nodes[48632466] = Treasure({
     quest = 70605,
+    vignette = 5375,
     note = L['gem_cluster_note'],
     requires = {
         ns.requirement.Reputation(2507, 21, true), -- Dragonscale Expedition
@@ -2297,5 +2299,285 @@ end
 
 map.nodes[26964646] = Eadweard()
 tra.nodes[55335134] = Eadweard()
+
+---------------------------- ISKAARA TUSKARR VENDORS ----------------------------
+
+-- map.nodes[13144926] = Vendor({
+--     icon = 'peg_bl',
+--     scale = 2.0,
+--     label = 193006, -- Murik <Keeper of Renown>
+--     -- note = '',
+--     rewards = {
+--         Section(_G.RENOWN_LEVEL_LABEL .. ' 3'),
+--     }
+-- })
+-- https://www.wowhead.com/npc=193006/murik#sells;50
+
+map.nodes[13905007] = Vendor({
+    scale = 1.0,
+    id = 194059, -- Rokkutuk <Lead Craftsman>
+    rewards = {
+        Recipe({item = 198102, profession = 185, count = 400}), -- Recipe: Impossibly Sharp Cutting Knife
+        Recipe({item = 193875, profession = 165, count = 400}), -- Pattern: Allied Heartwarming Fur Coat
+        Recipe({item = 193876, profession = 165, count = 400}), -- Pattern: Snowball Makers
+        Recipe({item = 198458, profession = 165, count = 500}), -- Pattern: Resplendent Cover
+        Recipe({item = 198459, profession = 165, count = 500}), -- Pattern: Lavish Floral Pack
+        Recipe({item = 198461, profession = 165, count = 500}), -- Pattern: Shockproof Gloves
+        Recipe({item = 198465, profession = 165, count = 500}), -- Pattern: Expert Skinner's Cap
+        Recipe({item = 194311, profession = 165, count = 750}), -- Pattern: Tuskarr Beanbag
+        Recipe({item = 197981, profession = 165, count = 750}), -- Pattern: Finished Prototype Regal Barding
+        Recipe({item = 194602, profession = 755, count = 50}), -- Design: Sensei's Alexstraszite
+        Recipe({item = 194603, profession = 755, count = 50}), -- Design: Radiant Alexstraszite
+        Recipe({item = 194610, profession = 755, count = 50}), -- Design: Keen Ysemerald
+        Recipe({item = 194611, profession = 755, count = 50}), -- Design: Energized Ysemerald
+        Recipe({item = 194726, profession = 755, count = 50}), -- Design: Kalu'ak Figurine
+        Recipe({item = 194633, profession = 755, count = 400}), -- Design: Idol of the Spell-Weaver
+        Recipe({item = 194634, profession = 755, count = 400}), -- Design: Idol of the Dreamer
+        Recipe({item = 194660, profession = 755, count = 500}), -- Design: Fine-Print Trifocals
+        Recipe({item = 194663, profession = 755, count = 500}), -- Design: Resonant Focus
+        Recipe({item = 198894, profession = 773, count = 25}), -- Technique: Highland Drake: Black Hair
+        Recipe({item = 198940, profession = 773, count = 200}), -- Technique: Contract: Iskaara Tuskarr
+        Recipe({item = 199815, profession = 333, count = 50}), -- Formula: Enchant Cloak - Regenerative Leech
+        Recipe({item = 199816, profession = 333, count = 50}) -- Formula: Enchant Chest - Accelerated Agility
+    }
+})
+
+map.nodes[12934862] = Vendor({
+    scale = 1.0,
+    id = 196544, -- Norukk
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 7'),
+        ns.reward.Quest({id = 70954}), -- Mounting Curiosity
+        DC.HighlandDrake.BushyBrow, DC.HighlandDrake.MultiHornedHead,
+        DC.HighlandDrake.SpikedCheek, DC.HighlandDrake.FinnedNeck,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 13'),
+        ns.reward.Quest({id = 70955}), -- Fascinating Fliers
+        DC.HighlandDrake.ThornHorns, DC.HighlandDrake.LargeSpottedPattern,
+        DC.HighlandDrake.BladedTail,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 19'),
+        ns.reward.Quest({id = 70956}), -- Of Azure Scales
+        DC.RenewedProtoDrake.BlueScales, DC.WindborneVelocidrake.BlueScales,
+        DC.CliffsideWylderdrake.BlueScales, DC.WindingSlitherdrake.BlueScales
+    }
+})
+
+map.nodes[13794972] = Vendor({
+    scale = 1.0,
+    id = 186462, -- Tatto <Stable Master>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 25'),
+        ns.reward.Quest({id = 70972}), -- Our Loyal, Lanky Steeds
+        Mount({item = 198872, id = 1657}), -- Brown Scouting Ottuk
+        Mount({item = 200118, id = 1659}), -- Yellow Scouting Ottuk
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 30'),
+        ns.reward.Quest({id = 72328}), -- Our Ferocious, Armored Steeds
+        Mount({item = 201426, id = 1653}), -- Brown War Ottuk
+        Mount({item = 201425, id = 1655}) -- Yellow War Ottuk
+    }
+})
+
+map.nodes[13164897] = Vendor({
+    scale = 1.0,
+    id = 186564, -- Jiq
+    pois = {
+        Path({
+            13084910, 12944947, 12904986, 13034995, 13205006, 13445004,
+            13694989, 13764968, 13724949, 13574926, 13474902, 13304889,
+            13174897, 13084910
+        })
+    },
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 9'),
+        ns.reward.Quest({id = 70959}), -- Cute and Cuddly
+        Pet({item = 193225, id = 3284}), -- Whiskuk
+        Pet({item = 193837, id = 3326}) -- Backswimmer Timbertooth
+    }
+})
+
+map.nodes[24407080] = Vendor({
+    scale = 1.0,
+    id = 194318, -- Kiopo <The Eldest>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 26'),
+        ns.reward.Quest({id = 70976}), -- Slacking and Sledding
+        Toy({item = 198827}), -- Magical Snow Sled
+        Toy({item = 199899}) -- Iskaara Tug Sled
+    }
+})
+
+map.nodes[13934924] = Vendor({
+    scale = 1.0,
+    id = 186554, -- Nunvuq <Fishing Trainer>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 17'),
+        ns.reward.Quest({id = 70967}), -- Fishy Entertainment
+        Toy({item = 199894}), -- Fisherman's Folly
+        Toy({item = 199896}) -- Rubbery Fish Head
+    }
+})
+
+map.nodes[13524868] = Vendor({
+    scale = 1.0,
+    id = 186547, -- Lil Ki <Soup Assistant>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 4'),
+        ns.reward.Quest({id = 70939}), -- Cooking Utensils
+        Transmog({item = 200748, slot = L['fist']}), -- Tuskarr Ulu Knife
+        Transmog({item = 200749, slot = L['1h_mace']}), -- Tuskarr Clobbering Board
+        Toy({item = 199650}), -- Whale Bone Tea Set
+        Toy({item = 199892}) -- Tuskarr Traveling Soup Pot
+    }
+})
+
+map.nodes[13994926] = Vendor({
+    scale = 1.0,
+    id = 196016, -- Lontupit <Leatherworking Trainer>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 12'),
+        ns.reward.Appearance({item = 199877}), -- Ensemble: Tuskarr Trader's Leather Armor
+        Transmog({item = 199872, slot = L['cloak']}), -- Tuskarr Trader's Cloak
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 23'),
+        Toy({item = 199897}), -- Blue-Covered Beanbag
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 28'),
+        Transmog({item = 199543, slot = L['cosmetic']}), -- Azure Depths Shoulderguards
+        Transmog({item = 199544, slot = L['cosmetic']}), -- Murky Depths Shoulderguards
+        Transmog({item = 199545, slot = L['cosmetic']}), -- Grey Depths Shoulderguards
+        Transmog({item = 199546, slot = L['cosmetic']}), -- Crimson Depths Shoulderguards
+        Transmog({item = 199547, slot = L['cosmetic']}), -- Spine Reinforced Spaulders
+        Transmog({item = 199548, slot = L['cosmetic']}), -- Rugged Seaspawn Spaulders
+        Transmog({item = 199549, slot = L['cosmetic']}), -- Depth Delvers Spaulders
+        Transmog({item = 199550, slot = L['cosmetic']}), -- Bloody Shorestalker's Spaulders
+        ns.reward.Quest({id = 70961}), -- Shouldering the Needed Armor
+        Transmog({item = 199539, slot = L['cosmetic']}), -- Blue Tufted Shoulderpads
+        Transmog({item = 199540, slot = L['cosmetic']}), -- Green Tufted Shoulderpads
+        Transmog({item = 199541, slot = L['cosmetic']}), -- Grey Tufted Shoulderpads
+        Transmog({item = 199542, slot = L['cosmetic']}) -- Red Tufted Shoulderpads
+    }
+})
+
+map.nodes[12854858] = Vendor({
+    scale = 1.0,
+    id = 187680, -- Scaps
+    requires = {ns.requirement.Quest(66223)}, -- Can We Keep It?
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 29'),
+        ns.reward.Quest({id = 70977}), -- Scaps Packs
+        Transmog({item = 198337, slot = L['cosmetic']}), -- Azure Paw Pack
+        Transmog({item = 198338, slot = L['cosmetic']}), -- Black Print Paw Pack
+        Transmog({item = 198339, slot = L['cosmetic']}), -- Dark Blue Paw Pack
+        Transmog({item = 198340, slot = L['cosmetic']}), -- Red Print Paw Pack
+        Transmog({item = 198341, slot = L['cosmetic']}) -- Tan Paw Pack
+    }
+})
+
+map.nodes[12904870] = Vendor({
+    scale = 1.0,
+    id = 186186, -- Hanu
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 24'),
+        ns.reward.Quest({id = 70971}), -- Arms for Every Arm
+        Transmog({item = 199878, slot = L['1h_axe']}), -- Tuskarr Timber Splitter
+        Transmog({item = 199879, slot = L['dagger']}), -- Tuskarr Fisherman's Dagger
+        Transmog({item = 199880, slot = L['2h_mace']}), -- Tuskarr Leviathan's Hook
+        Transmog({item = 199881, slot = L['polearm']}), -- Tuskarr Fisherman's Harpoon
+        Transmog({item = 199882, slot = L['staff']}), -- Tuskarr Mystic's Stave
+        Transmog({item = 199883, slot = L['crossbow']}) -- Tuskarr Sharktooth Bolthrower
+    }
+})
+
+map.nodes[12705033] = Vendor({
+    scale = 1.0,
+    id = 187869, -- Tikukk
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 16'),
+        Transmog({item = 199852, slot = L['cosmetic']}), -- Rustic Fisherman's Pack
+        Transmog({item = 199853, slot = L['cosmetic']}), -- Tan Fisherman's Pack
+        Transmog({item = 199854, slot = L['cosmetic']}), -- Dark Fisherman's Pack
+        Transmog({item = 199855, slot = L['cosmetic']}), -- Burgundy Fisherman's Pack
+        Transmog({item = 199856, slot = L['cosmetic']}), -- Rustic Tuskarr Traders Pack
+        Transmog({item = 199857, slot = L['cosmetic']}), -- Tan Tuskarr Traders Pack
+        Transmog({item = 199858, slot = L['cosmetic']}), -- Dark Tuskarr Traders Pack
+        Transmog({item = 199859, slot = L['cosmetic']}), -- Burgundy Tuskarr Traders Pack
+        ns.reward.Quest({id = 70966}), -- Trading Made Easier
+        Transmog({item = 199860, slot = L['cosmetic']}), -- Rustic Tuskarr Backpack
+        Transmog({item = 199861, slot = L['cosmetic']}), -- Tan Tuskarr Backpack
+        Transmog({item = 199862, slot = L['cosmetic']}), -- Dark Tuskarr Backpack
+        Transmog({item = 199863, slot = L['cosmetic']}) -- Burgundy Tuskarr Backpack
+    }
+})
+
+map.nodes[13884985] = Vendor({
+    id = 196069, -- Patchu <Master Pet Trainer>
+    note = 'Exchange {item:163036} for pets.',
+    rewards = {
+        Pet({item = 193071, id = 3278, count = 50}), -- Pistachio
+        Pet({item = 200927, id = 3408, count = 100}), -- Petal
+        Pet({item = 201707, id = 3416, count = 200}), -- Troubled Tome
+        Pet({item = 192459, id = 3270, count = 300}), -- Jean's Lucky Fish
+        Pet({item = 201703, id = 3417, count = 500}), -- Pinkie
+        Pet({item = 205052, id = 3530, count = 2500}), -- Miloh
+        Pet({item = 201441, id = 3407, count = 5000}) -- Scout
+    }
+})
+
+map.nodes[14024970] = Vendor({
+    id = 199448, -- Tattukiaka <Ottuk Trader>
+    rewards = {
+        Mount({item = 198873, id = 1658}), -- Ivory Trader's Ottuk
+        Mount({item = 198871, id = 1546}) -- Iskaara Trader's Ottuk
+    }
+})
+
+map.nodes[13804940] = Vendor({
+    scale = 1.0,
+    id = 193637, -- Jinkutuk <Herbalism Trainer>
+    rewards = {
+        Recipe({item = 198104, profession = 185}) -- Recipe: Blubbery Muffin
+    }
+})
+
+--------------------------------- COBALT ASSEMBLY --------------------------------
+
+map.nodes[49372261] = Vendor({
+    label = '{currency:2134}', -- Cobalt Assembly
+    rewards = {
+        Spacer(), Section('{npc:194832}'), -- Meiz
+        DC.WindborneVelocidrake.FinnedBack, --
+        DC.RenewedProtoDrake.ThickSpinedJaw, -- Low
+        DC.CliffsideWylderdrake.FinnedBack, -- Low
+        DC.HighlandDrake.TripleFinnedHead, -- Medium
+        DC.WindborneVelocidrake.BeakedSnout, -- Medium
+        DC.CliffsideWylderdrake.FinnedTail, -- High
+        DC.HighlandDrake.VerticalFinnedTail, -- High
+        DC.RenewedProtoDrake.BlueHair, -- Maximum
+        Spacer(), Section('{npc:196862}'), -- Steiz
+        Recipe({item = 191579, profession = 171}), -- Recipe: Transmute: Awakened Frost
+        Recipe({item = 194265, profession = 197}), -- Pattern: Blue Silken Lining
+        Recipe({item = 194261, profession = 197}), -- Pattern: Frozen Spellthread
+        Recipe({item = 198895, profession = 773}), -- Technique: Highland Drake: Spined Head
+        Recipe({item = 201733, profession = 165}), -- Pattern: Frosted Armor Kit
+        Transmog({item = 191829, slot = L['cosmetic']}), -- Cobalt Guardian's Hauberk
+        Transmog({item = 191830, slot = L['cosmetic']}), -- Cobalt Guardian's Grips
+        Transmog({item = 191831, slot = L['cosmetic']}), -- Cobalt Guardian's Helm
+        Transmog({item = 191832, slot = L['cosmetic']}), -- Cobalt Guardian's Leggings
+        Transmog({item = 191833, slot = L['cosmetic']}), -- Cobalt Guardian's Pauldron
+        Transmog({item = 191834, slot = L['cosmetic']}), -- Cobalt Guardian's Belt
+        Transmog({item = 191835, slot = L['cosmetic']}), -- Cobalt Guardian's Bracers
+        Transmog({item = 191836, slot = L['cosmetic']}), -- Cobalt Guardian's Cover
+        Transmog({item = 217891, slot = L['cosmetic']}), -- Cobalt Guardian's Cloak
+        Transmog({item = 199703, slot = L['cosmetic']}), -- Steadfast Cobalt Bulwark
+        Transmog({item = 199727, slot = L['cosmetic']}), -- Cobalt Essence Weaver's Scepter
+        Transmog({item = 199706, slot = L['cosmetic']}), -- Cobalt Stalker's Lancet
+        Transmog({item = 199708, slot = L['cosmetic']}), -- Cobalt Wingguard's Polearm
+        Transmog({item = 199701, slot = L['cosmetic']}), -- Cobalt Dragonwing Decapitator
+        Transmog({item = 199729, slot = L['cosmetic']}), -- Cobalt Essence Weaver's Staff
+        Transmog({item = 199731, slot = L['cosmetic']}), -- Cobalt Bladewing Staff
+        Transmog({item = 199733, slot = L['cosmetic']}), -- Cobalt Defender's Wingglaive
+        Transmog({item = 199735, slot = L['cosmetic']}), -- Cobalt Guardian's Cutlass
+        Transmog({item = 199737, slot = L['cosmetic']}), -- Cobalt Dragonflame Blade
+        Transmog({item = 200559, slot = L['cosmetic']}), -- Cobalt Duelist's Saber
+        Transmog({item = 201371, slot = L['cosmetic']}) -- Cobalt Defender's Shredder
+    }
+})
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

@@ -11,6 +11,7 @@ local Node = ns.node.Node
 local NPC = ns.node.NPC
 local PetBattle = ns.node.PetBattle
 local Rare = ns.node.Rare
+local Vendor = ns.node.Vendor
 local Treasure = ns.node.Treasure
 
 local AncientStone = ns.node.AncientStone
@@ -849,6 +850,7 @@ map.nodes[73495613] = Treasure({
 
 map.nodes[33205532] = Treasure({
     quest = 70391,
+    vignette = 5353,
     note = L['gem_cluster_note'],
     requires = {
         ns.requirement.Reputation(2507, 21, true), -- Dragonscale Expedition
@@ -874,6 +876,7 @@ map.nodes[82327339] = Treasure({
 
 map.nodes[32423817] = Treasure({
     quest = 67049,
+    vignette = 5142,
     note = L['nokhud_warspear_note'],
     requires = {
         ns.requirement.Quest(72709), -- Funding a Treasure Hunt
@@ -884,6 +887,7 @@ map.nodes[32423817] = Treasure({
 
 map.nodes[70603543] = Treasure({
     quest = 67950,
+    vignette = 5214,
     note = L['slightly_chewed_duck_egg_note'],
     requires = ns.requirement.Item(195453), -- Ludo's Stash Map
     rewards = {
@@ -2222,17 +2226,17 @@ function Khadin.getters:note()
     local n = C_Item.GetItemCount(191784, true, nil, true)
     local note = L['khadin_note'] .. '\n' .. format(_G.PROFESSIONS_SPECIALIZATION_CURRENCY_TOTAL, n)
     local DFprof = {
-        [171] = {variant = 2823, spell = 2259, max = 510, currency = 2024}, -- Alchemy
-        [164] = {variant = 2822, spell = 2018, max = 800, currency = 2023}, -- Blacksmithing
-        [333] = {variant = 2825, spell = 7411, max = 565, currency = 2030}, -- Enchanting
-        [202] = {variant = 2827, spell = 4036, max = 525, currency = 2027}, -- Engineering
-        [182] = {variant = 2832, spell = 2366, max = 520, currency = 2034}, -- Herbalism
-        [773] = {variant = 2828, spell = 45357, max = 680, currency = 2028}, -- Inscription
-        [755] = {variant = 2829, spell = 25229, max = 630, currency = 2029}, -- Jewelcrafting
-        [165] = {variant = 2830, spell = 2108, max = 750, currency = 2025}, -- Leatherworking
-        [186] = {variant = 2833, spell = 2575, max = 455, currency = 2035}, -- Mining
-        [393] = {variant = 2834, spell = 8613, max = 400, currency = 2033}, -- Skinning
-        [197] = {variant = 2831, spell = 3908, max = 630, currency = 2026} -- Tailoring
+        [171] = {variant = 2823, spell = 366248, max = 510, currency = 2024}, -- Alchemy
+        [164] = {variant = 2822, spell = 365699, max = 800, currency = 2023}, -- Blacksmithing
+        [333] = {variant = 2825, spell = 366245, max = 565, currency = 2030}, -- Enchanting
+        [202] = {variant = 2827, spell = 366244, max = 525, currency = 2027}, -- Engineering
+        [182] = {variant = 2832, spell = 366242, max = 520, currency = 2034}, -- Herbalism
+        [773] = {variant = 2828, spell = 366241, max = 680, currency = 2028}, -- Inscription
+        [755] = {variant = 2829, spell = 366240, max = 630, currency = 2029}, -- Jewelcrafting
+        [165] = {variant = 2830, spell = 366239, max = 750, currency = 2025}, -- Leatherworking
+        [186] = {variant = 2833, spell = 366264, max = 455, currency = 2035}, -- Mining
+        [393] = {variant = 2834, spell = 366263, max = 400, currency = 2033}, -- Skinning
+        [197] = {variant = 2831, spell = 366262, max = 630, currency = 2026} -- Tailoring
     }
     local KPneed = function(prof)
         local cfg = C_ProfSpecs.GetConfigIDForSkillLine(DFprof[prof].variant)
@@ -2419,5 +2423,115 @@ map.nodes[58303170] = PrismaticLeaperSchool()
 map.nodes[61508230] = PrismaticLeaperSchool()
 map.nodes[64303850] = PrismaticLeaperSchool()
 map.nodes[86105250] = PrismaticLeaperSchool()
+
+----------------------------- MARUUK CENTAUR VENDORS -----------------------------
+
+map.nodes[60393772] = Vendor({
+    id = 196707, -- Quartermaster Huseng <Renown Quartermaster>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 3'),
+        ns.reward.Quest({id = 72117}), -- Cultural Exchange
+        Toy({item = 198402}), -- Maruuk Cooking Pot
+        Toy({item = 200550}), -- Very Comfortable Pelt
+        Toy({item = 200551}), -- Comfortable Pile of Pelts
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 6'),
+        ns.reward.Quest({id = 71058}), -- Observing the Wind
+        DC.WindborneVelocidrake.FeatheredNeck, DC.WindborneVelocidrake.HornedJaw,
+        DC.WindborneVelocidrake.OxHorns, DC.WindborneVelocidrake.YellowHorns,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 15'),
+        ns.reward.Quest({id = 71075}), -- Understanding Their Grace
+        DC.WindborneVelocidrake.FeatheredBack, DC.WindborneVelocidrake.HairyHead,
+        DC.WindborneVelocidrake.LongSnout, DC.WindborneVelocidrake.SpikedTail,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 19'),
+        ns.reward.Quest({id = 71083}), -- An Expected Unexpected Gift
+        DC.RenewedProtoDrake.GreenScales, DC.HighlandDrake.GreenScales,
+        DC.CliffsideWylderdrake.GreenScales, DC.WindingSlitherdrake.GreenScales,
+        Spacer(), --
+        Recipe({item = 191547, profession = 171}), -- Recipe: Alacritous Alchemist Stone
+        Recipe({item = 191588, profession = 171}), -- Recipe: Exultant Incense
+        Recipe({item = 193870, profession = 165}), -- Pattern: Allied Legguards of Sansok Khan
+        Recipe({item = 193878, profession = 165}), -- Pattern: Ancestor's Dew Drippers
+        Recipe({item = 198457, profession = 165}), -- Pattern: Masterwork Smock
+        Recipe({item = 198462, profession = 165}), -- Pattern: Flameproof Apron
+        Recipe({item = 198463, profession = 165}), -- Pattern: Expert Alchemist's Hat
+        Recipe({item = 198464, profession = 165}), -- Pattern: Reinforced Pack
+        Recipe({item = 197982, profession = 165}), -- Pattern: Finished Prototype Explorer's Barding
+        Recipe({item = 194477, profession = 164}), -- Plans: Obsidian Seared Runeaxe
+        Recipe({item = 194478, profession = 164}), -- Plans: Obsidian Seared Facesmasher
+        Recipe({item = 194480, profession = 164}), -- Plans: Obsidian Seared Halberd
+        Recipe({item = 194497, profession = 164}), -- Plans: Khaz'gorite Skinning Knife
+        Recipe({item = 194499, profession = 164}), -- Plans: Khaz'gorite Leatherworker's Knife
+        Recipe({item = 198713, profession = 164}), -- Plans: Prototype Explorer's Barding Framework
+        Recipe({item = 198902, profession = 773}), -- Technique: Windborne Velocidrake: Black Fur
+        Recipe({item = 198937, profession = 773}), -- Technique: Contract: Maruuk Centaur
+        Recipe({item = 199813, profession = 333}), -- Formula: Enchant Chest - Sustained Strength
+        Recipe({item = 199814, profession = 333}) -- Formula: Enchant Boots - Plainsrunner's Breeze
+    }
+})
+
+map.nodes[62384228] = Vendor({
+    scale = 1.0,
+    id = 195529, -- Weaponmaster Aloom <Renown Weaponsmith>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 17'),
+        ns.reward.Quest({id = 71079}), -- Getting to the Point
+        Transmog({item = 200510, slot = L['polearm']}), -- Huntstrider Spear
+        Transmog({item = 200511, slot = L['polearm']}), -- Stonework Greatspear
+        Transmog({item = 200512, slot = L['polearm']}), -- Teerai Warspear
+        Transmog({item = 200517, slot = L['polearm']}), -- Nokhud Warspear
+        Transmog({item = 200518, slot = L['polearm']}), -- Nokhud Goliath's Spear
+        Transmog({item = 200520, slot = L['dagger']}), -- Mammothbone Knife
+        Transmog({item = 200521, slot = L['dagger']}), -- Maruuk Boneblade
+        Transmog({item = 200522, slot = L['dagger']}), -- Maruukai Smith's Tongs
+        Transmog({item = 200523, slot = L['1h_mace']}), -- Smith's Stoneworked Mallet
+        Transmog({item = 200524, slot = L['1h_mace']}), -- Nokhud Warhammer
+        Transmog({item = 200525, slot = L['2h_mace']}), -- Massive Stone Sledgehammer
+        Transmog({item = 200534, slot = L['2h_axe']}), -- Toghus Poleaxe
+        Transmog({item = 200539, slot = L['shield']}), -- Khansguard Shield
+        Transmog({item = 200540, slot = L['shield']}), -- Improvised Maruuk Barrier
+        Transmog({item = 200541, slot = L['shield']}) -- Fur-Lined Safeguard
+    }
+})
+
+map.nodes[62534247] = Vendor({
+    scale = 1.0,
+    id = 195547, -- Farrier Rondare <Renown Armorsmith>
+    rewards = {
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 7'),
+        ns.reward.Quest({id = 71060}), -- To Adorn Your Head
+        Transmog({item = 200481, slot = L['cosmetic']}), -- Ohn'ir Midnight Helm
+        Transmog({item = 200482, slot = L['cosmetic']}), -- Shikaar Harrier's Visor
+        Transmog({item = 200483, slot = L['cosmetic']}), -- Nokhud Battle Helm
+        Transmog({item = 200484, slot = L['cosmetic']}), -- Ohn'ir Dawnlight Hat
+        Transmog({item = 200485, slot = L['cosmetic']}), -- Ohn'ir Dusklight Cap
+        Transmog({item = 200486, slot = L['cosmetic']}), -- Ohn'ir Daylight Visor
+        Transmog({item = 200487, slot = L['cosmetic']}), -- Shikaar Hunter's Visor
+        Transmog({item = 200488, slot = L['cosmetic']}), -- Shikaar Huntmaster's Visor
+        Transmog({item = 200489, slot = L['cosmetic']}), -- Shikaar Scout's Visor
+        Transmog({item = 200490, slot = L['cosmetic']}), -- Nokhud Reaver's Helm
+        Transmog({item = 200491, slot = L['cosmetic']}), -- Nokhud Champion's Helm
+        Transmog({item = 200492, slot = L['cosmetic']}), -- Nokhud Warlord's Helm
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 13'),
+        ns.reward.Quest({id = 71073}), -- Mantle of Friendship
+        Transmog({item = 200493, slot = L['cosmetic']}), -- Ohn'ir Daylight Shoulderpads
+        Transmog({item = 200494, slot = L['cosmetic']}), -- Shikaar Scout's Shoulderpads
+        Transmog({item = 200495, slot = L['cosmetic']}), -- Nokhud Warlord's Shoulderpads
+        Transmog({item = 200496, slot = L['cosmetic']}), -- Shikaar Huntmaster's Shoulderpads
+        Transmog({item = 200497, slot = L['cosmetic']}), -- Shikaar Hunter's Shoulderpads
+        Transmog({item = 200498, slot = L['cosmetic']}), -- Shikaar Harrier's Shoulderpads
+        Transmog({item = 200499, slot = L['cosmetic']}), -- Nokhud Battle Shoulderpads
+        Transmog({item = 200500, slot = L['cosmetic']}), -- Nokhud Champion's Shoulderpads
+        Transmog({item = 200501, slot = L['cosmetic']}), -- Nokhud Reaver's Shoulderpads
+        Transmog({item = 200502, slot = L['cosmetic']}), -- Ohn'ir Midnight Shoulderpads
+        Transmog({item = 200503, slot = L['cosmetic']}), -- Ohn'ir Dusklight Shoulderpads
+        Transmog({item = 200504, slot = L['cosmetic']}), -- Ohn'ir Dawnlight Shoulderpads
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 22'),
+        ns.reward.Quest({id = 71085}), -- Representation Matters
+        Transmog({item = 200543, slot = L['cosmetic']}), -- Clan Teerai Pennant
+        Transmog({item = 200545, slot = L['cosmetic']}), -- Clan Shikaar Pennant
+        Transmog({item = 200546, slot = L['cosmetic']}), -- Clan Nokhud Pennant
+        Transmog({item = 200547, slot = L['cosmetic']}) -- Clan Ohn'ir Pennant
+    }
+})
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

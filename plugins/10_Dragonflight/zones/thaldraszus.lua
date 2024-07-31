@@ -44,6 +44,7 @@ local Skin = ns.reward.Skin
 local Mount = ns.reward.Mount
 local Pet = ns.reward.Pet
 local Recipe = ns.reward.Recipe
+local Knowledge = ns.reward.Knowledge
 local Section = ns.reward.Section
 local Spacer = ns.reward.Spacer
 local Toy = ns.reward.Toy
@@ -61,6 +62,7 @@ local DC = ns.DRAGON_CUSTOMIZATIONS
 local map = Map({id = 2025, settings = true})
 local val = Map({id = 2112, settings = false}) -- Valdrakken
 local tpf = Map({id = 2085, settings = false}) -- The Primalist Future
+local tyr = ns.maps[2199] or Map({id = 2199, settings = false}) -- Tyrhold Reservoir
 
 -------------------------------------------------------------------------------
 ------------------------------------ RARES ------------------------------------
@@ -268,7 +270,7 @@ map.nodes[62298177] = Rare({
     pois = {POI({61708120})} -- Entrance
 }) -- Lord Epochbrgl
 
-map.nodes[52895903] = Rare({
+local MatriarchRemalla = Class('MatriarchRemalla', Rare, {
     id = 193246,
     vignette = 5204,
     quest = 74013,
@@ -287,6 +289,9 @@ map.nodes[52895903] = Rare({
         Skin({item = 193252, quest = 74208, count = 4}) -- Salamanther Scales
     }
 }) -- Matriarch Remalla
+
+map.nodes[52895903] = MatriarchRemalla()
+tyr.nodes[85915544] = MatriarchRemalla()
 
 map.nodes[59806100] = Rare({
     id = 193688,
@@ -710,6 +715,27 @@ map.nodes[61736079] = Rare({
 }) -- Morlash
 
 -- 10.1.5 'Fractures in Time'
+map.nodes[54618590] = Rare({
+    id = 201664,
+    quest = {75479, 78094}, --
+    requires = {
+        ns.requirement.Quest(75986), -- Feats Per Minute
+        ns.requirement.Spell(419536), -- Taste of Infinitea
+    },
+    note = L['temporal_investigator_note'],
+    rewards = {
+        Toy({item = 206993}), -- Investi-gator's Pocketwatch
+        Toy({item = 200148}), -- A Collection of Me
+        Transmog({item = 200126, slot = L['cloak']}), -- Mantle of Copious Chronologies
+        Transmog({item = 200202, slot = L['mail']}), -- Tomorrow's Chains
+        DC.CliffsideWylderdrake.NarrowStripesPattern,
+        DC.HighlandDrake.StagHorns
+    },
+    pois = {
+        POI({54968164, color = 'Yellow'}), -- Melly Teletone
+        POI({52528156}) -- Eon's Fringe Inn
+    },
+}) -- Temporal Investi-gator
 
 map.nodes[59807060] = Rare({
     id = 205865,
@@ -736,6 +762,7 @@ map.nodes[49436289] = Treasure({
 
 map.nodes[52607673] = Treasure({
     quest = 70408,
+    vignette = 5358,
     note = L['gem_cluster_note'],
     requires = {
         ns.requirement.Reputation(2507, 21, true), -- Dragonscale Expedition
@@ -751,6 +778,7 @@ map.nodes[52607673] = Treasure({
 
 map.nodes[33967695] = Treasure({
     quest = 70607,
+    vignette = 5379,
     note = L['cracked_hourglass_note'],
     requires = {
         ns.requirement.Quest(72709), -- Funding a Treasure Hunt
@@ -772,6 +800,7 @@ map.nodes[60244164] = Treasure({
 
 map.nodes[58168007] = Treasure({
     quest = 70608,
+    vignette = 5371,
     note = L['sandy_wooden_duck_note'],
     requires = ns.requirement.Quest(70538, '{item:199069}'), -- Yennu's Map
     rewards = {
@@ -795,7 +824,7 @@ map.nodes[52458361] = Treasure({
     quest = 72355,
     label = '{npc:198604}',
     location = L['in_cave'],
-    requires = ns.requirement.Profession(186), -- Mining
+    requires = ns.requirement.Item(198727), -- Expedition Explosives, or Mining
     rewards = {
         Pet({item = 201463, id = 3415}) -- Cubbly
     }
@@ -1042,9 +1071,12 @@ map.nodes[55974053] = PetBattle({
 -------------------------------------------------------------------------------
 
 map.nodes[52208050] = PT.Blacksmithing({
+    requires = {ns.requirement.Quest(76355)}, -- If a Hammer Can Break a Lock...
     id = 201006,
     quest = 70311,
-    note = L['pt_smith_draconic_flux_note']
+    location = L['pt_smith_draconic_flux_note'],
+    note = L['tempo_questline_requirement'],
+    pois = {POI({54768161, color = 'Yellow'})}, -- Temporal Investigator Tempo
 }) -- Draconic Flux
 
 map.nodes[55203050] = PT.Alchemy({
@@ -1893,12 +1925,7 @@ map.nodes[61373139] = Vendor({
         Transmog({item = 213274, slot = L['staff'], count = 10000}), -- Archivist's Pathfinder
         Transmog({item = 208459, slot = L['2h_mace'], count = 10000}), -- Archivist's Improvised Cudgel
         Transmog({item = 208457, slot = L['2h_mace'], count = 10000}), -- Archivist's Spelunking Torch
-        Transmog({
-            item = 212941,
-            slot = L['gun'],
-            count = 10000,
-            note = _G.ITEM_ACCOUNTBOUND
-        }) -- Archivist's "Light Touch"
+        Transmog({item = 212941, slot = L['gun'], count = 10000}) -- Archivist's "Light Touch"
     }
 }) -- Provisioner Aristta
 
@@ -2007,20 +2034,20 @@ map.nodes[62618507] = ns.node.MoteOfNaszuro({
 
 ---------------------- TOY: INVESTI-GATOR'S POCKETWATCH -----------------------
 
-map.nodes[54648589] = Collectible({
-    id = 201664,
-    icon = 134376,
-    note = format('%s\n\n%s\n\n%s', L['investigators_pocketwatch_note_a'],
-        L['investigators_pocketwatch_note_b'],
-        L['investigators_pocketwatch_note_c']),
-    rewards = {
-        Toy({item = 206993}) -- Investi-gator's Pocketwatch
-    },
-    pois = {
-        POI({52158140, color = 'Green'}), -- Melly Teletone
-        POI({52138151, color = 'Blue'}) -- Bartender Bob
-    }
-}) -- Temporal Investi-gator
+-- map.nodes[54648589] = Collectible({
+--     id = 201664,
+--     icon = 134376,
+--     note = format('%s\n\n%s\n\n%s', L['investigators_pocketwatch_note_a'],
+--         L['investigators_pocketwatch_note_b'],
+--         L['investigators_pocketwatch_note_c']),
+--     rewards = {
+--         Toy({item = 206993}) -- Investi-gator's Pocketwatch
+--     },
+--     pois = {
+--         POI({52158140, color = 'Green'}), -- Melly Teletone
+--         POI({52138151, color = 'Blue'}) -- Bartender Bob
+--     }
+-- }) -- Temporal Investi-gator
 
 -------------------------------------------------------------------------------
 
@@ -2150,7 +2177,7 @@ map.nodes[61373139] = Vendor({
     }
 }) -- Provisioner Aristta
 
---------------------------------- Ms. Xiulan ----------------------------------
+--------------------------------- MS. XIULAN ----------------------------------
 
 local Xiulan = Class('Xiulan', Vendor, {
     id = 189644,
@@ -2207,5 +2234,401 @@ local Xiulan = Class('Xiulan', Vendor, {
 }) -- Ms. Xiulan <Madam Goya's Assistant>
 
 val.nodes[19215029] = Xiulan()
+
+------------------------------ IRONUS COLDSTEEL -------------------------------
+
+map.nodes[52198078] = Vendor({
+    id = 209220,
+    requires = {ns.requirement.Quest(76356)}, -- questline {76350,76352,76354,76355,76258,76356}
+    note = L['tempo_questline_requirement'],
+    rewards = {
+        Recipe({item = 12837, profession = 164}), -- Plans: Masterwork Stormhammer
+        Recipe({item = 206351, profession = 164}), -- Plans: Truesilver Champion
+        Recipe({item = 206352, profession = 164}), -- Plans: The Shatterer
+        Transmog({item = 206926, slot = L['offhand']}), -- Off-Sync Off-Hammer
+        Transmog({item = 206927, slot = L['2h_mace']}), -- Depleted Chronoforged Mallet
+        Transmog({item = 206928, slot = L['1h_mace']}) -- Echoing Temporadic Gavel
+    },
+    pois = {POI({54768161, color = 'Yellow'})} -- Temporal Investigator Tempo
+}) -- Ironus Coldsteel <Chronosmith>
+
+------------------------- ARTISAN'S CONSORTIUM VENDORS --------------------------
+
+val.nodes[35415910] = Vendor({
+    id = 194057, -- Rabul <Artisan's Consortium Quartermaster>
+    parent = map.id,
+    rewards = {
+        Recipe({item = 191590, profession = 171, count = 75}), -- Recipe: Stable Fluidic Draconium
+        Recipe({item = 198533, profession = 171, count = 75}), -- Recipe: Aerated Phial of Quick Hands
+        Recipe({item = 191586, profession = 171, count = 75}), -- Recipe: Sagacious Incense
+        Recipe({item = 191593, profession = 171, count = 75}), -- Recipe: Agitating Potion Augmentation
+        Recipe({item = 191594, profession = 171}), -- Recipe: Reactive Phial Embellishment
+        Recipe({item = 194493, profession = 164, count = 75}), -- Plans: Armor Spikes
+        Recipe({item = 194506, profession = 164, count = 75}), -- Plans: Primal Razorstone
+        Recipe({item = 199802, profession = 333, count = 75}), -- Formula: Enchant Tool - Draconic Finesse
+        Recipe({item = 199803, profession = 333, count = 75}), -- Formula: Enchant Tool - Draconic Perception
+        Recipe({item = 199804, profession = 333, count = 75}), -- Formula: Enchant Tool - Draconic Deftness
+        Recipe({item = 199242, profession = 202, count = 75}), -- Schematic: Portable Alchemist's Lab Bench
+        Recipe({item = 199243, profession = 202, count = 75}), -- Schematic: Portable Tinker's Workbench
+        Recipe({item = 199285, profession = 202, count = 75}), -- Schematic: Khaz'gorite Encased Samophlange
+        Recipe({item = 199286, profession = 202, count = 75}), -- Schematic: Khaz'gorite Brainwave Amplifier
+        Recipe({item = 199290, profession = 202}), -- Schematic: Red Fireflight
+        Recipe({item = 199289, profession = 202}), -- Schematic: Blue Fireflight
+        Recipe({item = 199295, profession = 202}), -- Schematic: Black Fireflight
+        Recipe({item = 199240, profession = 202}), -- Schematic: Green Fireflight
+        Recipe({item = 200599, profession = 773, count = 75}), -- Technique: Draconic Missive of Inspiration
+        Recipe({item = 200600, profession = 773, count = 75}), -- Technique: Draconic Missive of Resourcefulness
+        Recipe({item = 200601, profession = 773, count = 75}), -- Technique: Draconic Missive of Multicraft
+        Recipe({item = 200602, profession = 773, count = 75}), -- Technique: Draconic Missive of Crafting Speed
+        Recipe({item = 200603, profession = 773, count = 75}), -- Technique: Draconic Missive of Finesse
+        Recipe({item = 200604, profession = 773, count = 75}), -- Technique: Draconic Missive of Perception
+        Recipe({item = 200605, profession = 773, count = 75}), -- Technique: Draconic Missive of Deftness
+        Recipe({item = 198938, profession = 773}), -- Technique: Contract: Artisan's Consortium
+        Recipe({item = 198943, profession = 773, count = 75}), -- Technique: Alchemist's Brilliant Mixing Rod
+        Recipe({item = 198947, profession = 773, count = 75}), -- Technique: Chef's Splendid Rolling Pin
+        Recipe({item = 198598, profession = 773, count = 75}), -- Technique: Scroll of Sales
+        Recipe({item = 194662, profession = 755, count = 75}), -- Design: Alexstraszite Loupes
+        Recipe({item = 198618, profession = 165}), -- Pattern: Artisan's Sign
+        Recipe({item = 194286, profession = 197, count = 75}), -- Pattern: Chromatic Embroidery Thread
+        Recipe({item = 194293, profession = 197, count = 75}), -- Pattern: Vibrant Polishing Cloth
+        Recipe({item = 198098, profession = 185}), -- Recipe: Ooey-Gooey Chocolate
+        Spacer(),
+        Transmog({item = 198802, type = _G.INVTYPE_TABARD}), -- Artisan's Consortium Tabard
+        Spacer(),
+        Knowledge({item = 200972, profession = 164, quest = 71894, count = 100}), -- Dusty Blacksmith's Diagrams
+        Knowledge({item = 200973, profession = 773, quest = 71898, count = 100}), -- Dusty Scribe's Runic Drawings
+        Knowledge({item = 200974, profession = 171, quest = 71893, count = 100}), -- Dusty Alchemist's Research
+        Knowledge({item = 200975, profession = 197, quest = 71903, count = 100}), -- Dusty Tailor's Diagrams
+        Knowledge({item = 200976, profession = 333, quest = 71895, count = 100}), -- Dusty Enchanter's Research
+        Knowledge({item = 200977, profession = 202, quest = 71896, count = 100}), -- Dusty Engineer's Scribblings
+        Knowledge({item = 200978, profession = 755, quest = 71899, count = 100}), -- Dusty Jeweler's Illustrations
+        Knowledge({item = 200979, profession = 165, quest = 71900, count = 100}), -- Dusty Leatherworker's Diagrams
+        Knowledge({item = 200980, profession = 182, quest = 71897, count = 100}), -- Dusty Herbalist's Notes
+        Knowledge({item = 200981, profession = 186, quest = 71901, count = 100}), -- Dusty Miner's Notes
+        Knowledge({item = 200982, profession = 393, quest = 71902, count = 100}), -- Dusty Skinner's Notes
+        Knowledge({item = 201268, profession = 164, quest = 71905, count = 150}), -- Rare Blacksmith's Diagrams
+        Knowledge({item = 201269, profession = 773, quest = 71909, count = 150}), -- Rare Scribe's Runic Drawings
+        Knowledge({item = 201270, profession = 171, quest = 71904, count = 150}), -- Rare Alchemist's Research
+        Knowledge({item = 201271, profession = 197, quest = 71914, count = 150}), -- Rare Tailor's Diagrams
+        Knowledge({item = 201272, profession = 333, quest = 71906, count = 150}), -- Rare Enchanter's Research
+        Knowledge({item = 201273, profession = 202, quest = 71907, count = 150}), -- Rare Engineer's Scribblings
+        Knowledge({item = 201274, profession = 755, quest = 71910, count = 150}), -- Rare Jeweler's Illustrations
+        Knowledge({item = 201275, profession = 165, quest = 71911, count = 150}), -- Rare Leatherworker's Diagrams
+        Knowledge({item = 201276, profession = 182, quest = 71908, count = 150}), -- Rare Herbalist's Notes
+        Knowledge({item = 201277, profession = 186, quest = 71912, count = 150}), -- Rare Miner's Notes
+        Knowledge({item = 201278, profession = 393, quest = 71913, count = 150}), -- Rare Skinner's Notes
+        Knowledge({item = 201279, profession = 164, quest = 71916, count = 200}), -- Ancient Blacksmith's Diagrams
+        Knowledge({item = 201280, profession = 773, quest = 71920, count = 200}), -- Ancient Scribe's Runic Drawings
+        Knowledge({item = 201281, profession = 171, quest = 71915, count = 200}), -- Ancient Alchemist's Research
+        Knowledge({item = 201282, profession = 197, quest = 71925, count = 200}), -- Ancient Tailor's Diagrams
+        Knowledge({item = 201283, profession = 333, quest = 71917, count = 200}), -- Ancient Enchanter's Research
+        Knowledge({item = 201284, profession = 202, quest = 71918, count = 200}), -- Ancient Engineer's Scribblings
+        Knowledge({item = 201285, profession = 755, quest = 71921, count = 200}), -- Ancient Jeweler's Illustrations
+        Knowledge({item = 201286, profession = 165, quest = 71922, count = 200}), -- Ancient Leatherworker's Diagrams
+        Knowledge({item = 201287, profession = 182, quest = 71919, count = 200}), -- Ancient Herbalist's Notes
+        Knowledge({item = 201288, profession = 186, quest = 71923, count = 200}), -- Ancient Miner's Notes
+        Knowledge({item = 201289, profession = 393, quest = 71924, count = 200}) -- Ancient Skinner's Notes
+    }
+})
+
+--------------------------- VALDRAKKEN ACCORD VENDORS ---------------------------
+
+val.nodes[36386301] = Vendor({
+    id = 191000, -- Dothenos <Trade Coordinator>
+    parent = map.id,
+    rewards = {
+        Recipe({item = 199246, profession = 202, count = 50}), -- Schematic: Tinker: Grounded Circuitry
+        Recipe({item = 199817, profession = 333, count = 50}), -- Formula: Enchant Cloak - Homebound Speed
+        Recipe({item = 199818, profession = 333, count = 50}), -- Formula: Enchant Boots - Watcher's Loam
+        Recipe({item = 191545, profession = 171, count = 400}), -- Recipe: Sustaining Alchemist's Stone
+        Recipe({item = 194279, profession = 197, count = 400}), -- Pattern: Azureweave Slippers
+        Recipe({item = 194280, profession = 197, count = 400}), -- Pattern: Chronocloth Sash
+        Recipe({item = 194479, profession = 164, count = 400}), -- Plans: Obsidian Seared Claymore
+        Recipe({item = 194482, profession = 164, count = 400}), -- Plans: Obsidian Seared Invoker
+        Recipe({item = 198892, profession = 773, count = 25}), -- Technique: Cliffside Wylderdrake: Red Hair
+        Recipe({item = 194288, profession = 197, count = 500}), -- Pattern: Master's Wildercloth Alchemist's Robe
+        Recipe({item = 194290, profession = 197, count = 500}), -- Pattern: Master's Wildercloth Enchanter's Hat
+        Recipe({item = 194292, profession = 197, count = 500}), -- Pattern: Master's Wildercloth Gardening Hat
+        Recipe({item = 194495, profession = 164, count = 500}), -- Plans: Khaz'gorite Sickle
+        Recipe({item = 194498, profession = 164, count = 500}), -- Plans: Khaz'gorite Needle Set
+        Recipe({item = 194500, profession = 164, count = 500}), -- Plans: Khaz'gorite Leatherworker's Toolset
+        Recipe({item = 199244, profession = 202, count = 500}), -- Schematic: Khaz'gorite Delver's Helmet
+        Recipe({item = 199245, profession = 202, count = 500}), -- Schematic: Lapidary's Khaz'gorite Clamps
+        Recipe({item = 194287, profession = 197, count = 750}), -- Pattern: Chronocloth Reagent Bag
+        Recipe({item = 198941, profession = 773, count = 200}), -- Technique: Contract: Valdrakken Accord
+        Recipe({item = 194282, profession = 197, count = 750}), -- Pattern: Cushion of Time Travel
+        Recipe({item = 198912, profession = 773, count = 750}), -- Technique: Illusion Parchment: Whirling Breeze
+        Spacer(), --
+        Knowledge({item = 201706, profession = 171, quest = 70892, note = '+5' .. ' {spell:2259}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201708, profession = 164, quest = 72329, note = '+5' .. ' {spell:2018}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201710, profession = 202, quest = 72330, note = '+5' .. ' {spell:4036}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201711, profession = 773, quest = 72331, note = '+5' .. ' {spell:45357}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201715, profession = 197, quest = 72333, note = '+5' .. ' {spell:3908}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201700, profession = 186, quest = 72332, note = '+5' .. ' {spell:2575}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201706, profession = 171, quest = 70889, note = '+5' .. ' {spell:2259}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201708, profession = 164, quest = 70909, note = '+5' .. ' {spell:2018}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201710, profession = 202, quest = 70902, note = '+5' .. ' {spell:4036}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201711, profession = 773, quest = 72334, note = '+5' .. ' {spell:45357}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201715, profession = 197, quest = 72336, note = '+5' .. ' {spell:3908}'}), -- Notebook of Crafting Knowledge
+        Knowledge({item = 201716, profession = 186, quest = 72335, note = '+10' .. ' {spell:2575}'}) -- Notebook of Crafting Knowledge
+    }
+})
+
+val.nodes[46687896] = Vendor({
+    id = 185561, -- Kaestrasz <Stable Master>
+    parent = map.id,
+    rewards = {
+        Item({
+            item = 201791,
+            quest = 72094,
+            class = 'HUNTER',
+            note = _G.RENOWN_LEVEL_LABEL .. ' 23'
+        }), -- How to Train a Dragonkin
+        Spacer(), Section(_G.RENOWN_LEVEL_LABEL .. ' 9'),
+        -- ns.reward.Quest({id = 70887}), -- Feeling Freedom
+        DC.CliffsideWylderdrake.DarkSkinVariation, DC.CliffsideWylderdrake.PlatedBrow,
+        DC.CliffsideWylderdrake.SpikedCheek, DC.CliffsideWylderdrake.SplitHeadHorns,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 15'),
+        -- ns.reward.Quest({id = 70895}), -- Soaring in Style
+        DC.CliffsideWylderdrake.FourHornedChin, DC.CliffsideWylderdrake.HookHorns,
+        DC.CliffsideWylderdrake.ScaledPattern, DC.CliffsideWylderdrake.SpearTail,
+        DC.CliffsideWylderdrake.SpikedLegs, DC.CliffsideWylderdrake.WhiteHair,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 21'),
+        -- ns.reward.Quest({id = 70904}), -- Variety is the Spice of Life
+        DC.HighlandDrake.BronzeScales, DC.RenewedProtoDrake.BronzeScales,
+        DC.WindborneVelocidrake.BronzeScales, DC.WindingSlitherdrake.BronzeScales,
+        Section(_G.RENOWN_LEVEL_LABEL .. ' 26'),
+        -- ns.reward.Quest({id = 70911}), -- Armored and Ready
+        DC.RenewedProtoDrake.SilverAndPurpleArmor, DC.WindborneVelocidrake.SilverAndPurpleArmor,
+        DC.HighlandDrake.SilverAndPurpleArmor, DC.CliffsideWylderdrake.SilverAndPurpleArmor
+    }
+})
+
+------------------------------ TIME RIFTS VENDORS -------------------------------
+
+local TimeRiftVendorOne = Class('TimeRiftVendorOne', Vendor, {
+    id = 185561, -- Shi Everbreeze <Weapons and Armor>
+    rewards = {
+        Transmog({item = 207595, type = L['cloth']}), -- Anachronistic Robes
+        Transmog({item = 207596, type = L['cloth']}), -- Anachronistic Slippers
+        Transmog({item = 207597, type = L['cloth']}), -- Anachronistic Mitts
+        Transmog({item = 207598, type = L['cloth']}), -- Anachronistic Hood
+        Transmog({item = 207599, type = L['cloth']}), -- Anachronistic Breeches
+        Transmog({item = 207600, type = L['cloth']}), -- Anachronistic Mantle
+        Transmog({item = 207601, type = L['cloth']}), -- Anachronistic Sash
+        Transmog({item = 207602, type = L['cloth']}), -- Anachronistic Bindings
+        Transmog({item = 207603, type = L['leather']}), -- Raiment of Discontinuity
+        Transmog({item = 207604, type = L['leather']}), -- Treads of Discontinuity
+        Transmog({item = 207605, type = L['leather']}), -- Gloves of Discontinuity
+        Transmog({item = 207606, type = L['leather']}), -- Mask of Discontinuity
+        Transmog({item = 207607, type = L['leather']}), -- Leggings of Discontinuity
+        Transmog({item = 207608, type = L['leather']}), -- Epaulets of Discontinuity
+        Transmog({item = 207609, type = L['leather']}), -- Cincture of Discontinuity
+        Transmog({item = 207610, type = L['leather']}), -- Wristbands of Discontinuity
+        Transmog({item = 207611, type = L['mail']}), -- Paradoxical Chainmail
+        Transmog({item = 208518, type = L['mail']}), -- Paradoxical Striders
+        Transmog({item = 207613, type = L['mail']}), -- Paradoxical Gauntlets
+        Transmog({item = 207614, type = L['mail']}), -- Paradoxical Cowl
+        Transmog({item = 207615, type = L['mail']}), -- Paradoxical Tassets
+        Transmog({item = 207616, type = L['mail']}), -- Paradoxical Spaulders
+        Transmog({item = 207617, type = L['mail']}), -- Paradoxical Cinch
+        Transmog({item = 207618, type = L['mail']}), -- Paradoxical Bracers
+        Transmog({item = 207619, type = L['plate']}), -- Anomalous Chestplate
+        Transmog({item = 207620, type = L['plate']}), -- Anomalous Stompers
+        Transmog({item = 207621, type = L['plate']}), -- Anomalous Crushers
+        Transmog({item = 207622, type = L['plate']}), -- Anomalous Greathelm
+        Transmog({item = 207623, type = L['plate']}), -- Anomalous Greaves
+        Transmog({item = 207624, type = L['plate']}), -- Anomalous Pauldrons
+        Transmog({item = 207625, type = L['plate']}), -- Anomalous Girdle
+        Transmog({item = 207626, type = L['plate']}), -- Anomalous Vambraces
+        Transmog({item = 207627, type = L['cloak']}), -- Anachronistic Wrap
+        Transmog({item = 207628, type = L['cloak']}), -- Anomalous Cape
+        Transmog({item = 207629, type = L['cloak']}), -- Paradoxical Drape
+        Transmog({item = 207630, type = L['cloak']}), -- Cloak of Discontinuity
+        Transmog({item = 207976, type = L['wand']}), -- Chroniton Wand
+        Transmog({item = 207977, type = L['warglaive']}), -- Rift Render
+        Transmog({item = 207979, type = L['offhand']}), -- Timespan Scepter
+        Transmog({item = 207980, type = L['2h_sword']}), -- Inevitable Claymore
+        Transmog({item = 207981, type = L['2h_sword']}), -- Time Slicer
+        Transmog({item = 207982, type = L['shield']}), -- Timeless Bulwark
+        Transmog({item = 207985, type = L['gun']}), -- Ever-Repeating Rifle
+        Transmog({item = 207988, type = L['polearm']}), -- Time Keeper's Polearm
+        Transmog({item = 207989, type = L['staff']}), -- Chronospire
+        Transmog({item = 207990, type = L['staff']}), -- Temporal Battle Staff
+        Transmog({item = 207993, type = L['1h_axe']}), -- Spacetime Cleaver
+        Transmog({item = 207998, type = L['1h_mace']}), -- Hoursteel Mace
+        Transmog({item = 208042, type = L['dagger']}), -- Edge of Tomorrow
+        Transmog({item = 208043, type = L['1h_mace']}), -- Bronzegift Mallet
+    }
+})
+
+map.nodes[50955666] = TimeRiftVendorOne()
+tyr.nodes[66843124] = TimeRiftVendorOne()
+
+local TimeRiftVendorTwo = Class('TimeRiftVendorTwo', Vendor, {
+    label = '{quest:76984}', -- Time Rifts
+    rewards = {
+        Spacer(), Section('{npc:208338}'), -- Baron Sliver <Azmourne Vendor>
+        Mount({item = 206680, id = 1783, count = 3000}), -- Reins of the Scourgebound Vanquisher
+        Pet({item = 208138, id = 4262, count = 2750}), -- N'Ruby
+        Transmog({item = 206786, type = L['cosmetic'], count = 1500}), -- Scourge Victorious Tabard
+        Transmog({item = 206793, type = L['cosmetic'], count = 1000}), -- Upraised Headstone
+        Transmog({item = 206803, type = L['cosmetic'], count = 1000}), -- Cursed Blade of the Scourge
+        Transmog({item = 206784, type = L['cosmetic'], count = 1050}), -- Blighted Greatbow
+        Transmog({item = 206778, type = L['cosmetic'], count = 1050}), -- Northern Ballista
+        Transmog({item = 206797, type = L['cosmetic'], count = 1050}), -- Frostspire
+        Transmog({item = 206802, type = L['cosmetic'], count = 1050}), -- Plague-Touched Stave
+        Transmog({item = 206783, type = L['cosmetic'], count = 1050}), -- Bonegale Greataxe
+        Spacer(), Section('{npc:208342}'), -- Gill the Drill <A.Z.E.R.O.T.H Vendor>
+        Mount({item = 206679, id = 1782, count = 3000}), -- Perfected Juggernaut
+        Pet({item = 208013, id = 4260, count = 2750}), -- Killbot 9000
+        Transmog({item = 206796, type = L['cosmetic'], count = 1000}), -- Energetic Power Knife
+        Transmog({item = 206804, type = L['cosmetic'], count = 1000}), -- Clockwork Mallet
+        Transmog({item = 206807, type = L['cosmetic'], count = 1000}), -- Order-Powered Mechblade
+        Transmog({item = 206777, type = L['cosmetic'], count = 1000}), -- Energy Projection Regulator
+        Transmog({item = 206780, type = L['cosmetic'], count = 1050}), -- Overclocked Hand Cannon
+        Transmog({item = 206779, type = L['cosmetic'], count = 1000}), -- Steel-Lined Locking System
+        Transmog({item = 206785, type = L['cosmetic'], count = 1050}), -- Defect Retirement Tool
+        Spacer(), Section('{npc:208347}'), -- Provisioner Qorra <Azq'roth Vendor>
+        Mount({item = 206678, id = 1781, count = 3000}), -- Sulfur Hound's Leash
+        Pet({item = 208010, id = 4258, count = 2750}), -- Jeepers
+        Transmog({item = 206768, type = L['cosmetic'], count = 1000}), -- Serrated Parasite
+        Transmog({item = 206769, type = L['cosmetic'], count = 1000}), -- Unknown Horror's Arm
+        Transmog({item = 206770, type = L['cosmetic'], count = 1000}), -- Consuming Claws
+        Transmog({item = 206776, type = L['cosmetic'], count = 1000}), -- Heretical Gavel
+        Transmog({item = 206792, type = L['cosmetic'], count = 1000}), -- Subjugator's Shield
+        Transmog({item = 206799, type = L['cosmetic'], count = 1100}), -- Pauldrons of the Fire Lord
+        Transmog({item = 206765, type = L['cosmetic'], count = 1050}), -- Its Focused Gaze
+        Spacer(), Section('{npc:208341}'), -- Falara Nightsong <Azewrath Vendor>
+        Mount({item = 206676, id = 1779, count = 3000}), -- Felstorm Dragon
+        Pet({item = 208008, id = 4259, count = 2750}), -- Doomrubble
+        Transmog({item = 206766, type = L['cosmetic'], count = 1000}), -- Jagged Treason
+        Transmog({item = 206764, type = L['cosmetic'], count = 1050}), -- Fel-Infused Polearm
+        Transmog({item = 206781, type = L['cosmetic'], count = 1050}), -- Demonic Bone-Crusher
+        Transmog({item = 206789, type = L['cosmetic'], count = 1050}), -- Heart-Slicer
+        Transmog({item = 206790, type = L['cosmetic'], count = 1050}), -- Fel-Ridden Divider
+        Transmog({item = 206791, type = L['cosmetic'], count = 1050}), -- Branded Greatmaul
+        Transmog({item = 206801, type = L['cosmetic'], count = 1050}), -- Inferna Rod
+    }
+})
+
+map.nodes[51215730] = TimeRiftVendorTwo()
+tyr.nodes[67873242] = TimeRiftVendorTwo()
+
+local TimeRiftVendorThree = Class('TimeRiftVendorThree', Vendor, {
+    label = '{quest:76984}', -- Time Rifts
+    rewards = {
+        Spacer(), Section('{npc:208345}'), -- Sir Finley Mrrgglton <Azmerloth Vendor>
+        Pet({item = 208009, id = 4257, count = 2750}), -- Gill'dan
+        Spacer(), Section('{npc:208343}'), -- Sorotis <Ulderoth Vendor>
+        Mount({item = 206675, id = 1778, count = 3000}), -- Gold-Toed Albatross
+        Pet({item = 208012, id = 4255, count = 2750}), -- Briarhorn Hatchling
+        Appearance({item = 207046, note = L['plate'], count = 2500}), -- Ensemble: Valhalas Ceremonial Armor
+        Appearance({item = 207047, note = L['mail'], count = 2500}), -- Ensemble: Hauberk of Discipline
+        Appearance({item = 207048, note = L['leather'], count = 2500}), -- Ensemble: Lifegiver's Garms
+        Appearance({item = 207049, note = L['cloth'], count = 2500}), -- Ensemble: Decorous Garments
+        Transmog({item = 206788, type = L['cosmetic'], count = 1500}), -- Utopian Tabard
+        Transmog({item = 206782, type = L['cosmetic'], count = 1000}), -- Titanic Hourglass
+        Transmog({item = 206767, type = L['cosmetic'], count = 1000}), -- Valhalas Peacekeeper
+        Transmog({item = 206794, type = L['cosmetic'], count = 1000}), -- Hand of Order
+        Transmog({item = 206795, type = L['cosmetic'], count = 1000}), -- Titan Watcher's Shortblade
+        Transmog({item = 206798, type = L['cosmetic'], count = 1050}), -- Valhalas Heartstriker
+        Spacer(), Section('{npc:208346}'), -- Warden Krizzik <Warlands Vendor>
+        Mount({item = 206674, id = 1777, faction = 'Alliance', count = 3000}), -- Reins of the Ravenous Black Gryphon
+        Mount({item = 206673, id = 1776, faction = 'Horde', count = 3000}), -- Horn of the White War Wolf
+        Pet({item = 208011, id = 4261, count = 2750}), -- Obsidian Warwhelp
+        Transmog({item = 206829, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Shroud
+        Transmog({item = 206824, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Epaulets
+        Transmog({item = 206827, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Mitts
+        Transmog({item = 206822, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Wristwraps
+        Transmog({item = 206828, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Treads
+        Transmog({item = 206823, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Cord
+        Transmog({item = 206821, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Robe
+        Transmog({item = 206826, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Hood
+        Transmog({item = 206825, type = L['cloth'], faction = 'Alliance'}), -- Jingoist's Leggings
+        Transmog({item = 206831, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Cloak
+        Transmog({item = 206836, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Spaulders
+        Transmog({item = 206838, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Bracers
+        Transmog({item = 206833, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Gloves
+        Transmog({item = 206837, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Belt
+        Transmog({item = 206832, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Boots
+        Transmog({item = 206839, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Cuirass
+        Transmog({item = 206834, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Headcover
+        Transmog({item = 206835, type = L['leather'], faction = 'Alliance'}), -- Jingoist's Pantaloons
+        Transmog({item = 206868, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Drape
+        Transmog({item = 206863, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Mantle
+        Transmog({item = 206861, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Bonds
+        Transmog({item = 206866, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Grips
+        Transmog({item = 206862, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Clasp
+        Transmog({item = 206867, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Footpads
+        Transmog({item = 206869, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Vestment
+        Transmog({item = 206860, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Chainmail
+        Transmog({item = 206865, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Casque
+        Transmog({item = 206864, type = L['mail'], faction = 'Alliance'}), -- Jingoist's Legguards
+        Transmog({item = 206870, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Cape
+        Transmog({item = 206875, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Pauldrons
+        Transmog({item = 206872, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Gauntlets
+        Transmog({item = 206877, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Vambraces
+        Transmog({item = 206876, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Girdle
+        Transmog({item = 206871, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Warboots
+        Transmog({item = 206878, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Breastplate
+        Transmog({item = 206873, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Greathelm
+        Transmog({item = 206874, type = L['plate'], faction = 'Alliance'}), -- Jingoist's Legplates
+        Transmog({item = 207014, type = L['1h_axe'], faction = 'Alliance'}), -- Jingoist's Slicer
+        Transmog({item = 206819, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Shroud
+        Transmog({item = 206808, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Robe
+        Transmog({item = 206818, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Treads
+        Transmog({item = 206810, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Cord
+        Transmog({item = 206816, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Skullcap
+        Transmog({item = 206812, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Epaulets
+        Transmog({item = 206814, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Leggings
+        Transmog({item = 206817, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Mitts
+        Transmog({item = 206809, type = L['cloth'], faction = 'Horde'}), -- Warmonger's Wristwraps
+        Transmog({item = 206849, type = L['leather'], faction = 'Horde'}), -- Warmonger's Cloak
+        Transmog({item = 206846, type = L['leather'], faction = 'Horde'}), -- Warmonger's Headcover
+        Transmog({item = 206840, type = L['leather'], faction = 'Horde'}), -- Warmonger's Cuirass
+        Transmog({item = 206843, type = L['leather'], faction = 'Horde'}), -- Warmonger's Spaulders
+        Transmog({item = 206848, type = L['leather'], faction = 'Horde'}), -- Warmonger's Boots
+        Transmog({item = 206847, type = L['leather'], faction = 'Horde'}), -- Warmonger's Gloves
+        Transmog({item = 206841, type = L['leather'], faction = 'Horde'}), -- Warmonger's Bracers
+        Transmog({item = 206845, type = L['leather'], faction = 'Horde'}), -- Warmonger's Pantaloons
+        Transmog({item = 206842, type = L['leather'], faction = 'Horde'}), -- Warmonger's Belt
+        Transmog({item = 206844, type = L['leather'], faction = 'Horde'}), -- Warmonger's Vestment
+        Transmog({item = 206850, type = L['mail'], faction = 'Horde'}), -- Warmonger's Drape
+        Transmog({item = 206854, type = L['mail'], faction = 'Horde'}), -- Warmonger's Legguards
+        Transmog({item = 206855, type = L['mail'], faction = 'Horde'}), -- Warmonger's Mantle
+        Transmog({item = 206858, type = L['mail'], faction = 'Horde'}), -- Warmonger's Chainmail
+        Transmog({item = 206853, type = L['mail'], faction = 'Horde'}), -- Warmonger's Casque
+        Transmog({item = 206851, type = L['mail'], faction = 'Horde'}), -- Warmonger's Footpads
+        Transmog({item = 206856, type = L['mail'], faction = 'Horde'}), -- Warmonger's Clasp
+        Transmog({item = 206852, type = L['mail'], faction = 'Horde'}), -- Warmonger's Grips
+        Transmog({item = 206857, type = L['mail'], faction = 'Horde'}), -- Warmonger's Bonds
+        Transmog({item = 206887, type = L['plate'], faction = 'Horde'}), -- Warmonger's Cape
+        Transmog({item = 206882, type = L['plate'], faction = 'Horde'}), -- Warmonger's Pauldrons
+        Transmog({item = 206885, type = L['plate'], faction = 'Horde'}), -- Warmonger's Gauntlets
+        Transmog({item = 206884, type = L['plate'], faction = 'Horde'}), -- Warmonger's Greathelm
+        Transmog({item = 206886, type = L['plate'], faction = 'Horde'}), -- Warmonger's Warboots
+        Transmog({item = 206879, type = L['plate'], faction = 'Horde'}), -- Warmonger's Breastplate
+        Transmog({item = 206880, type = L['plate'], faction = 'Horde'}), -- Warmonger's Vambraces
+        Transmog({item = 206883, type = L['plate'], faction = 'Horde'}), -- Warmonger's Legplates
+        Transmog({item = 206881, type = L['plate'], faction = 'Horde'}), -- Warmonger's Girdle
+        Transmog({item = 207015, type = L['1h_axe'], faction = 'Horde'}), -- Warmonger's Ripper
+    }
+})
+
+map.nodes[51355686] = TimeRiftVendorThree()
+tyr.nodes[68683107] = TimeRiftVendorThree()
+
+------------------------- LORD GODFREY'S OLD SPECTACLES -------------------------
+
+local gilneas = ns.maps[217] or Map({id = 217, settings = false}) -- Ruins of Gilneas
+
+gilneas.nodes[51785301] = Collectible({
+    requires = {ns.requirement.Profession(356)}, -- Fishing
+    label = '{item:67108}',
+    icon = 4620674,
+    rewards = {Transmog({item = 67108, note = L['cosmetic']})},
+    pois = {Path({ns.poi.Circle({origin = 58795018, radius = 24})})}
+}) -- Lord Godfrey's Old Spectacles
 
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

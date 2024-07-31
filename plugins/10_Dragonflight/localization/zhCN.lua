@@ -598,6 +598,7 @@ L['lord_epochbrgl_note'] = '点击 {npc:193257} 后稀有出现。'
 L['the_great_shellkhan_note'] = '从 {location:碧蓝林海} 的 {location:考里克闪光河湾} 拾取 {item:200949}，3分钟内回到 {npc:191416} 交还物品激活稀有并获得成就。\n\n{note:在开始前确保 {npc:191416} 和 {npc:191305} 确实存在。一个角色每周只能拾取并交还一次物品，之后 {npc:191416} 只会表示感谢。}'
 L['weeping_vilomah_note'] = '和 {npc:193206} 对话召唤稀有。'
 L['woofang_note'] = '抚摸 {npc:193156} 稀有出现。'
+L['temporal_investigator_note'] = '1. {note:完成 {npc:204990}{dot:Yellow} 给的从 {quest:75935} 开始的任务线。}\n\n2. 向 {location:万时旅馆}{dot:Blue} 楼上的 {npc:204990} 借一个 {item:208449}。\n\n3. 去楼下 {npc:203769} 旁边使用后，从 {npc:207463} 那买一份 {item:208448} {note:(只持续30秒)}。\n\n4. 赶去稀有刷新点，喝下茶, 凭增益 {spell:419536} {note:(只持续30秒)}，能看见{object:时润时钟}显现， 触碰后， {npc:201664} 刷新。'
 
 L['acorn_harvester_note'] = '从附近地面收集1个 {object:橡果} 获得 {spell:388485} 并与 {npc:196172} 互动。\n\n{bug:（错误：点击 {npc:196172} 可能需要重新加载）}'
 L['cracked_hourglass_note'] = '{item:199068} 可以从 {object:探险队斥候的背包} 和 {object:翻动过的泥土} 中找到。'
@@ -919,7 +920,11 @@ L['big_slick_note'] = '从 {npc:201752} 完成的每日任务达到 {faction:256
 L['grogul_note'] = '与 {npc:204672} 交谈并选择一种可以用来鼓励这只蜗牛移动得更快的食物。\n{note:该成就可以在名望7之前获得。}'
 
 L['saccratos_note'] = '用 {item:204727} 换取宠物，坐骑和其他。'
-L['ponzo_note'] = '用 {item:204985} 换取幼龙定制，宠物，坐骑和其他。'
+L['ponzo_note'] = '用 {item:%d} 换取幼龙定制，宠物，坐骑和其他。'
+L['topper_cheapst_note'] = '\n\n{note:{npc:204693} 现在给出的是 {item:205421} 的最低价。}'
+L['topper_cutprice_note'] = '\n\n{note:继续与 {npc:204693} 讨价还价，争取 {item:205421} 更低的价格。}'
+L['topper_askprice_note'] = '\n\n{note:和 {npc:204693} 攀谈，看他是否愿意出售他的 {item:205421}。}'
+L['topper_premise_note'] = '\n\n{note:名望等级达到12，并完成 {quest:75728}后， {item:205421} 将可以购买。}'
 
 L['smelly_trash_pile_label'] = '臭垃圾堆'
 L['options_icons_smelly_trash_pile'] = '臭垃圾堆'
@@ -1128,14 +1133,14 @@ L['nahqi_note'] = '要对 {npc:210908} 施放 {spell:1515}，需要 {item:211314
 
 L['sulraka_note'] = '{npc:210868} {npc:<吉布尔之女>} 在 {location:阿梅达希尔} 东方以 {note:逆时针} 路线巡游，大约17分钟绕一周。\n它的刷新时间最少30分钟。\n\n当它行进时会在身后留下 {object:笨重的踪迹}，持续3分钟。\n由于一直潜行状态，需要在一个刚刚刷新的 {object:笨重的踪迹} 前面使用 {spell:1543} 来让其显形。\n先施放 {spell:257284} 和（或）{spell:187650}，再尝试 {spell:1515}。\n\n{note:注意：{npc:210868} 即使受到攻击也不会停止前行，所以一定要使用陷阱或照明。否则 {spell:1543} 会在超距后取消施法。}\n\n{note:这是只 {npc:灵魂兽}。只有兽王猎人能驯服。}'
 
-L['alarashinu_note'] = '{item:210961}，一把隐藏的带有邪色的自然战刃。\n\n{note:特殊视觉效果：}\n装备或幻化阿莱纳希努使用 {spell:195072} / {spell:189110} / {spell:198793} 时会留下一串花迹！'
-L['alarashinu_note_stage1'] = '与 {location:翡翠梦境} 的 {location:中心营地} 的 {npc:213029} 交谈。'
-L['alarashinu_note_stage2'] = '前往 {location:破碎海滩 } 的 {location:失落的神殿}，见 {npc:213114}。'
-L['alarashinu_note_stage3'] = '前往 {location:瓦尔莎拉 } 的 {location:月神殿}，见 {npc:213186}。'
-L['alarashinu_note_stage4'] = '记忆结束后，一个 {npc:213248} 会带着他的战刃出现。'
-L['alarashinu_note_stage5'] = '用邪能火焰灌注 {npc:213308}。'
-L['alarashinu_note_stage6'] = '拾取 {npc:213381} 并获得 {item:210961}。'
-L['alarashinu_note_end'] = '返回 {npc:213029}，在获得这把战刃后，他会出现一个奖励对话框。'
+L['alarashinu_note'] = '{item:210961}， 一把侵染邪能的自然风格的战刃。\n\n{note:特殊视觉效果：} \n装备或幻化 {item:210961} 后，在施放 {spell:195072}/{spell:189110}/{spell:198793} 会在身后留下鲜花轨迹！'
+L['alarashinu_note_stage1'] = '与{location:翡翠梦境} {location:中心营地} 的 {npc:213029} 交谈。'
+L['alarashinu_note_stage2'] = '前往 {location:破碎海滩} 的 {location:失落的神殿}，见证一段 {npc:213114}。'
+L['alarashinu_note_stage3'] = '前往 {location:瓦尔莎拉} 的 {location:月神殿}, 见证另一段 {npc:213186}。'
+L['alarashinu_note_stage4'] = '在影像离开后, 一只 {npc:213248} 会携带战刃出现。'
+L['alarashinu_note_stage5'] = '将你的邪能烈焰注入 {npc:213308}。'
+L['alarashinu_note_stage6'] = '拾取 {npc:213381}，获得 {item:210961}。'
+L['alarashinu_note_end'] = '获得 {item:210961} 后，回去和 {npc:213029} 交谈，会一段额外的对话。'
 
 -------------------------------------------------------------------------------
 ----------------------------- SECRETS OF AZEROTH ------------------------------

@@ -643,6 +643,7 @@ dragonskullIsland.nodes[84045351] = Amephyst({
 map.nodes[48947352] = ns.node.ElementalChest({
     label = L['storm_bound_chest_label'],
     quest = 74567,
+    vignette = 5550,
     areaPOI = 7415,
     rewards = {
         Item({item = 202196}), -- Zskera Vault Key
@@ -752,7 +753,7 @@ local ForbiddenHoard = Class('ForbiddenHoard', Collectible, {
     }
 }) -- Forbidden Hoard
 
-map.nodes[28414200] = ForbiddenHoard()
+map.nodes[28414200] = ForbiddenHoard({vignette = {5463, 5614}})
 map.nodes[39192452] = ForbiddenHoard()
 map.nodes[40911121] = ForbiddenHoard()
 map.nodes[41154445] = ForbiddenHoard({

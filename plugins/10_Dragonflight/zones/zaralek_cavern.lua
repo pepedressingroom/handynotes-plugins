@@ -26,7 +26,10 @@ local Skin = ns.reward.Skin
 local Mount = ns.reward.Mount
 local Pet = ns.reward.Pet
 local Recipe = ns.reward.Recipe
+local Knowledge = ns.reward.Knowledge
+local Appearance = ns.reward.Appearance
 local Section = ns.reward.Section
+local Spacer = ns.reward.Spacer
 local Toy = ns.reward.Toy
 local Transmog = ns.reward.Transmog
 
@@ -43,6 +46,34 @@ local DC = ns.DRAGON_CUSTOMIZATIONS
 local map = Map({id = 2133, settings = true})
 
 local deepflayerNest = Map({id = 2184, settings = false}) -- Deepflayer Nest
+
+-------------------------------------------------------------------------------
+
+local barter, price = _, {}
+
+local function SetBarterRate()
+    -- local Loammlevel = C_MajorFactions.GetCurrentRenownLevel(2564)
+    local UnlockBoulder = C_QuestLog.IsQuestFlaggedCompleted(75728)
+    local BrickPrice = {3, 25, 35, 55, 80, 85, 90, 170}
+    local BoulderPrice = {1, 10, 25, 30, 40, 45, 40, 85}
+    local TopperPrice = function()
+        local q = {75871, 75870, 75836, 75869}
+        local n = {249, 999, 4999, 9999}
+        for i = 1, #q do
+            d = C_QuestLog.IsQuestFlaggedCompleted(q[i])
+            if d then return n[i] end
+        end
+    end
+    if UnlockBoulder
+    then price = BoulderPrice
+        price[9] = TopperPrice()
+        barter = 205188 -- Barter Boulder
+    else price = BrickPrice
+        barter = 204985 -- Barter Brick
+    end
+end
+
+SetBarterRate()
 
 -------------------------------------------------------------------------------
 ------------------------------------ RARES ------------------------------------
@@ -470,6 +501,7 @@ map.nodes[38867151] = Rare({
 
 map.nodes[36694883] = Treasure({
     quest = 73697,
+    vignette = 5534,
     note = L['ancient_zaqali_chest_note'],
     rewards = {
         Achievement({id = 17786, criteria = 59222}) -- Treasures of Zaralek Cavern
@@ -479,6 +511,7 @@ map.nodes[36694883] = Treasure({
 
 map.nodes[28544791] = Treasure({
     quest = 72986,
+    vignette = 5523,
     requires = ns.requirement.Item(15138),
     note = L['blazing_shadowflame_chest_note'],
     rewards = {
@@ -489,6 +522,7 @@ map.nodes[28544791] = Treasure({
 
 map.nodes[42976040] = Treasure({
     quest = 75231, -- 75232
+    vignette = 5637,
     requires = {
         ns.requirement.Quest(73047) -- Terrestrial Tunneling
     },
@@ -500,6 +534,7 @@ map.nodes[42976040] = Treasure({
 
 map.nodes[30044193] = Treasure({
     quest = 73706,
+    vignette = 5539,
     rewards = {
         Achievement({id = 17786, criteria = 59226}) -- Treasures of Zaralek Cavern
     }
@@ -507,6 +542,7 @@ map.nodes[30044193] = Treasure({
 
 map.nodes[56040305] = Treasure({
     quest = 75187,
+    vignette = 5619,
     location = L['in_small_cave'],
     note = L['chest_of_the_flights_treasure_note'],
     rewards = {
@@ -519,9 +555,10 @@ map.nodes[56040305] = Treasure({
 map.nodes[36397425] = Treasure({
     note = L['crystal_encased_chest_note'],
     quest = {74987, 75559, 75601, 74986}, -- delete 73697, it's Ancient Zaqali Chest Looting Quest
+    vignette = 5690,
     rewards = {
         Achievement({id = 17786, criteria = 59228}), -- Treasures of Zaralek Cavern
-        Item({item = 204985}), -- Barter Brick
+        -- Item({item = 204985}), -- Barter Brick -- no this drop
         Currency({id = 2245}), -- Flightstones
         Currency({id = 2003}) -- Dragon Isles Supplies
     },
@@ -533,6 +570,7 @@ map.nodes[36397425] = Treasure({
 
 map.nodes[62715376] = Treasure({
     quest = 75019,
+    vignette = 5593,
     location = L['in_water'],
     rewards = {
         Achievement({id = 17786, criteria = 59223}) -- Treasures of Zaralek Cavern
@@ -546,6 +584,7 @@ map.nodes[62715376] = Treasure({
 map.nodes[43058256] = Treasure({
     requires = ns.requirement.Item(204323), -- Old Trunk Key
     quest = 74995,
+    vignette = 5687,
     note = L['old_trunk_note'],
     rewards = {
         Achievement({id = 17786, criteria = 59227}) -- Treasures of Zaralek Cavern
@@ -561,9 +600,10 @@ map.nodes[43058256] = Treasure({
 
 map.nodes[32333935] = Treasure({
     quest = 73410,
+    vignette = 5527,
     note = L['seething_cache_treasure_note'],
     rewards = {
-        Achievement({id = 17786, criteria = 59221}), -- Treasures of Zaralek Cavern
+        Achievement({id = 17786, criteria = 59220}), -- Treasures of Zaralek Cavern
         Mount({item = 192779, id = 1623}) -- Seething Slug
     },
     pois = {
@@ -577,6 +617,7 @@ map.nodes[32333935] = Treasure({
 
 map.nodes[29764054] = Treasure({
     quest = 73395,
+    vignette = 5522,
     note = L['well_chewed_chest_note'],
     requires = ns.requirement.Item(202869), -- Scorching Key
     rewards = {
@@ -593,6 +634,7 @@ map.nodes[29764054] = Treasure({
 map.nodes[48411636] = Treasure({
     label = L['molten_hoard_label'],
     quest = 75515,
+    vignette = 5686,
     location = L['in_small_cave'],
     rewards = {
         Transmog({item = 205981, slot = L['cosmetic']}) -- Molten Primal Fang
@@ -603,6 +645,7 @@ map.nodes[48411636] = Treasure({
 map.nodes[48451083] = Treasure({
     label = L['fealtys_reward_label'],
     quest = 75514,
+    vignette = 5685,
     note = L['fealtys_reward_note'],
     rewards = {
         Currency({id = 2245}), -- Flightstones
@@ -614,12 +657,14 @@ map.nodes[48451083] = Treasure({
 map.nodes[57956632] = Treasure({
     label = L['dreamers_bounty_label'],
     quest = 75762,
+    vignette = 5712,
     note = L['dreamers_bounty_note']
 }) -- Dreamer's Bounty
 
 map.nodes[56734868] = Treasure({
     label = L['moth_pilfered_pouch_label'],
     quest = 75320,
+    vignette = {5650, 5658},
     note = L['moth_pilfered_pouch_note'],
     rewards = {
         Currency({id = 2245}), -- Flightstones
@@ -628,13 +673,15 @@ map.nodes[56734868] = Treasure({
     pois = {POI({56664934})} -- Struggling Mothling
 }) -- Moth-Pilfered Pouch
 
-map.nodes[62055534] = Treasure({
+local WaterloggedBundle = Class('WaterloggedBundle', Treasure, {
+-- map.nodes[62055534] = Treasure({
     label = L['waterlogged_bundle_label'],
     quest = 75015,
+    vignette = 5592,
     location = L['in_water'],
     rewards = {
         Item({item = 199906}), -- Titan Relic
-        Item({item = 204985}), -- Barter Brick
+        Item({item = barter}), -- Barter Brick/Barter Boulder
         Currency({id = 2245}) -- Flightstones
     },
     pois = {
@@ -643,10 +690,25 @@ map.nodes[62055534] = Treasure({
     }
 }) -- Waterlogged Bundle
 
+-- function WaterloggedBundle.getters:rewards()
+--     local currency = 204985 -- Barter Brick
+--     if C_QuestLog.IsQuestFlaggedCompleted(75728) then
+--         currency = 205188 -- Barter Boulder
+--     end
+--     return {
+--         Item({item = currency}), -- Barter Brick/Barter Boulder
+--         Item({item = 199906}), -- Titan Relic
+--         Currency({id = 2245}) -- Flightstones
+--     }
+-- end
+
+map.nodes[62055534] = WaterloggedBundle()
+
 map.nodes[64197495] = Treasure({
     label = L['nal_kskol_reliquary_label'],
     requires = {ns.requirement.Quest(72962)},
     quest = 75745,
+    vignette = 5711,
     note = L['nal_kskol_reliquary_note'],
     rewards = {
         Item({item = 191784}), -- Dragon Shard of Knowledge
@@ -661,6 +723,7 @@ map.nodes[64197495] = Treasure({
 map.nodes[60664622] = Treasure({
     label = L['stolen_stash_label'],
     quest = 75302,
+    vignette = 5647,
     rewards = {
         Currency({id = 2245}), -- Flightstones
         Currency({id = 2003}) -- Dragon Isles Supplies
@@ -670,6 +733,7 @@ map.nodes[60664622] = Treasure({
 deepflayerNest.nodes[63698291] = Treasure({
     label = L['stolen_stash_label'],
     quest = 75303,
+    vignette = 5648,
     location = L['in_deepflayer_nest'],
     rewards = {
         Currency({id = 2245}), -- Flightstones
@@ -684,19 +748,32 @@ local RitualOffering = Class('RitualOffering', Treasure, {
     icon = 'chest_bn',
     rewards = {
         Item({item = 199906}), -- Titan Relic
-        Item({item = 204985}), -- Barter Brick
+        Item({item = barter}), -- Barter Brick/Barter Boulder
         Currency({id = 2245}), -- Flightstones
         DC.RenewedProtoDrake.PlatedJaw
     }
 }) -- Ritual Offering
 
-map.nodes[26874611] = RitualOffering({fgroup = 'ritual53', quest = 73553})
+-- function RitualOffering.getters:rewards()
+--     local currency = 204985 -- Barter Brick
+--     if C_QuestLog.IsQuestFlaggedCompleted(75728) then
+--         currency = 205188 -- Barter Boulder
+--     end
+--     return {
+--         DC.RenewedProtoDrake.PlatedJaw,
+--         Item({item = currency}),
+--         Item({item = 199906}), -- Titan Relic
+--         Currency({id = 2245}) -- Flightstones
+--     }
+-- end
+
+map.nodes[26874611] = RitualOffering({fgroup = 'ritual53', quest = 73553, vignette = 5531})
 map.nodes[27344217] = RitualOffering({fgroup = 'ritual53', quest = 73553})
 map.nodes[28195157] = RitualOffering({fgroup = 'ritual53', quest = 73553})
 map.nodes[28754415] = RitualOffering({fgroup = 'ritual53', quest = 73553})
-map.nodes[28945491] = RitualOffering({fgroup = 'ritual52', quest = 73552})
+map.nodes[28945491] = RitualOffering({fgroup = 'ritual52', quest = 73552, vignette = 5530})
 map.nodes[30055140] = RitualOffering({fgroup = 'ritual52', quest = 73552})
-map.nodes[30454365] = RitualOffering({fgroup = 'ritual51', quest = 73551})
+map.nodes[30454365] = RitualOffering({fgroup = 'ritual51', quest = 73551, vignette = 5529})
 map.nodes[31883961] = RitualOffering({fgroup = 'ritual51', quest = 73551})
 map.nodes[31955275] = RitualOffering({fgroup = 'ritual52', quest = 73552})
 map.nodes[32355045] = RitualOffering({fgroup = 'ritual52', quest = 73552})
@@ -706,7 +783,7 @@ map.nodes[35145225] = RitualOffering({fgroup = 'ritual52', quest = 73552})
 map.nodes[35304181] = RitualOffering({fgroup = 'ritual51', quest = 73551})
 map.nodes[36034454] = RitualOffering({fgroup = 'ritual51', quest = 73551})
 map.nodes[36395236] = RitualOffering({fgroup = 'ritual52', quest = 73552})
-map.nodes[38174991] = RitualOffering({fgroup = 'ritual48', quest = 73548})
+map.nodes[38174991] = RitualOffering({fgroup = 'ritual48', quest = 73548, vignette = 5528})
 map.nodes[40015127] = RitualOffering({fgroup = 'ritual48', quest = 73548})
 map.nodes[41054876] = RitualOffering({fgroup = 'ritual48', quest = 73548})
 map.nodes[41694457] = RitualOffering({fgroup = 'ritual48', quest = 73548})
@@ -725,7 +802,7 @@ local SmellyTrashPile = Class('SmellyTrashPile', ns.node.Node, {
     }
 }) -- Smelly Trash Pile
 
-map.nodes[31175207] = SmellyTrashPile()
+map.nodes[31175207] = SmellyTrashPile({vignette = 5714})
 map.nodes[35044233] = SmellyTrashPile()
 map.nodes[35244459] = SmellyTrashPile()
 map.nodes[35754907] = SmellyTrashPile()
@@ -776,12 +853,24 @@ local SmellyTreasureChest = Class('SmellyTreasureChest', ns.node.Node, {
     rewards = {
         DC.RenewedProtoDrake.PlatedJaw, -- Renewed Proto-Drake: Plated Jaw
         Item({item = 199906}), -- Titan Relic
-        Item({item = 204985}), -- Barter Brick
-        Item({item = 205188}) -- Barter Boulder
+        Item({item = barter}) -- Barter Brick/Barter Boulder
+        -- Item({item = 205188}) -- Barter Boulder
     }
 }) -- Smell Treasure Chest
 
-map.nodes[25704360] = SmellyTreasureChest()
+-- function SmellyTreasureChest.getters:rewards()
+--     local currency = 204985 -- Barter Brick
+--     if C_QuestLog.IsQuestFlaggedCompleted(75728) then
+--         currency = 205188 -- Barter Boulder
+--     end
+--     return {
+--         DC.RenewedProtoDrake.PlatedJaw, -- Renewed Proto-Drake: Plated Jaw
+--         Item({item = currency}),
+--         Item({item = 199906}) -- Titan Relic
+--     }
+-- end
+
+map.nodes[25704360] = SmellyTreasureChest({vignette = 5715})
 map.nodes[28205370] = SmellyTreasureChest()
 map.nodes[30204010] = SmellyTreasureChest()
 map.nodes[32505300] = SmellyTreasureChest()
@@ -996,7 +1085,7 @@ map.nodes[60233957] = ElusiveCreature({
     quest = 74234,
     rewards = {
         Skin({item = 193224, count = 3}), -- Lustrous Scaled Hide
-        Item({item = 205451, quest = 75866}), -- Flawless Crystal Scale
+        Knowledge({item = 205451, profession = 393, quest = 75866}), -- Flawless Crystal Scale
         Achievement({id = 18833, criteria = 61483}) -- Elusive Legends of the Dragon Isles
     },
     pois = {Path({ns.poi.Circle({origin = 60233957, radius = 3})})}
@@ -1467,17 +1556,289 @@ map.nodes[55895537] = Vendor({
     }
 }) -- Saccratos <Coveted Bauble Exchange>
 
-map.nodes[58085381] = Vendor({
-    id = 204693,
-    note = L['ponzo_note'],
+map.nodes[56485563] = Vendor({
+    id = 202468,
+    -- note = 'harlowe_marl_note', --
     rewards = {
-        DC.SetCount(DC.WindingSlitherdrake.HairyBrow, 55),
-        DC.SetCount(DC.WindingSlitherdrake.ClusterChinHorn, 55),
-        DC.SetCount(DC.WindingSlitherdrake.CurledNose, 55),
-        Pet({item = 205120, id = 3537, count = 85}), -- Thimblerig
-        Mount({item = 205209, id = 1736, count = 170}) -- Boulder Hauler
+        DC.SetCount(DC.WindingSlitherdrake.GrandChinThorn, 150),
+        DC.SetCount(DC.WindingSlitherdrake.LargeFinnedCrest, 150),
+        DC.SetCount(DC.WindingSlitherdrake.TanHorns, 150),
+        DC.SetCount(DC.WindingSlitherdrake.BrownHair, 300),
+        DC.SetCount(DC.WindingSlitherdrake.CurvedHorns, 300),
+        DC.SetCount(DC.WindingSlitherdrake.LongJawHorns, 300),
+        DC.SetCount(DC.WindingSlitherdrake.LargeSpikedNose, 600),
+        DC.SetCount(DC.WindingSlitherdrake.HairyTail, 600),
+        DC.SetCount(DC.WindingSlitherdrake.HairyThroat, 600),
+        DC.SetCount(DC.HighlandDrake.OrnateHelm, 1000),
+        Spacer(),
+        Knowledge({item = 205348, profession = 755, quest = 75754, count = 300}), -- Niffen Notebook of Jewelcrafting Knowledge
+        Knowledge({item = 205349, profession = 202, quest = 75759, count = 300}), -- Niffen Notebook of Engineering Knowledge
+        Knowledge({item = 205350, profession = 165, quest = 75751, count = 300}), -- Niffen Notebook of Leatherworking Knowledge
+        Knowledge({item = 205351, profession = 333, quest = 75752, count = 300}), -- Niffen Notebook of Enchanting Knowledge
+        Knowledge({item = 205352, profession = 164, quest = 75755, count = 300}), -- Niffen Notebook of Blacksmithing Knowledge
+        Knowledge({item = 205353, profession = 171, quest = 75756, count = 300}), -- Niffen Notebook of Alchemy Knowledge
+        Knowledge({item = 205354, profession = 773, quest = 75761, count = 300}), -- Niffen Notebook of Inscription Knowledge
+        Knowledge({item = 205355, profession = 197, quest = 75757, count = 300}), -- Niffen Notebook of Tailoring Knowledge
+        Knowledge({item = 205356, profession = 186, quest = 75758, count = 300}), -- Niffen Notebook of Mining Knowledge
+        Knowledge({item = 205357, profession = 393, quest = 75760, count = 300}), -- Niffen Notebook of Skinning Knowledge
+        Knowledge({item = 205358, profession = 182, quest = 75753, count = 300}), -- Niffen Notebook of Herbalism Knowledge
+        Spacer(),
+        Toy({item = 205963, count = 200}), -- Sniffin' Salts
+        Pet({item = 205050, id = 3528, count = 250}), -- Paulie
+        Pet({item = 205051, id = 3529, count = 250}), -- Rango
+        Mount({item = 205207, id = 1738, count = 800}), -- Morsel Sniffer Reins
+        Spacer(),
+        Transmog({item = 205971, type = L['1h_axe'], note = L['cosmetic'], count = 200}), -- Rock Breaking Digger
+        Transmog({item = 205972, type = L['1h_sword'], note = L['cosmetic'], count = 200}), -- Decorative Niffen Sword
+        Appearance({item = 205363, count = 200}) -- Ensemble: Ornate Black Dragon Labwear -- quest = 75832
+    }
+}) -- Harlowe Marl <Loamm Niffen Quartermaster>
+
+
+-- local Ponzo = Class('Ponzo', Vendor, {id = 204693}) -- Ponzo
+
+
+local Ponzo = Class('Ponzo', Vendor, {
+-- map.nodes[58085381] = Vendor({
+    id = 204693,
+    -- note = format(L['ponzo_note'], barter),
+    rewards = {
+        Item({item = 205984, weekly = 76077, count = price[1]}), -- Bartered Dig Map
+        Spacer(),
+        Item({item = 205452, count = price[2]}), -- Ponzo's Cream
+        Item({item = 205453, count = price[5]}), -- Glimmerogg Timeshare Voucher
+        Spacer(),
+        DC.SetCount(DC.WindingSlitherdrake.HairyBrow, price[4]),
+        DC.SetCount(DC.WindingSlitherdrake.ClusterChinHorn, price[4]),
+        DC.SetCount(DC.WindingSlitherdrake.CurledNose, price[4]),
+        Spacer(),
+        Knowledge({item = 205424, profession = 755, quest = 75841, count = price[3]}), -- Bartered Jewelcrafting Notes
+        Knowledge({item = 205425, profession = 202, quest = 75844, count = price[3]}), -- Bartered Engineering Notes
+        Knowledge({item = 205426, profession = 165, quest = 75840, count = price[3]}), -- Bartered Leatherworking Notes
+        Knowledge({item = 205427, profession = 333, quest = 75845, count = price[3]}), -- Bartered Enchanting Notes
+        Knowledge({item = 205428, profession = 164, quest = 75846, count = price[3]}), -- Bartered Blacksmithing Notes
+        Knowledge({item = 205429, profession = 171, quest = 75847, count = price[3]}), -- Bartered Alchemy Notes
+        Knowledge({item = 205430, profession = 773, quest = 75842, count = price[3]}), -- Bartered Inscription Notes
+        Knowledge({item = 205431, profession = 197, quest = 75837, count = price[3]}), -- Bartered Tailoring Notes
+        Knowledge({item = 205432, profession = 186, quest = 75839, count = price[3]}), -- Bartered Mining Notes
+        Knowledge({item = 205433, profession = 393, quest = 75838, count = price[3]}), -- Bartered Skinning Notes
+        Knowledge({item = 205434, profession = 182, quest = 75843, count = price[3]}), -- Bartered Herbalism Notes
+        Knowledge({item = 205435, profession = 755, quest = 75854, count = price[7]}), -- Bartered Jewelcrafting Journal
+        Knowledge({item = 205436, profession = 202, quest = 75851, count = price[7]}), -- Bartered Engineering Journal
+        Knowledge({item = 205437, profession = 165, quest = 75855, count = price[7]}), -- Bartered Leatherworking Journal
+        Knowledge({item = 205438, profession = 333, quest = 75850, count = price[7]}), -- Bartered Enchanting Journal
+        Knowledge({item = 205439, profession = 164, quest = 75849, count = price[7]}), -- Bartered Blacksmithing Journal
+        Knowledge({item = 205440, profession = 171, quest = 75848, count = price[7]}), -- Bartered Alchemy Journal
+        Knowledge({item = 205441, profession = 773, quest = 75853, count = price[7]}), -- Bartered Inscription Journal
+        Knowledge({item = 205442, profession = 197, quest = 75858, count = price[7]}), -- Bartered Tailoring Journal
+        Knowledge({item = 205443, profession = 186, quest = 75856, count = price[7]}), -- Bartered Mining Journal
+        Knowledge({item = 205444, profession = 393, quest = 75857, count = price[7]}), -- Bartered Skinning Journal
+        Knowledge({item = 205445, profession = 182, quest = 75852, count = price[7]}), -- Bartered Herbalism Journal
+        Spacer(),
+        Pet({item = 205120, id = 3537, count = price[6]}), -- Thimblerig
+        Mount({item = 205209, id = 1736, count = price[8]}), -- Boulder Hauler
+        Transmog({item = 205421, slot = L['cosmetic'], count = price[9]}), -- Ponzo's Scheming Topper x249 talk to Ponzo to see {75869,75836,75870,75871}
+        Achievement({id = 17841}) -- Pyramid Scheme
     }
 }) -- Ponzo <Barterer Extraordinaire>
+
+-- function Ponzo.getters:note()
+--     local currency = 204985 -- Barter Brick
+--     if C_QuestLog.IsQuestFlaggedCompleted(75728) then
+--         currency = 205188 -- Barter Boulder
+--     end
+--     local n = format(L['ponzo_note'], currency)
+
+--     local _,_,_,toppercollected = GetAchievementInfo(17841)
+--     if toppercollected then return note end
+--     -- talk to Ponzo to cut price {75869,75836,75870,75871}
+--     local q, c = {75871, 75870, 75836, 75869, 75728}, {}
+--     for i = 1, #q do c[i] = C_QuestLog.IsQuestFlaggedCompleted(q[i]) end
+--     if c[1] then  n = n .. L['topper_cheapst_note']
+--     elseif c[2] or c[3] or c[4] then n = n .. L['topper_cutprice_note']
+--     elseif c[5] then n = n .. L['topper_askprice_note']
+--     else n = n .. L['topper_premise_note']
+--     end
+--     return n
+-- end
+
+function Ponzo.getters:note()
+    local n = format(L['ponzo_note'], barter)
+    local _,_,_,toppercollected = GetAchievementInfo(17841)
+    if toppercollected then return note end
+    local q, c = {75871, 75870, 75836, 75869, 75728}, {}
+    for i = 1, #q do c[i] = C_QuestLog.IsQuestFlaggedCompleted(q[i]) end
+    if c[1] then  n = n .. L['topper_cheapst_note']
+    elseif c[2] or c[3] or c[4] then n = n .. L['topper_cutprice_note']
+    elseif c[5] then n = n .. L['topper_askprice_note']
+    else n = n .. L['topper_premise_note']
+    end
+    return n
+end
+
+-- function Ponzo.getters:rewards()
+--     local BrickPrice = {3, 25, 35, 55, 80, 85, 90, 170}
+--     local BoulderPrice = {1, 10, 25, 30, 40, 45, 40, 85}
+
+--     local SchemingTopper = function()
+--         local q = {75871, 75870, 75836, 75869}
+--         local n = {249, 999, 4999, 9999}
+--         for i = 1, #q do
+--             d = C_QuestLog.IsQuestFlaggedCompleted(q[i])
+--             if d then return n[i] end
+--         end
+--     end
+
+--     local price = BrickPrice
+--     if C_QuestLog.IsQuestFlaggedCompleted(75728) then
+--         price = BoulderPrice
+--         price[9] = SchemingTopper()
+--     end
+
+--     return {
+--         Item({item = 205984, weekly = 76077, count = price[1]}), -- Bartered Dig Map
+--         Spacer(),
+--         Item({item = 205452, count = price[2]}), -- Ponzo's Cream
+--         Item({item = 205453, count = price[5]}), -- Glimmerogg Timeshare Voucher
+--         Spacer(),
+--         DC.SetCount(DC.WindingSlitherdrake.HairyBrow, price[4]),
+--         DC.SetCount(DC.WindingSlitherdrake.ClusterChinHorn, price[4]),
+--         DC.SetCount(DC.WindingSlitherdrake.CurledNose, price[4]),
+--         Spacer(),
+--         Knowledge({item = 205424, profession = 755, quest = 75841, count = price[3]}), -- Bartered Jewelcrafting Notes
+--         Knowledge({item = 205425, profession = 202, quest = 75844, count = price[3]}), -- Bartered Engineering Notes
+--         Knowledge({item = 205426, profession = 165, quest = 75840, count = price[3]}), -- Bartered Leatherworking Notes
+--         Knowledge({item = 205427, profession = 333, quest = 75845, count = price[3]}), -- Bartered Enchanting Notes
+--         Knowledge({item = 205428, profession = 164, quest = 75846, count = price[3]}), -- Bartered Blacksmithing Notes
+--         Knowledge({item = 205429, profession = 171, quest = 75847, count = price[3]}), -- Bartered Alchemy Notes
+--         Knowledge({item = 205430, profession = 773, quest = 75842, count = price[3]}), -- Bartered Inscription Notes
+--         Knowledge({item = 205431, profession = 197, quest = 75837, count = price[3]}), -- Bartered Tailoring Notes
+--         Knowledge({item = 205432, profession = 186, quest = 75839, count = price[3]}), -- Bartered Mining Notes
+--         Knowledge({item = 205433, profession = 393, quest = 75838, count = price[3]}), -- Bartered Skinning Notes
+--         Knowledge({item = 205434, profession = 182, quest = 75843, count = price[3]}), -- Bartered Herbalism Notes
+--         Knowledge({item = 205435, profession = 755, quest = 75854, count = price[7]}), -- Bartered Jewelcrafting Journal
+--         Knowledge({item = 205436, profession = 202, quest = 75851, count = price[7]}), -- Bartered Engineering Journal
+--         Knowledge({item = 205437, profession = 165, quest = 75855, count = price[7]}), -- Bartered Leatherworking Journal
+--         Knowledge({item = 205438, profession = 333, quest = 75850, count = price[7]}), -- Bartered Enchanting Journal
+--         Knowledge({item = 205439, profession = 164, quest = 75849, count = price[7]}), -- Bartered Blacksmithing Journal
+--         Knowledge({item = 205440, profession = 171, quest = 75848, count = price[7]}), -- Bartered Alchemy Journal
+--         Knowledge({item = 205441, profession = 773, quest = 75853, count = price[7]}), -- Bartered Inscription Journal
+--         Knowledge({item = 205442, profession = 197, quest = 75858, count = price[7]}), -- Bartered Tailoring Journal
+--         Knowledge({item = 205443, profession = 186, quest = 75856, count = price[7]}), -- Bartered Mining Journal
+--         Knowledge({item = 205444, profession = 393, quest = 75857, count = price[7]}), -- Bartered Skinning Journal
+--         Knowledge({item = 205445, profession = 182, quest = 75852, count = price[7]}), -- Bartered Herbalism Journal
+--         Spacer(),
+--         Pet({item = 205120, id = 3537, count = price[6]}), -- Thimblerig
+--         Mount({item = 205209, id = 1736, count = price[8]}), -- Boulder Hauler
+--         Transmog({item = 205421, slot = L['cosmetic'], count = price[9]}), -- Ponzo's Scheming Topper
+--         Achievement({id = 17841}) -- Pyramid Scheme
+--     }
+-- end
+
+map.nodes[58085381] = Ponzo()
+
+map.nodes[56705530] = Vendor({
+    icon = 4620677, -- Jewelcrafting
+    scale = 0.8,
+    id = 203612, -- Fanilly
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 205175, profession = 755}), -- Design: Statuette of Foreseen Power
+        Recipe({item = 205176, profession = 755}), -- Design: Figurine of the Gathering Storm
+        Section('{item:205453}'),
+        Recipe({item = 205174, profession = 755}) -- Design: B.B.F. Fist
+    }
+})
+
+map.nodes[55875567] = Vendor({
+    icon = 4620676, -- Inscription
+    scale = 0.8,
+    id = 203171, -- Scridorsa the Chiseler
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 205131, profession = 773}), -- Technique: Winding Slitherdrake: Small Finned Throat
+        Recipe({item = 205134, profession = 773}), -- Technique: Vantus Rune: Aberrus, the Shadowed Crucible
+        Recipe({item = 205135, profession = 773}), -- Technique: Hissing Rune
+        Section('{item:205453}'),
+        Recipe({item = 205130, profession = 773}), -- Technique: Winding Slitherdrake: White Hair
+        Recipe({item = 205132, profession = 773}), -- Technique: Glyph of the Chosen Glaive
+        Recipe({item = 205133, profession = 773}), -- Technique: Glyph of the Heaved Armament
+        Recipe({item = 205136, profession = 773}) -- Technique: Contract: Loamm Niffen
+    }
+})
+
+map.nodes[57255585] = Vendor({
+    icon = 4620678, -- Leatherworking
+    scale = 0.8,
+    id = 203644, -- Garram
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 204969, profession = 165}), -- Pattern: Spore Colony Shoulderguards
+        Section('{item:205453}'),
+        Recipe({item = 204970, profession = 165}), -- Pattern: Adaptive Dracothyst Armguards
+        Recipe({item = 204974, profession = 165}) -- Pattern: Lambent Armor Kit
+    }
+})
+
+map.nodes[56075665] = Vendor({
+    icon = 4620681, -- Tailoring
+    scale = 0.8,
+    id = 203608, -- Rossmar
+    rewards = {
+        Section('{item:205453}'),
+        Recipe({item = 205138, profession = 197}), -- Pattern: Medical Wrap Kit
+        Recipe({item = 205139, profession = 197}) -- Pattern: Reserve Parachute
+    }
+})
+
+map.nodes[57065498] = Vendor({
+    icon = 4620670, -- Blacksmithing
+    scale = 0.8,
+    id = 203170, -- Kilnmaster Crubus
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 205137, profession = 164}), -- Plans: Shadowed Alloy
+        Section('{item:205453}'),
+        Recipe({item = 205143, profession = 164}) -- Plans: Shadowed Belt Clasp
+    }
+})
+
+map.nodes[55835585] = Vendor({
+    icon = 4620673, -- Engineering
+    scale = 0.8,
+    id = 203610, -- Scrybbil
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 204844, profession = 202}), -- Schematic: Polarity Bomb
+        Section('{item:205453}'),
+        Recipe({item = 205178, profession = 202}) -- Schematic: Mallard Mortar
+    }
+})
+
+map.nodes[55995647] = Vendor({
+    icon = 4620669, -- Alchemy
+    scale = 0.8,
+    id = 203607, -- Mistie
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 204631, profession = 171}), -- Recipe: Transmute: Dracothyst
+        Section('{item:205453}'),
+        Recipe({item = 204984, profession = 171}) -- Recipe: Stinky Bright Potion
+    }
+})
+
+map.nodes[55935680] = Vendor({
+    icon = 4620672, -- Enchanting
+    scale = 0.8,
+    id = 203172, -- Dustmonger Topuiz
+    rewards = {
+        Section('{item:205452}'),
+        Recipe({item = 204976, profession = 333}), -- Formula: Spore Keeper's Baton
+        Recipe({item = 204978, profession = 333}), -- Formula: Enchant Weapon - Spore Tender
+        Section('{item:205453}'),
+        Recipe({item = 204977, profession = 333}) -- Formula: Illusory Adornment: Spores
+    }
+})
 
 -------------------------------------------------------------------------------
 -------------------- TO ALL THE SQUIRRELS BURROWED BENEATH --------------------

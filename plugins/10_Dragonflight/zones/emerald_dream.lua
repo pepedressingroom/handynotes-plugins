@@ -587,6 +587,7 @@ map.nodes[72002700] = Node({
 
 map.nodes[39146553] = Treasure({
     quest = 77950,
+    vignette = 5981,
     location = L['in_a_tree'],
     rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
@@ -598,6 +599,7 @@ map.nodes[39146553] = Treasure({
 map.nodes[47493485] = Treasure({
     label = L['hidden_moonkin_stash_label'],
     quest = 77858,
+    vignette = 5826,
     location = L['in_a_tree'],
     rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
@@ -608,6 +610,7 @@ map.nodes[47493485] = Treasure({
 
 map.nodes[61625960] = Treasure({
     quest = 78005,
+    vignette = {5831, 5926, 5927},
     note = L['magical_bloom_note'],
     rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
@@ -619,6 +622,7 @@ map.nodes[61625960] = Treasure({
 
 map.nodes[55275726] = Treasure({
     quest = 78006,
+    vignette = 5832,
     location = L['in_a_tree'],
     rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
@@ -629,6 +633,7 @@ map.nodes[55275726] = Treasure({
 
 map.nodes[37263069] = Treasure({
     quest = 78120,
+    vignette = 5872,
     location = L['pineshrew_cache_note'],
     rewards = {
         Achievement({id = 19317, criteria = 62956}), -- Treasures of The Emerald Dream
@@ -638,6 +643,7 @@ map.nodes[37263069] = Treasure({
 
 bor.nodes[63863509] = Treasure({
     quest = 78359,
+    vignette = 5935,
     location = L['in_cave'],
     note = L['reliquary_of_ashamane_note'],
     parent = {
@@ -656,6 +662,7 @@ bor.nodes[63863509] = Treasure({
 
 map.nodes[64231928] = Treasure({
     quest = 78360,
+    vignette = 5936,
     note = L['reliquary_of_aviana_note'],
     rewards = {
         Achievement({id = 19317, criteria = 62957}), -- Treasures of The Emerald Dream
@@ -666,6 +673,7 @@ map.nodes[64231928] = Treasure({
 
 map.nodes[32938325] = Treasure({
     quest = 78361,
+    vignette = 5937,
     location = L['in_small_cave'],
     note = L['reliquary_of_goldrinn_note'],
     rewards = {
@@ -680,6 +688,7 @@ map.nodes[32938325] = Treasure({
 
 map.nodes[47055309] = Treasure({
     quest = 78107,
+    vignette = 5870,
     note = L['reliquary_of_ursol_note'],
     rewards = {
         Achievement({id = 19317, criteria = 62955}), -- Treasures of The Emerald Dream
@@ -692,6 +701,7 @@ map.nodes[34105633] = Treasure({
     label = '{npc:210060}',
     note = L['triflesnatchs_roving_trove_note'],
     quest = {77855, 77857, 77860, 77872},
+    vignette = 5812,
     rewards = {
         Achievement({id = 19317, criteria = 62952}), -- Treasures of The Emerald Dream
         Item({item = 208067}) -- Plump Dreamseed
@@ -736,16 +746,19 @@ local UnwakingEcho = Class('UnwakingEcho', Treasure, {
 
 map.nodes[46408615] = UnwakingEcho({
     quest = 78552,
+    vignette = 5956,
     rewards = {Transmog({item = 210682, type = L['cosmetic']})} -- Camper's Knife
 })
 
 map.nodes[55672258] = UnwakingEcho({
     quest = 78547,
+    vignette = 5953,
     rewards = {Transmog({item = 210675, type = L['cosmetic']})} -- Gardener's Lightstaff
 })
 
 map.nodes[55324538] = UnwakingEcho({
     quest = 78551,
+    vignette = 5955,
     location = L['in_small_cave'],
     rewards = {Transmog({item = 210678, type = L['cosmetic']})}, -- Verdant Glearner's Scythe
     pois = {POI({54774452})} -- Entrance
@@ -753,6 +766,7 @@ map.nodes[55324538] = UnwakingEcho({
 
 map.nodes[69575284] = UnwakingEcho({
     quest = 78550,
+    vignette = 5954,
     location = L['inside_building'],
     rewards = {Transmog({item = 210686, type = L['shield']})} -- Grovekeeper's Barrier
 })

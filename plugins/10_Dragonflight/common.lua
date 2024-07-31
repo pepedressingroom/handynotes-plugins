@@ -1078,7 +1078,7 @@ local Disturbeddirt = Class('Disturbed_dirt', Node, {
     label = L['disturbed_dirt'],
     group = ns.groups.DISTURBED_DIRT,
     requires = {
-        ns.requirement.Quest(70813), -- Digging Up Treasure
+        -- ns.requirement.Quest(70813), -- Digging Up Treasure
         ns.requirement.ItemAny(L['expedition_shovel'], 191294, 191304) -- Small/Sturdy Expedition Shovel
         -- ns.requirement.Item(191294) -- Small Expedition Shovel
     },
@@ -1111,7 +1111,7 @@ local Scoutpack = Class('Scoutpack', Node, {
     icon = 4562583,
     label = L['scout_pack'],
     group = ns.groups.SCOUT_PACK,
-    requires = ns.requirement.Quest(70822), -- Lost Expedition Scouts
+    -- requires = ns.requirement.Quest(70822), -- Lost Expedition Scouts
     rewards = {
         Item({item = 191784}), -- Dragon Shard of Knowledge
         Mount({item = 192764, id = 1617}), -- Verdant Skitterfly

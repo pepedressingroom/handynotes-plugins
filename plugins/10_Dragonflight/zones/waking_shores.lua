@@ -2880,4 +2880,79 @@ map.nodes[47738323] = Vendor({
     }
 })
 
+---------------------------- OBSIDIAN THRONE VENDORS ---------------------------
+
+local WrathionVendor = Class('WrathionVendor', Vendor, {
+    rewards = {
+        DC.RenewedProtoDrake.GoldandBlackArmor, -- Friend by Wrathion
+        DC.HighlandDrake.GoldandBlackArmor, -- Friend by Wrathion
+        DC.CliffsideWylderdrake.GoldandBlackArmor, -- Friend by Wrathion
+        DC.RenewedProtoDrake.BlackScales, -- True Friend by Wrathion
+        DC.WindborneVelocidrake.BlackScales, -- True Friend by Wrathion
+        DC.HighlandDrake.BlackScales, -- True Friend by Wrathion
+        DC.CliffsideWylderdrake.BlackScales, -- True Friend by Wrathion
+        Spacer(), --
+        Toy({item = 200707}), -- Armoire of Endless Cloaks
+        Pet({item = 200930, id = 3414}), -- Obsidian Proto-Whelp
+        Appearance({item = 200952, note = L['mail']}), -- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+        Item({item = 200992, type = L['cosmetic']}), -- Obsidian Spellweaver's Scepter
+        Item({item = 200996, type = L['cosmetic']}), -- Obsidian Guard's Claw
+        Item({item = 199740, type = L['cosmetic']}), -- Onyx Dragonflame Blade
+        Item({item = 200997, type = L['cosmetic']}), -- Obsidian Guard's Saber
+        Item({item = 200998, type = L['cosmetic']}), -- Obsidian Wing Glaive
+        Item({item = 200985, type = L['cosmetic']}), -- Obsidian Wingedguard Polearm
+        Item({item = 200987, type = L['cosmetic']}), -- Obsidian Spellcarver's Stave
+        Spacer(), --
+        Item({item = 201840}) -- Sturdy Obsidian Glasses
+    }
+})
+
+map.nodes[25155579] = WrathionVendor({id = 188625}) -- Lorena Belle <Wrathion's Quartermaster>
+map.nodes[26506248] = WrathionVendor({id = 199020}) -- Atticus Belle <Assistant Quartermaster>
+
+local SabellianVendor = Class('SabellianVendor', Vendor, {
+    rewards = {
+        DC.RenewedProtoDrake.GoldandBlackArmor, -- Friend by Sabellian
+        DC.HighlandDrake.GoldandBlackArmor, -- Friend by Sabellian
+        DC.CliffsideWylderdrake.GoldandBlackArmor, -- Friend by Sabellian
+        DC.RenewedProtoDrake.BlackScales, -- True Friend by Sabellian
+        DC.WindborneVelocidrake.BlackScales, -- True Friend by Sabellian
+        DC.HighlandDrake.BlackScales, -- True Friend by Sabellian
+        DC.CliffsideWylderdrake.BlackScales, -- True Friend by Sabellian
+        Spacer(), --
+        Toy({item = 200640}), -- Obsidian Egg Clutch
+        Appearance({item = 200952, note = L['mail']}), -- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+        Appearance({item = 200963, note = L['cloth']}), -- Ensemble: Sabellian's Battlegear Cloth Armor
+        Item({item = 199740, type = L['cosmetic']}), -- Onyx Dragonflame Blade
+        Item({item = 200990, type = L['cosmetic']}), -- Obsidian Guard's Cutlass
+        Item({item = 200996, type = L['cosmetic']}), -- Obsidian Guard's Claw
+        Item({item = 200993, type = L['cosmetic']}), -- Obsidian Guard's Barrier
+        Item({item = 200983, type = L['cosmetic']}), -- Obsidian Wingguard Polearm
+        Item({item = 200986, type = L['cosmetic']}), -- Obsidian Spellweaver's Stave
+        Item({item = 200988, type = L['cosmetic']}), -- Obsidian Guard's Skullsplitter
+        Spacer(), --
+        Item({item = 201839}) -- Netherforged Lavaproof Boots
+    }
+})
+
+map.nodes[24685678] = SabellianVendor({id = 188623}) -- Samia Inkling <Sabellian's Quartermaster>
+map.nodes[27755626] = SabellianVendor({id = 199036}) -- Xaldrass <Assistant Quartermaster>
+
+map.nodes[26435544] = Vendor({
+    id = 191135, -- Yries Lightfingers
+    rewards = {
+        Mount({item = 201837, id = 1612}), -- Magmammoth Harness
+        Pet({item = 199326, id = 3376}) -- Chip
+    }
+})
+
+map.nodes[25585432] = Vendor({
+    id = 189207, -- Griftah <Amazing Amulets>
+    rewards = {
+        Pet({item = 199177, id = 3292}), -- Ash Feather Amulet
+        Item({item = 202046}), -- Lucky Tortollan Charm
+        Item({item = 203652}) -- Griftah's All-Purpose Embellishing Powder
+    }
+})
+
 -- STOP: DO NOT ADD NEW NODES HERE UNLESS THEY BELONG IN MISCELLANEOUS

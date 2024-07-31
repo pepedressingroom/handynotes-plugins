@@ -116,6 +116,7 @@ L['elemental_storm_mythressa_note_end'] = 'Zurzeit hast du %s {currency:2118}.'
 L['options_icons_elemental_storm'] = 'Elementarstürme'
 L['options_icons_elemental_storm_desc'] = 'Zeigt die möglichen Positionen der Elementarstürme an.'
 
+L['creature_bait'] = 'Köder für Kreaturen'
 L['elusive_creature_note'] = 'Benötigt {object:Rang 40/40} in der {object:Köderherstellung}s Spezialisierung, um {item:193906} herstellen zu können, dieser wird benötigt, um die Kreaturen einmal pro Tag anlocken und Kürschnern zu können.'
 L['options_icons_elusive_creature'] = '{item:193906}'
 L['options_icons_elusive_creature_desc'] = 'Zeigt die Positionen der scheuen Kreaturen an, die mit {item:193906} angelockt werden können.'

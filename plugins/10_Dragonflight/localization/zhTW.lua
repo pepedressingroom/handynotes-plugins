@@ -598,6 +598,7 @@ L['lord_epochbrgl_note'] = '點擊 {npc:193257} 來刷新稀有.'
 L['the_great_shellkhan_note'] = '從 {location:蒼藍高地} 的 {location:寇莉格微光水灣} 收集 {item:200949}, 在3分鐘內走回去找 {npc:191416} 繳回物品來啟動稀有並取得成就.\n\n {note:在開始前確定 {npc:191416} 和 {npc:191305}在那裡.每週只有1個角色可以撿起並繳回物品來啟動稀有, 之後 {npc:191416} 只會感謝你.}'
 L['weeping_vilomah_note'] = '和 {npc:193206} 對話來召喚稀有.'
 L['woofang_note'] = '撫摸 {npc:193156} 來召喚稀有.'
+L['temporal_investigator_note'] = '1. {note:完成 {npc:204990}{dot:Yellow} 派發的從 {quest:75935} 開始的任務綫.}\n\n2. 向 {location:隨時旅店}{dot:Blue} 樓上的 {npc:204990} 借一個 {item:208449}.\n\n3. 去樓下 {npc:203769} 身邊使用後, 從 {npc:207463} 那裏買一份 {item:208448} {note:(只持續30秒)}.\n\n4. 趕往稀有刷新點, 喝下茶, 憑增益 {spell:419536} {note:(只持續30秒)}, 能看見{object:時間浸透時鐘}顯現, 觸碰之後，{npc:201664} 刷新.'
 
 L['acorn_harvester_note'] = '在附近的地上收集一個 {object:橡實} 來取得 {spell:388485} 之後再和 {npc:196172} 互動.\n\n{bug:(BUG: 要點選 {npc:196172} 可能需要重新載入)}.'
 L['cracked_hourglass_note'] = '{item:199068} 可以在 {object:遠征隊斥侯包} 和 {object:挖過的土} 中找到.'

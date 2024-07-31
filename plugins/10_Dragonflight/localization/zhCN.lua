@@ -1116,7 +1116,7 @@ L['thorn_beast_bear'] = '{item:%d}（{npc:熊}）'
 
 L['thornbeast_disclaimer'] = '{note:注意：每种野兽的 {item:%s} 虽同名但不一样。}'
 
-L['thorn_laden_heart_note_1'] = '从 {location:翡翠梦境} 的任意 {npc:梦麋}、{npc:梦刃豹} 或 {npc:鬃罴} 三类野兽身上拾取到3种不同的 {item:209860}。'
+L['thorn_laden_heart_note_1'] = '从 {location:翡翠梦境} 的任意 {npc:鹿}、{npc:豹} 或 {npc:熊} 三类野兽身上拾取到3种不同的 {item:209860}。'
 L['thorn_laden_heart_note_2'] = '获得一种野兽的 {item:209860} 之后, 去 {location:库尔提拉斯} 的 {location:德鲁斯瓦}, 找一只名唤 {npc:140044} 的母鹿。'
 
 L['athainne_note_1'] = '{note:{npc:140044} 夜晚与 {npc:129771} 一起漫步，白天在 {location:奥尔法的兽穴} 休憩。}\n\n请求 {npc:140044} 祝福 {item:209860} 来制造 {item:209863}。'

@@ -37,6 +37,7 @@ local TuskarrTacklebox = ns.node.TuskarrTacklebox
 local WarSupply = ns.node.WarSupply
 
 local Achievement = ns.reward.Achievement
+local Appearance = ns.reward.Appearance
 local Currency = ns.reward.Currency
 local Item = ns.reward.Item
 local Skin = ns.reward.Skin

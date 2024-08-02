@@ -589,7 +589,7 @@ map.nodes[39146553] = Treasure({
     quest = 77950,
     vignette = 5981,
     location = L['in_a_tree'],
-    rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
+    -- rlabel = ns.tooltip.ReputationGain(200, 2574), -- Dream Wardens
     rewards = {
         Achievement({id = 19317, criteria = 62954}), -- Treasures of The Emerald Dream
         Item({item = 208047, note = '50%'}) -- Gigantic Dreamseed
@@ -1459,8 +1459,8 @@ end
 map.nodes[54507698] = SlumberingSomnowl({
     pois = {
         POI({
-            55357645, 54627720, 71455417, 34205882, 43887115, 68425147,
-            59634116, 60424151, 61473978, 59534241
+            55357645, 54627720, 71455417, 34205882, 43887115, 68425147
+            -- 59634116, 60424151, 61473978, 59534241
         })
     }
 })
